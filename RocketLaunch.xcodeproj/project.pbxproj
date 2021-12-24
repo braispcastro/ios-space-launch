@@ -41,6 +41,8 @@
 		8BD9F3B327768266001312A9 /* Services.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BD9F3B227768266001312A9 /* Services.plist */; };
 		8BD9F3B52776841E001312A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3B42776841E001312A9 /* Constants.swift */; };
 		8BD9F3B7277684BF001312A9 /* SpaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3B6277684BF001312A9 /* SpaceService.swift */; };
+		8BD9F3BB277685E4001312A9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8BD9F3BA277685E4001312A9 /* Alamofire */; };
+		8BD9F3BE277685FB001312A9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8BD9F3BD277685FB001312A9 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BD9F3BE277685FB001312A9 /* Kingfisher in Frameworks */,
+				8BD9F3BB277685E4001312A9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +310,10 @@
 			dependencies = (
 			);
 			name = RocketLaunch;
+			packageProductDependencies = (
+				8BD9F3BA277685E4001312A9 /* Alamofire */,
+				8BD9F3BD277685FB001312A9 /* Kingfisher */,
+			);
 			productName = RocketLaunch;
 			productReference = 8B1B93D027765F7E00398B5C /* RocketLaunch.app */;
 			productType = "com.apple.product-type.application";
@@ -378,6 +386,10 @@
 				Base,
 			);
 			mainGroup = 8B1B93C727765F7E00398B5C;
+			packageReferences = (
+				8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 8B1B93D127765F7E00398B5C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -788,6 +800,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.5.0;
+			};
+		};
+		8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = exactVersion;
+				version = 7.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8BD9F3BA277685E4001312A9 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		8BD9F3BD277685FB001312A9 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8B1B93DC27765F7E00398B5C /* RocketLaunch.xcdatamodeld */ = {
