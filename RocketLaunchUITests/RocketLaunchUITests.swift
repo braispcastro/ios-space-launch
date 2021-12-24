@@ -2,7 +2,7 @@
 //  RocketLaunchUITests.swift
 //  RocketLaunchUITests
 //
-//  Created by Castro, Brais on 24/12/21.
+//  Created by Brais Castro on 24/12/21.
 //
 
 import XCTest

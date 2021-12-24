@@ -8,15 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		8B1B93D427765F7E00398B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93D327765F7E00398B5C /* AppDelegate.swift */; };
-		8B1B93D627765F7E00398B5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93D527765F7E00398B5C /* SceneDelegate.swift */; };
-		8B1B93D827765F7E00398B5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93D727765F7E00398B5C /* ViewController.swift */; };
-		8B1B93DB27765F7E00398B5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1B93D927765F7E00398B5C /* Main.storyboard */; };
 		8B1B93DE27765F7E00398B5C /* RocketLaunch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93DC27765F7E00398B5C /* RocketLaunch.xcdatamodeld */; };
 		8B1B93E027765F8000398B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B1B93DF27765F8000398B5C /* Assets.xcassets */; };
 		8B1B93E327765F8000398B5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1B93E127765F8000398B5C /* LaunchScreen.storyboard */; };
 		8B1B93EE27765F8000398B5C /* RocketLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93ED27765F8000398B5C /* RocketLaunchTests.swift */; };
 		8B1B93F827765F8000398B5C /* RocketLaunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93F727765F8000398B5C /* RocketLaunchUITests.swift */; };
 		8B1B93FA27765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93F927765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift */; };
+		8B72819E27766A97009050D9 /* RocketLaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819927766A97009050D9 /* RocketLaunchPresenter.swift */; };
+		8B72819F27766A97009050D9 /* RocketLaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819A27766A97009050D9 /* RocketLaunchRouter.swift */; };
+		8B7281A027766A97009050D9 /* RocketLaunchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819B27766A97009050D9 /* RocketLaunchModels.swift */; };
+		8B7281A127766A97009050D9 /* RocketLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819C27766A97009050D9 /* RocketLaunchViewController.swift */; };
+		8B7281A227766A97009050D9 /* RocketLaunchBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819D27766A97009050D9 /* RocketLaunchBuilder.swift */; };
+		8B7281A527766B36009050D9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281A427766B36009050D9 /* BaseViewController.swift */; };
+		8B7281A727766BC8009050D9 /* BaseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281A627766BC8009050D9 /* BaseBuilder.swift */; };
+		8B7281A927766C41009050D9 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281A827766C41009050D9 /* BasePresenter.swift */; };
+		8B7281AB27766DAC009050D9 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281AA27766DAC009050D9 /* BaseRouter.swift */; };
+		8B7281AF277670D9009050D9 /* RocketLaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281AD277670D9009050D9 /* RocketLaunchInteractor.swift */; };
+		8B7281B12776711F009050D9 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B02776711F009050D9 /* BaseInteractor.swift */; };
+		8B7281BA2776755B009050D9 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B42776755A009050D9 /* EventsViewController.swift */; };
+		8B7281BB2776755B009050D9 /* EventsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B52776755A009050D9 /* EventsModels.swift */; };
+		8B7281BC2776755B009050D9 /* EventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B62776755A009050D9 /* EventsPresenter.swift */; };
+		8B7281BD2776755B009050D9 /* EventsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B72776755A009050D9 /* EventsRouter.swift */; };
+		8B7281BE2776755B009050D9 /* EventsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B82776755A009050D9 /* EventsBuilder.swift */; };
+		8B7281BF2776755B009050D9 /* EventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B92776755A009050D9 /* EventsInteractor.swift */; };
+		8B7281C6277675DB009050D9 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C0277675DB009050D9 /* SettingsRouter.swift */; };
+		8B7281C7277675DB009050D9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C1277675DB009050D9 /* SettingsViewController.swift */; };
+		8B7281C8277675DB009050D9 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C2277675DB009050D9 /* SettingsPresenter.swift */; };
+		8B7281C9277675DB009050D9 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C3277675DB009050D9 /* SettingsModels.swift */; };
+		8B7281CA277675DB009050D9 /* SettingsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C4277675DB009050D9 /* SettingsBuilder.swift */; };
+		8B7281CB277675DB009050D9 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C5277675DB009050D9 /* SettingsInteractor.swift */; };
+		8B7281CD27767D72009050D9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8B7281CC27767D72009050D9 /* Settings.bundle */; };
+		8BD9F3B327768266001312A9 /* Services.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BD9F3B227768266001312A9 /* Services.plist */; };
+		8BD9F3B52776841E001312A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3B42776841E001312A9 /* Constants.swift */; };
+		8BD9F3B7277684BF001312A9 /* SpaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3B6277684BF001312A9 /* SpaceService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +63,6 @@
 /* Begin PBXFileReference section */
 		8B1B93D027765F7E00398B5C /* RocketLaunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketLaunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1B93D327765F7E00398B5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B1B93D527765F7E00398B5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8B1B93D727765F7E00398B5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8B1B93DA27765F7E00398B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B1B93DD27765F7E00398B5C /* RocketLaunch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RocketLaunch.xcdatamodel; sourceTree = "<group>"; };
 		8B1B93DF27765F8000398B5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B1B93E227765F8000398B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +72,33 @@
 		8B1B93F327765F8000398B5C /* RocketLaunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketLaunchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1B93F727765F8000398B5C /* RocketLaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchUITests.swift; sourceTree = "<group>"; };
 		8B1B93F927765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8B72819927766A97009050D9 /* RocketLaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchPresenter.swift; sourceTree = "<group>"; };
+		8B72819A27766A97009050D9 /* RocketLaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchRouter.swift; sourceTree = "<group>"; };
+		8B72819B27766A97009050D9 /* RocketLaunchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchModels.swift; sourceTree = "<group>"; };
+		8B72819C27766A97009050D9 /* RocketLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchViewController.swift; sourceTree = "<group>"; };
+		8B72819D27766A97009050D9 /* RocketLaunchBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchBuilder.swift; sourceTree = "<group>"; };
+		8B7281A427766B36009050D9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		8B7281A627766BC8009050D9 /* BaseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBuilder.swift; sourceTree = "<group>"; };
+		8B7281A827766C41009050D9 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		8B7281AA27766DAC009050D9 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		8B7281AD277670D9009050D9 /* RocketLaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchInteractor.swift; sourceTree = "<group>"; };
+		8B7281B02776711F009050D9 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
+		8B7281B42776755A009050D9 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		8B7281B52776755A009050D9 /* EventsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsModels.swift; sourceTree = "<group>"; };
+		8B7281B62776755A009050D9 /* EventsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsPresenter.swift; sourceTree = "<group>"; };
+		8B7281B72776755A009050D9 /* EventsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsRouter.swift; sourceTree = "<group>"; };
+		8B7281B82776755A009050D9 /* EventsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsBuilder.swift; sourceTree = "<group>"; };
+		8B7281B92776755A009050D9 /* EventsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsInteractor.swift; sourceTree = "<group>"; };
+		8B7281C0277675DB009050D9 /* SettingsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		8B7281C1277675DB009050D9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8B7281C2277675DB009050D9 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		8B7281C3277675DB009050D9 /* SettingsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
+		8B7281C4277675DB009050D9 /* SettingsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsBuilder.swift; sourceTree = "<group>"; };
+		8B7281C5277675DB009050D9 /* SettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		8B7281CC27767D72009050D9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		8BD9F3B227768266001312A9 /* Services.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Services.plist; sourceTree = "<group>"; };
+		8BD9F3B42776841E001312A9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8BD9F3B6277684BF001312A9 /* SpaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,13 +149,11 @@
 		8B1B93D227765F7E00398B5C /* RocketLaunch */ = {
 			isa = PBXGroup;
 			children = (
+				8B7281B227767520009050D9 /* Core */,
+				8B728192277666D0009050D9 /* Modules */,
+				8B72819527766704009050D9 /* Resources */,
+				8B728193277666D7009050D9 /* SupportingFiles */,
 				8B1B93D327765F7E00398B5C /* AppDelegate.swift */,
-				8B1B93D527765F7E00398B5C /* SceneDelegate.swift */,
-				8B1B93D727765F7E00398B5C /* ViewController.swift */,
-				8B1B93D927765F7E00398B5C /* Main.storyboard */,
-				8B1B93DF27765F8000398B5C /* Assets.xcassets */,
-				8B1B93E127765F8000398B5C /* LaunchScreen.storyboard */,
-				8B1B93E427765F8000398B5C /* Info.plist */,
 				8B1B93DC27765F7E00398B5C /* RocketLaunch.xcdatamodeld */,
 			);
 			path = RocketLaunch;
@@ -128,6 +174,120 @@
 				8B1B93F927765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift */,
 			);
 			path = RocketLaunchUITests;
+			sourceTree = "<group>";
+		};
+		8B728192277666D0009050D9 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8B7281A327766B13009050D9 /* Common */,
+				8B728194277666F3009050D9 /* LaunchScreen */,
+				8B72819627766829009050D9 /* RocketLaunch */,
+				8B7281972776698C009050D9 /* Events */,
+				8B7281982776699E009050D9 /* Settings */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8B728193277666D7009050D9 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8B1B93E427765F8000398B5C /* Info.plist */,
+				8BD9F3B227768266001312A9 /* Services.plist */,
+				8B7281CC27767D72009050D9 /* Settings.bundle */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		8B728194277666F3009050D9 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8B1B93E127765F8000398B5C /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		8B72819527766704009050D9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B1B93DF27765F8000398B5C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8B72819627766829009050D9 /* RocketLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				8B72819D27766A97009050D9 /* RocketLaunchBuilder.swift */,
+				8B72819C27766A97009050D9 /* RocketLaunchViewController.swift */,
+				8B72819927766A97009050D9 /* RocketLaunchPresenter.swift */,
+				8B7281AD277670D9009050D9 /* RocketLaunchInteractor.swift */,
+				8B72819A27766A97009050D9 /* RocketLaunchRouter.swift */,
+				8B72819B27766A97009050D9 /* RocketLaunchModels.swift */,
+			);
+			path = RocketLaunch;
+			sourceTree = "<group>";
+		};
+		8B7281972776698C009050D9 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				8B7281B82776755A009050D9 /* EventsBuilder.swift */,
+				8B7281B42776755A009050D9 /* EventsViewController.swift */,
+				8B7281B62776755A009050D9 /* EventsPresenter.swift */,
+				8B7281B92776755A009050D9 /* EventsInteractor.swift */,
+				8B7281B72776755A009050D9 /* EventsRouter.swift */,
+				8B7281B52776755A009050D9 /* EventsModels.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		8B7281982776699E009050D9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8B7281C4277675DB009050D9 /* SettingsBuilder.swift */,
+				8B7281C1277675DB009050D9 /* SettingsViewController.swift */,
+				8B7281C2277675DB009050D9 /* SettingsPresenter.swift */,
+				8B7281C5277675DB009050D9 /* SettingsInteractor.swift */,
+				8B7281C0277675DB009050D9 /* SettingsRouter.swift */,
+				8B7281C3277675DB009050D9 /* SettingsModels.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		8B7281A327766B13009050D9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8B7281A627766BC8009050D9 /* BaseBuilder.swift */,
+				8B7281A427766B36009050D9 /* BaseViewController.swift */,
+				8B7281A827766C41009050D9 /* BasePresenter.swift */,
+				8B7281AA27766DAC009050D9 /* BaseRouter.swift */,
+				8B7281B02776711F009050D9 /* BaseInteractor.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8B7281B227767520009050D9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8B7281B32776752E009050D9 /* Services */,
+				8BD9F3B42776841E001312A9 /* Constants.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8B7281B32776752E009050D9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8BD9F3B8277684E0001312A9 /* TheSpaceDevs */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8BD9F3B8277684E0001312A9 /* TheSpaceDevs */ = {
+			isa = PBXGroup;
+			children = (
+				8BD9F3B6277684BF001312A9 /* SpaceService.swift */,
+			);
+			path = TheSpaceDevs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +394,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BD9F3B327768266001312A9 /* Services.plist in Resources */,
 				8B1B93E327765F8000398B5C /* LaunchScreen.storyboard in Resources */,
+				8B7281CD27767D72009050D9 /* Settings.bundle in Resources */,
 				8B1B93E027765F8000398B5C /* Assets.xcassets in Resources */,
-				8B1B93DB27765F7E00398B5C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +422,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B72819E27766A97009050D9 /* RocketLaunchPresenter.swift in Sources */,
+				8B7281BC2776755B009050D9 /* EventsPresenter.swift in Sources */,
+				8B7281A927766C41009050D9 /* BasePresenter.swift in Sources */,
+				8B7281BA2776755B009050D9 /* EventsViewController.swift in Sources */,
+				8B7281BB2776755B009050D9 /* EventsModels.swift in Sources */,
 				8B1B93DE27765F7E00398B5C /* RocketLaunch.xcdatamodeld in Sources */,
-				8B1B93D827765F7E00398B5C /* ViewController.swift in Sources */,
 				8B1B93D427765F7E00398B5C /* AppDelegate.swift in Sources */,
-				8B1B93D627765F7E00398B5C /* SceneDelegate.swift in Sources */,
+				8BD9F3B52776841E001312A9 /* Constants.swift in Sources */,
+				8B7281A027766A97009050D9 /* RocketLaunchModels.swift in Sources */,
+				8B7281BF2776755B009050D9 /* EventsInteractor.swift in Sources */,
+				8B7281BD2776755B009050D9 /* EventsRouter.swift in Sources */,
+				8B7281A227766A97009050D9 /* RocketLaunchBuilder.swift in Sources */,
+				8B7281AF277670D9009050D9 /* RocketLaunchInteractor.swift in Sources */,
+				8B7281A527766B36009050D9 /* BaseViewController.swift in Sources */,
+				8B7281AB27766DAC009050D9 /* BaseRouter.swift in Sources */,
+				8B7281A127766A97009050D9 /* RocketLaunchViewController.swift in Sources */,
+				8BD9F3B7277684BF001312A9 /* SpaceService.swift in Sources */,
+				8B7281C8277675DB009050D9 /* SettingsPresenter.swift in Sources */,
+				8B7281C9277675DB009050D9 /* SettingsModels.swift in Sources */,
+				8B7281CB277675DB009050D9 /* SettingsInteractor.swift in Sources */,
+				8B7281C6277675DB009050D9 /* SettingsRouter.swift in Sources */,
+				8B7281C7277675DB009050D9 /* SettingsViewController.swift in Sources */,
+				8B72819F27766A97009050D9 /* RocketLaunchRouter.swift in Sources */,
+				8B7281A727766BC8009050D9 /* BaseBuilder.swift in Sources */,
+				8B7281BE2776755B009050D9 /* EventsBuilder.swift in Sources */,
+				8B7281CA277675DB009050D9 /* SettingsBuilder.swift in Sources */,
+				8B7281B12776711F009050D9 /* BaseInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +485,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8B1B93D927765F7E00398B5C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8B1B93DA27765F7E00398B5C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8B1B93E127765F8000398B5C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -445,22 +621,24 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RocketLaunch/Info.plist;
+				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Launch Calendar";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braispcastro.rocket-launch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -473,22 +651,24 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RocketLaunch/Info.plist;
+				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Launch Calendar";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braispcastro.rocket-launch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

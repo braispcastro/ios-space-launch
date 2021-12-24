@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  RocketLaunch
 //
-//  Created by Castro, Brais on 24/12/21.
+//  Created by Brais Castro on 24/12/21.
 //
 
 import UIKit
@@ -11,25 +11,38 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = setupNavigationController()
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    
+    // MARK: - Private Methods
+    
+    private func setupNavigationController() -> UINavigationController {
+        let navController = UINavigationController(rootViewController: setupTabBarController())
+        let backButtonImage = UIImage(systemName: "arrow.backward")
+        navController.navigationBar.backIndicatorImage = backButtonImage
+        navController.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
+        navController.navigationBar.prefersLargeTitles = true
+        
+        return navController
     }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    
+    private func setupTabBarController() -> UITabBarController {
+        let rocketLaunch = RocketLaunchBuilder.build()
+        let events = EventsBuilder.build()
+        let settings = SettingsBuilder.build()
+        
+        let bottomNavigator = UITabBarController()
+        bottomNavigator.setViewControllers([rocketLaunch, events, settings], animated: true)
+        
+        return bottomNavigator
     }
 
     // MARK: - Core Data stack
