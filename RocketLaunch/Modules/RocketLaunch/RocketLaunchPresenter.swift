@@ -36,13 +36,13 @@ extension RocketLaunchPresenter: RocketLaunchPresenterProtocol {
     }
     
     func getLaunchesToShow() {
-        interactor.getMockedLaunchList()
+        interactor.getLaunchList()
     }
     
 }
 
 extension RocketLaunchPresenter: RocketLaunchInteractorCallbackProtocol {
-    func setMockedLaunchList(launchList: [RocketLaunch.Launch]) {
+    func setLaunchList(launchList: [RocketLaunch.Launch]) {
         viewController.showLaunches(launchList: launchList)
     }
     

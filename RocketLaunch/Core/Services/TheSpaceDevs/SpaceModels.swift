@@ -20,22 +20,22 @@ struct Space {
             
             enum CodingKeys: String, CodingKey {
                 case id, url, slug, name, status, net, probability, holdreason, failreason, rocket, mission, pad, image
-                case lastUpdated = "lastUpdated"
+                case lastUpdated = "last_updated"
                 case windowEnd = "window_end"
                 case windowStart = "window_start"
                 case launchServiceProvider = "launch_service_provider"
                 case webcastLive = "webcast_live"
             }
             
-            let id: Int
+            let id: String
             let url: String?
             let slug: String?
             let name: String?
             let status: Status?
-            let lastUpdated: Date?
-            let net: Date?
-            let windowEnd: Date?
-            let windowStart: Date?
+            let lastUpdated: String?
+            let net: String?
+            let windowEnd: String?
+            let windowStart: String?
             let probability: Int?
             let holdreason: String?
             let failreason: String?
@@ -184,7 +184,7 @@ struct Space {
             let newsUrl: String?
             let videoUrl: String?
             let featureImage: String?
-            let date: Date?
+            let date: String?
             
             struct EventType: Decodable {
                 

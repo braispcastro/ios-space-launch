@@ -15,7 +15,7 @@ enum RocketLaunch {
     }
     
     struct Launch: Equatable {
-        let imageUrl: String?
+        let imageUrl: String
         let rocket: String?
         let mission: String?
         let provider: String?

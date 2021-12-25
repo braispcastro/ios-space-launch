@@ -139,6 +139,7 @@ class RocketLaunchTableViewCell: UITableViewCell {
             vStackView.topAnchor.constraint(equalTo: hStackView.topAnchor, constant: ViewTraits.margins.top),
             vStackView.bottomAnchor.constraint(equalTo: hStackView.bottomAnchor, constant: ViewTraits.margins.bottom),
             vStackView.leftAnchor.constraint(equalTo: mainImageView.rightAnchor, constant: ViewTraits.margins.left),
+            vStackView.trailingAnchor.constraint(equalTo: hStackView.trailingAnchor, constant: ViewTraits.margins.right),
             
             rocketLabel.bottomAnchor.constraint(equalTo: missionLabel.topAnchor, constant: ViewTraits.labelMargins.bottom),
             missionLabel.bottomAnchor.constraint(equalTo: providerLabel.topAnchor, constant: ViewTraits.margins.bottom),

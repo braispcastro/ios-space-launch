@@ -128,7 +128,7 @@ extension RocketLaunchViewController: UITableViewDataSource, UITableViewDelegate
             fatalError("Not registered for tableView")
         }
         
-        cell.mainImageView.kf.setImage(with: URL(string: launchList[indexPath.section].imageUrl ?? ""))
+        cell.mainImageView.kf.setImage(with: URL(string: launchList[indexPath.section].imageUrl))
         cell.rocketLabel.text = launchList[indexPath.section].rocket
         cell.missionLabel.text = launchList[indexPath.section].mission
         cell.providerLabel.text = launchList[indexPath.section].provider
