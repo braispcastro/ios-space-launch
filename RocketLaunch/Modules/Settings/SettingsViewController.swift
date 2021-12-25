@@ -40,11 +40,6 @@ final class SettingsViewController: BaseViewController {
         super.viewDidLoad()
         presenter.prepareView()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.title = viewModel.title
-    }
 
     // MARK: - Setup
 

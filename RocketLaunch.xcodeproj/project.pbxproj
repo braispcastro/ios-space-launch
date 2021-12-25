@@ -14,6 +14,7 @@
 		8B1B93EE27765F8000398B5C /* RocketLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93ED27765F8000398B5C /* RocketLaunchTests.swift */; };
 		8B1B93F827765F8000398B5C /* RocketLaunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93F727765F8000398B5C /* RocketLaunchUITests.swift */; };
 		8B1B93FA27765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93F927765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift */; };
+		8B4E28DF27776D1E00B83DB8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */; };
 		8B72819E27766A97009050D9 /* RocketLaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819927766A97009050D9 /* RocketLaunchPresenter.swift */; };
 		8B72819F27766A97009050D9 /* RocketLaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819A27766A97009050D9 /* RocketLaunchRouter.swift */; };
 		8B7281A027766A97009050D9 /* RocketLaunchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819B27766A97009050D9 /* RocketLaunchModels.swift */; };
@@ -38,6 +39,7 @@
 		8B7281CA277675DB009050D9 /* SettingsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C4277675DB009050D9 /* SettingsBuilder.swift */; };
 		8B7281CB277675DB009050D9 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C5277675DB009050D9 /* SettingsInteractor.swift */; };
 		8B7281CD27767D72009050D9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8B7281CC27767D72009050D9 /* Settings.bundle */; };
+		8BC3A6AC27777C1800F88D8D /* RocketLaunchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3A6AB27777C1800F88D8D /* RocketLaunchTableViewCell.swift */; };
 		8BD9F3B327768266001312A9 /* Services.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BD9F3B227768266001312A9 /* Services.plist */; };
 		8BD9F3B52776841E001312A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3B42776841E001312A9 /* Constants.swift */; };
 		8BD9F3B7277684BF001312A9 /* SpaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3B6277684BF001312A9 /* SpaceService.swift */; };
@@ -76,6 +78,7 @@
 		8B1B93F327765F8000398B5C /* RocketLaunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketLaunchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1B93F727765F8000398B5C /* RocketLaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchUITests.swift; sourceTree = "<group>"; };
 		8B1B93F927765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		8B72819927766A97009050D9 /* RocketLaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchPresenter.swift; sourceTree = "<group>"; };
 		8B72819A27766A97009050D9 /* RocketLaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchRouter.swift; sourceTree = "<group>"; };
 		8B72819B27766A97009050D9 /* RocketLaunchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchModels.swift; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 		8B7281C4277675DB009050D9 /* SettingsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsBuilder.swift; sourceTree = "<group>"; };
 		8B7281C5277675DB009050D9 /* SettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		8B7281CC27767D72009050D9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		8BC3A6AB27777C1800F88D8D /* RocketLaunchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchTableViewCell.swift; sourceTree = "<group>"; };
 		8BD9F3B227768266001312A9 /* Services.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Services.plist; sourceTree = "<group>"; };
 		8BD9F3B42776841E001312A9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8BD9F3B6277684BF001312A9 /* SpaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceService.swift; sourceTree = "<group>"; };
@@ -157,12 +161,11 @@
 		8B1B93D227765F7E00398B5C /* RocketLaunch */ = {
 			isa = PBXGroup;
 			children = (
+				8B1B93D327765F7E00398B5C /* AppDelegate.swift */,
 				8B7281B227767520009050D9 /* Core */,
 				8B728192277666D0009050D9 /* Modules */,
 				8B72819527766704009050D9 /* Resources */,
 				8B728193277666D7009050D9 /* SupportingFiles */,
-				8B1B93D327765F7E00398B5C /* AppDelegate.swift */,
-				8B1B93DC27765F7E00398B5C /* RocketLaunch.xcdatamodeld */,
 			);
 			path = RocketLaunch;
 			sourceTree = "<group>";
@@ -184,10 +187,28 @@
 			path = RocketLaunchUITests;
 			sourceTree = "<group>";
 		};
+		8B4E28DC27776CEA00B83DB8 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				8B4E28DD27776CF200B83DB8 /* Header */,
+				8BC3A6AA27777BF100F88D8D /* Cell */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		8B4E28DD27776CF200B83DB8 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		8B728192277666D0009050D9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				8B7281A327766B13009050D9 /* Common */,
+				8BD9F3C327769D24001312A9 /* Components */,
 				8B728194277666F3009050D9 /* LaunchScreen */,
 				8B72819627766829009050D9 /* RocketLaunch */,
 				8B7281972776698C009050D9 /* Events */,
@@ -279,6 +300,7 @@
 				8B7281B32776752E009050D9 /* Services */,
 				8BD9F3B42776841E001312A9 /* Constants.swift */,
 				8BD9F3C127768C4C001312A9 /* UserDefaultsManager.swift */,
+				8B1B93DC27765F7E00398B5C /* RocketLaunch.xcdatamodeld */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -291,6 +313,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		8BC3A6AA27777BF100F88D8D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8BC3A6AB27777C1800F88D8D /* RocketLaunchTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		8BD9F3B8277684E0001312A9 /* TheSpaceDevs */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +328,14 @@
 				8BD9F3B6277684BF001312A9 /* SpaceService.swift */,
 			);
 			path = TheSpaceDevs;
+			sourceTree = "<group>";
+		};
+		8BD9F3C327769D24001312A9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8B4E28DC27776CEA00B83DB8 /* Table */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,11 +498,13 @@
 				8BD9F3B7277684BF001312A9 /* SpaceService.swift in Sources */,
 				8B7281C8277675DB009050D9 /* SettingsPresenter.swift in Sources */,
 				8B7281C9277675DB009050D9 /* SettingsModels.swift in Sources */,
+				8BC3A6AC27777C1800F88D8D /* RocketLaunchTableViewCell.swift in Sources */,
 				8B7281CB277675DB009050D9 /* SettingsInteractor.swift in Sources */,
 				8B7281C6277675DB009050D9 /* SettingsRouter.swift in Sources */,
 				8B7281C7277675DB009050D9 /* SettingsViewController.swift in Sources */,
 				8BD9F3C227768C4C001312A9 /* UserDefaultsManager.swift in Sources */,
 				8B72819F27766A97009050D9 /* RocketLaunchRouter.swift in Sources */,
+				8B4E28DF27776D1E00B83DB8 /* HeaderView.swift in Sources */,
 				8B7281A727766BC8009050D9 /* BaseBuilder.swift in Sources */,
 				8B7281BE2776755B009050D9 /* EventsBuilder.swift in Sources */,
 				8B7281CA277675DB009050D9 /* SettingsBuilder.swift in Sources */,

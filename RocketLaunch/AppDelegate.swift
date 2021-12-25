@@ -16,23 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = setupNavigationController()
+        self.window?.rootViewController = setupTabBarController() //setupNavigationController()
         self.window?.makeKeyAndVisible()
         
         return true
     }
     
     // MARK: - Private Methods
-    
-    private func setupNavigationController() -> UINavigationController {
-        let navController = UINavigationController(rootViewController: setupTabBarController())
-        let backButtonImage = UIImage(systemName: "arrow.backward")
-        navController.navigationBar.backIndicatorImage = backButtonImage
-        navController.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
-        navController.navigationBar.prefersLargeTitles = true
-        
-        return navController
-    }
     
     private func setupTabBarController() -> UITabBarController {
         let rocketLaunch = RocketLaunchBuilder.build()

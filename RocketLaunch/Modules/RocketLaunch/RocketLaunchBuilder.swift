@@ -22,8 +22,13 @@ final class RocketLaunchBuilder: BaseBuilder {
         
         viewController.presenter = presenter
         interactor.presenter = presenter
-
-        return viewController
+        
+        let navController: UINavigationController = UINavigationController(rootViewController: viewController)
+        let backButtonImage = UIImage(systemName: "arrow.backward")
+        navController.navigationBar.backIndicatorImage = backButtonImage
+        navController.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
+        navController.navigationBar.prefersLargeTitles = true
+        return navController
     }
 
 }

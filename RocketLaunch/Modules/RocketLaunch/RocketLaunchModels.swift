@@ -10,8 +10,22 @@ import Foundation
 
 enum RocketLaunch {
 
-    struct ViewModel {
+    struct ViewModel: Equatable {
         let title: String
+    }
+    
+    struct Section: Equatable {
+        let title: String
+        let rows: [Row]
+    }
+    
+    struct Row: Equatable {
+        let imageUrl: String
+        let title: String
+        let provider: String
+        let pad: String
+        let windowStart: String
+        let status: String
     }
 
 }
