@@ -14,18 +14,14 @@ enum RocketLaunch {
         let title: String
     }
     
-    struct Section: Equatable {
-        let title: String
-        let rows: [Row]
-    }
-    
-    struct Row: Equatable {
-        let imageUrl: String
-        let title: String
-        let provider: String
-        let pad: String
-        let windowStart: String
-        let status: String
+    struct Launch: Equatable {
+        let imageUrl: String?
+        let rocket: String?
+        let mission: String?
+        let provider: String?
+        let pad: String?
+        let windowStart: String?
+        let status: String?
     }
 
 }

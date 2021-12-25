@@ -12,7 +12,7 @@ final class RocketLaunchViewController: BaseViewController {
 
     var presenter: RocketLaunchPresenterProtocol!
     private var viewModel: RocketLaunch.ViewModel!
-    private var launchList: [RocketLaunch.Section] = []
+    private var launchList: [RocketLaunch.Launch] = []
 
     // MARK: - Component Declaration
     
@@ -50,7 +50,7 @@ final class RocketLaunchViewController: BaseViewController {
     // MARK: - Setup
 
     override func setupComponents() {
-        tableView = UITableView(frame: .zero, style: .plain)
+        tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         tableView.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: HeaderView.kReuseIdentifier)
@@ -90,7 +90,7 @@ extension RocketLaunchViewController: RocketLaunchViewControllerProtocol {
         self.title = viewModel.title
     }
     
-    func showLaunches(launchList: [RocketLaunch.Section]) {
+    func showLaunches(launchList: [RocketLaunch.Launch]) {
         self.launchList = launchList
         tableView.reloadData()
     }
@@ -106,20 +106,21 @@ extension RocketLaunchViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView: HeaderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderView.kReuseIdentifier) as? HeaderView else {
-            fatalError("Not registered for tableView")
-        }
-        
-        headerView.textLabel?.text = launchList[section].title
-        return headerView
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        return view
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 28.0
+        return .leastNormalMagnitude
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return .leastNormalMagnitude
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return launchList[section].rows.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -127,12 +128,13 @@ extension RocketLaunchViewController: UITableViewDataSource, UITableViewDelegate
             fatalError("Not registered for tableView")
         }
         
-        cell.titleLabel.text = launchList[indexPath.section].rows[indexPath.row].title
-        cell.providerLabel.text = launchList[indexPath.section].rows[indexPath.row].provider
-        cell.padLabel.text = launchList[indexPath.section].rows[indexPath.row].pad
-        cell.windowStartLabel.text = launchList[indexPath.section].rows[indexPath.row].windowStart
-        cell.statusLabel.text = launchList[indexPath.section].rows[indexPath.row].status
-        cell.mainImageView.kf.setImage(with: URL(string: launchList[indexPath.section].rows[indexPath.row].imageUrl))
+        cell.mainImageView.kf.setImage(with: URL(string: launchList[indexPath.section].imageUrl ?? ""))
+        cell.rocketLabel.text = launchList[indexPath.section].rocket
+        cell.missionLabel.text = launchList[indexPath.section].mission
+        cell.providerLabel.text = launchList[indexPath.section].provider
+        cell.padLabel.text = launchList[indexPath.section].pad
+        cell.windowStartLabel.text = launchList[indexPath.section].windowStart
+        cell.statusLabel.text = launchList[indexPath.section].status
         
         return cell
     }

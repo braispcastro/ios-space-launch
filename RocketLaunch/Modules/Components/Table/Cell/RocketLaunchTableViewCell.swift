@@ -2,7 +2,7 @@
 //  RocketLaunchTableViewCell.swift
 //  RocketLaunch
 //
-//  Created by Castro, Brais on 25/12/21.
+//  Created by Brais Castro on 25/12/21.
 //
 
 import UIKit
@@ -16,7 +16,8 @@ class RocketLaunchTableViewCell: UITableViewCell {
     internal var hStackView: UIStackView!
     internal var mainImageView: UIImageView!
     internal var vStackView: UIStackView!
-    internal var titleLabel: UILabel!
+    internal var rocketLabel: UILabel!
+    internal var missionLabel: UILabel!
     internal var providerLabel: UILabel!
     internal var padLabel: UILabel!
     internal var windowStartLabel: UILabel!
@@ -32,7 +33,8 @@ class RocketLaunchTableViewCell: UITableViewCell {
         static let hStackView: String = "horizontal-stacl-view"
         static let mainImageView: String = "main-image-view"
         static let vStackView: String = "vertical-stack-view"
-        static let titleLabel: String = "title-label"
+        static let rocketLabel: String = "rocket-label"
+        static let missionLabel: String = "mission-label"
         static let providerLabel: String = "provider-label"
         static let padLabel: String = "pad-label"
         static let windowStartLabel: String = "window-start-label"
@@ -80,12 +82,19 @@ class RocketLaunchTableViewCell: UITableViewCell {
         vStackView.axis = .vertical
         hStackView.addArrangedSubview(vStackView)
         
-        titleLabel = UILabel()
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        titleLabel.textAlignment = .center
-        vStackView.addArrangedSubview(titleLabel)
+        rocketLabel = UILabel()
+        rocketLabel.translatesAutoresizingMaskIntoConstraints = false
+        rocketLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        rocketLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        rocketLabel.textAlignment = .center
+        vStackView.addArrangedSubview(rocketLabel)
+        
+        missionLabel = UILabel()
+        missionLabel.translatesAutoresizingMaskIntoConstraints = false
+        missionLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        missionLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        missionLabel.textAlignment = .center
+        vStackView.addArrangedSubview(missionLabel)
         
         providerLabel = UILabel()
         providerLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -110,8 +119,7 @@ class RocketLaunchTableViewCell: UITableViewCell {
         statusLabel = UILabel()
         statusLabel.translatesAutoresizingMaskIntoConstraints = false
         statusLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        statusLabel.backgroundColor = UIColor.init(named: "GoForLaunchColor")
-        statusLabel.textColor = UIColor.white
+        statusLabel.textColor = UIColor.init(named: "GoForLaunchColor")
         statusLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         statusLabel.textAlignment = .center
         vStackView.addArrangedSubview(statusLabel)
@@ -119,22 +127,24 @@ class RocketLaunchTableViewCell: UITableViewCell {
 
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            hStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: ViewTraits.margins.top),
-            hStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: ViewTraits.margins.bottom),
-            hStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: ViewTraits.margins.left),
-            hStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: ViewTraits.margins.right),
+            hStackView.topAnchor.constraint(equalTo: self.topAnchor),
+            hStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            hStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            hStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
             mainImageView.topAnchor.constraint(equalTo: hStackView.topAnchor),
             mainImageView.bottomAnchor.constraint(equalTo: hStackView.bottomAnchor),
             mainImageView.widthAnchor.constraint(equalToConstant: 100),
             
+            vStackView.topAnchor.constraint(equalTo: hStackView.topAnchor, constant: ViewTraits.margins.top),
+            vStackView.bottomAnchor.constraint(equalTo: hStackView.bottomAnchor, constant: ViewTraits.margins.bottom),
             vStackView.leftAnchor.constraint(equalTo: mainImageView.rightAnchor, constant: ViewTraits.margins.left),
             
-            titleLabel.bottomAnchor.constraint(equalTo: providerLabel.topAnchor, constant: ViewTraits.labelMargins.bottom),
+            rocketLabel.bottomAnchor.constraint(equalTo: missionLabel.topAnchor, constant: ViewTraits.labelMargins.bottom),
+            missionLabel.bottomAnchor.constraint(equalTo: providerLabel.topAnchor, constant: ViewTraits.margins.bottom),
             providerLabel.bottomAnchor.constraint(equalTo: padLabel.topAnchor, constant: ViewTraits.labelMargins.bottom),
-            padLabel.bottomAnchor.constraint(equalTo: windowStartLabel.topAnchor, constant: ViewTraits.labelMargins.bottom),
-            windowStartLabel.bottomAnchor.constraint(equalTo: statusLabel.topAnchor, constant: ViewTraits.labelMargins.bottom),
-            statusLabel.heightAnchor.constraint(equalToConstant: 28)
+            padLabel.bottomAnchor.constraint(equalTo: windowStartLabel.topAnchor, constant: ViewTraits.margins.bottom),
+            windowStartLabel.bottomAnchor.constraint(equalTo: statusLabel.topAnchor, constant: ViewTraits.margins.bottom)
         ])
     }
     
@@ -143,7 +153,8 @@ class RocketLaunchTableViewCell: UITableViewCell {
         hStackView.accessibilityIdentifier = AccessibilityIds.hStackView
         mainImageView.accessibilityIdentifier = AccessibilityIds.mainImageView
         vStackView.accessibilityIdentifier = AccessibilityIds.vStackView
-        titleLabel.accessibilityIdentifier = AccessibilityIds.titleLabel
+        rocketLabel.accessibilityIdentifier = AccessibilityIds.rocketLabel
+        missionLabel.accessibilityIdentifier = AccessibilityIds.missionLabel
         providerLabel.accessibilityIdentifier = AccessibilityIds.providerLabel
         padLabel.accessibilityIdentifier = AccessibilityIds.padLabel
         windowStartLabel.accessibilityIdentifier = AccessibilityIds.windowStartLabel

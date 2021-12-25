@@ -2,7 +2,7 @@
 //  HeaderView.swift
 //  RocketLaunch
 //
-//  Created by Castro, Brais on 25/12/21.
+//  Created by Brais Castro on 25/12/21.
 //
 
 import UIKit
