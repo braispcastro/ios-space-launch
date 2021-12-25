@@ -10,8 +10,17 @@ import Foundation
 
 enum Events {
 
-    struct ViewModel {
+    struct ViewModel: Equatable {
         let title: String
+    }
+    
+    struct Event: Equatable {
+        let imageUrl: String
+        let name: String
+        let location: String
+        let type: String
+        let description: String
+        let date: String
     }
 
 }

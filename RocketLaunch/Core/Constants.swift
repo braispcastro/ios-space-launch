@@ -18,5 +18,6 @@ struct Constants {
     
     // Placeholder
     static let kRocketLaunchPlaceholderImage = "https://via.placeholder.com/300x540"
+    static let kEventPlaceholderImage = "https://via.placeholder.com/1200x450"
     
 }

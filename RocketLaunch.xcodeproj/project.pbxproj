@@ -47,6 +47,7 @@
 		8BD9F3BE277685FB001312A9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8BD9F3BD277685FB001312A9 /* Kingfisher */; };
 		8BD9F3C027768655001312A9 /* SpaceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3BF27768655001312A9 /* SpaceModels.swift */; };
 		8BD9F3C227768C4C001312A9 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3C127768C4C001312A9 /* UserDefaultsManager.swift */; };
+		8BE852C42777BD610007EA6F /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE852C32777BD610007EA6F /* EventTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		8BD9F3B6277684BF001312A9 /* SpaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceService.swift; sourceTree = "<group>"; };
 		8BD9F3BF27768655001312A9 /* SpaceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceModels.swift; sourceTree = "<group>"; };
 		8BD9F3C127768C4C001312A9 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		8BE852C32777BD610007EA6F /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				8BC3A6AB27777C1800F88D8D /* RocketLaunchTableViewCell.swift */,
+				8BE852C32777BD610007EA6F /* EventTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				8B7281A027766A97009050D9 /* RocketLaunchModels.swift in Sources */,
 				8B7281BF2776755B009050D9 /* EventsInteractor.swift in Sources */,
 				8B7281BD2776755B009050D9 /* EventsRouter.swift in Sources */,
+				8BE852C42777BD610007EA6F /* EventTableViewCell.swift in Sources */,
 				8B7281A227766A97009050D9 /* RocketLaunchBuilder.swift in Sources */,
 				8B7281AF277670D9009050D9 /* RocketLaunchInteractor.swift in Sources */,
 				8B7281A527766B36009050D9 /* BaseViewController.swift in Sources */,

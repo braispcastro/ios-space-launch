@@ -42,6 +42,7 @@ extension RocketLaunchPresenter: RocketLaunchPresenterProtocol {
 }
 
 extension RocketLaunchPresenter: RocketLaunchInteractorCallbackProtocol {
+    
     func setLaunchList(launchList: [RocketLaunch.Launch]) {
         viewController.showLaunches(launchList: launchList)
     }

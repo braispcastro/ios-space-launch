@@ -9,10 +9,12 @@ import Foundation
 
 protocol EventsViewControllerProtocol: BaseViewControllerProtocol {
     func show(viewModel: Events.ViewModel)
+    func showEvents(eventList: [Events.Event])
 }
 
 protocol EventsPresenterProtocol: BasePresenterProtocol {
     func prepareView()
+    func getEventsToShow()
 }
 
 final class EventsPresenter<T: EventsViewControllerProtocol, U: EventsRouterProtocol>: BasePresenter<T, U> {
@@ -33,8 +35,16 @@ extension EventsPresenter: EventsPresenterProtocol {
         viewController.show(viewModel: viewModel)
     }
     
+    func getEventsToShow() {
+        interactor.getEventList()
+    }
+    
 }
 
 extension EventsPresenter: EventsInteractorCallbackProtocol {
+    
+    func setEventList(eventList: [Events.Event]) {
+        viewController.showEvents(eventList: eventList)
+    }
     
 }

@@ -47,7 +47,6 @@ extension RocketLaunchInteractor: RocketLaunchInteractorProtocol {
                 print(error)
             }
         }
-        
     }
     
 }

@@ -53,7 +53,6 @@ final class RocketLaunchViewController: BaseViewController {
         tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
-        tableView.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: HeaderView.kReuseIdentifier)
         tableView.register(RocketLaunchTableViewCell.self, forCellReuseIdentifier: RocketLaunchTableViewCell.kReuseIdentifier)
         view.addSubview(tableView)
         
@@ -140,7 +139,7 @@ extension RocketLaunchViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180.0
+        return 180
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
