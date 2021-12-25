@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol EventsRouterProtocol: BaseRouterProtocol {
+protocol EventRouterProtocol: BaseRouterProtocol {
 
 }
 
-class EventsRouter: BaseRouter, EventsRouterProtocol {
+class EventRouter: BaseRouter, EventRouterProtocol {
 
 }

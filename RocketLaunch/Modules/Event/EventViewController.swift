@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class EventsViewController: BaseViewController {
+final class EventViewController: BaseViewController {
 
-    var presenter: EventsPresenterProtocol!
-    private var viewModel: Events.ViewModel!
-    private var eventList: [Events.Event] = []
+    var presenter: EventPresenterProtocol!
+    private var viewModel: Event.ViewModel!
+    private var eventList: [Event.EventViewModel] = []
 
     // MARK: - Component Declaration
     
@@ -81,14 +81,14 @@ final class EventsViewController: BaseViewController {
 
 // MARK: - EventsViewControllerProtocol
 
-extension EventsViewController: EventsViewControllerProtocol {
+extension EventViewController: EventViewControllerProtocol {
     
-    func show(viewModel: Events.ViewModel) {
+    func show(viewModel: Event.ViewModel) {
         self.viewModel = viewModel
         self.title = viewModel.title
     }
     
-    func showEvents(eventList: [Events.Event]) {
+    func showEvents(eventList: [Event.EventViewModel]) {
         self.eventList = eventList
         tableView.reloadData()
     }
@@ -97,7 +97,7 @@ extension EventsViewController: EventsViewControllerProtocol {
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
 
-extension EventsViewController: UITableViewDataSource, UITableViewDelegate {
+extension EventViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return eventList.count

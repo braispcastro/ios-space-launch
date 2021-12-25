@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupTabBarController() -> UITabBarController {
         let rocketLaunch = RocketLaunchBuilder.build()
-        let events = EventsBuilder.build()
+        let events = EventBuilder.build()
         let settings = SettingsBuilder.build()
         
         let bottomNavigator = UITabBarController()

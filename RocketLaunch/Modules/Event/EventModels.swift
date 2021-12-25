@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum Events {
+enum Event {
 
     struct ViewModel: Equatable {
         let title: String
     }
     
-    struct Event: Equatable {
+    struct EventViewModel: Equatable {
         let imageUrl: String
         let name: String
         let location: String

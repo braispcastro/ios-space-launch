@@ -16,8 +16,8 @@ final class SettingsBuilder: BaseBuilder {
         let router: SettingsRouter = SettingsRouter(viewController: viewController)
         let interactor: SettingsInteractor = SettingsInteractor()
         let presenter: SettingsPresenter = SettingsPresenter(viewController: viewController,
-                                                                     router: router,
-                                                                     interactor: interactor)
+                                                             router: router,
+                                                             interactor: interactor)
         
         
         viewController.presenter = presenter

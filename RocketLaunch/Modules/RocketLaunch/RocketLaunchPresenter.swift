@@ -9,7 +9,7 @@ import Foundation
 
 protocol RocketLaunchViewControllerProtocol: BaseViewControllerProtocol {
     func show(viewModel: RocketLaunch.ViewModel)
-    func showLaunches(launchList: [RocketLaunch.Launch])
+    func showLaunches(launchList: [RocketLaunch.LaunchViewModel])
 }
 
 protocol RocketLaunchPresenterProtocol: BasePresenterProtocol {
@@ -43,7 +43,7 @@ extension RocketLaunchPresenter: RocketLaunchPresenterProtocol {
 
 extension RocketLaunchPresenter: RocketLaunchInteractorCallbackProtocol {
     
-    func setLaunchList(launchList: [RocketLaunch.Launch]) {
+    func setLaunchList(launchList: [RocketLaunch.LaunchViewModel]) {
         viewController.showLaunches(launchList: launchList)
     }
     

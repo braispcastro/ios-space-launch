@@ -12,7 +12,7 @@ final class RocketLaunchViewController: BaseViewController {
 
     var presenter: RocketLaunchPresenterProtocol!
     private var viewModel: RocketLaunch.ViewModel!
-    private var launchList: [RocketLaunch.Launch] = []
+    private var launchList: [RocketLaunch.LaunchViewModel] = []
 
     // MARK: - Component Declaration
     
@@ -89,7 +89,7 @@ extension RocketLaunchViewController: RocketLaunchViewControllerProtocol {
         self.title = viewModel.title
     }
     
-    func showLaunches(launchList: [RocketLaunch.Launch]) {
+    func showLaunches(launchList: [RocketLaunch.LaunchViewModel]) {
         self.launchList = launchList
         tableView.reloadData()
     }

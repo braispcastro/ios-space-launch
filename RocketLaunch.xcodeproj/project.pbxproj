@@ -26,12 +26,12 @@
 		8B7281AB27766DAC009050D9 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281AA27766DAC009050D9 /* BaseRouter.swift */; };
 		8B7281AF277670D9009050D9 /* RocketLaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281AD277670D9009050D9 /* RocketLaunchInteractor.swift */; };
 		8B7281B12776711F009050D9 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B02776711F009050D9 /* BaseInteractor.swift */; };
-		8B7281BA2776755B009050D9 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B42776755A009050D9 /* EventsViewController.swift */; };
-		8B7281BB2776755B009050D9 /* EventsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B52776755A009050D9 /* EventsModels.swift */; };
-		8B7281BC2776755B009050D9 /* EventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B62776755A009050D9 /* EventsPresenter.swift */; };
-		8B7281BD2776755B009050D9 /* EventsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B72776755A009050D9 /* EventsRouter.swift */; };
-		8B7281BE2776755B009050D9 /* EventsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B82776755A009050D9 /* EventsBuilder.swift */; };
-		8B7281BF2776755B009050D9 /* EventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B92776755A009050D9 /* EventsInteractor.swift */; };
+		8B7281BA2776755B009050D9 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B42776755A009050D9 /* EventViewController.swift */; };
+		8B7281BB2776755B009050D9 /* EventModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B52776755A009050D9 /* EventModels.swift */; };
+		8B7281BC2776755B009050D9 /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B62776755A009050D9 /* EventPresenter.swift */; };
+		8B7281BD2776755B009050D9 /* EventRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B72776755A009050D9 /* EventRouter.swift */; };
+		8B7281BE2776755B009050D9 /* EventBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B82776755A009050D9 /* EventBuilder.swift */; };
+		8B7281BF2776755B009050D9 /* EventInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B92776755A009050D9 /* EventInteractor.swift */; };
 		8B7281C6277675DB009050D9 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C0277675DB009050D9 /* SettingsRouter.swift */; };
 		8B7281C7277675DB009050D9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C1277675DB009050D9 /* SettingsViewController.swift */; };
 		8B7281C8277675DB009050D9 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C2277675DB009050D9 /* SettingsPresenter.swift */; };
@@ -91,12 +91,12 @@
 		8B7281AA27766DAC009050D9 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		8B7281AD277670D9009050D9 /* RocketLaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchInteractor.swift; sourceTree = "<group>"; };
 		8B7281B02776711F009050D9 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
-		8B7281B42776755A009050D9 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
-		8B7281B52776755A009050D9 /* EventsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsModels.swift; sourceTree = "<group>"; };
-		8B7281B62776755A009050D9 /* EventsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsPresenter.swift; sourceTree = "<group>"; };
-		8B7281B72776755A009050D9 /* EventsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsRouter.swift; sourceTree = "<group>"; };
-		8B7281B82776755A009050D9 /* EventsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsBuilder.swift; sourceTree = "<group>"; };
-		8B7281B92776755A009050D9 /* EventsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsInteractor.swift; sourceTree = "<group>"; };
+		8B7281B42776755A009050D9 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		8B7281B52776755A009050D9 /* EventModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModels.swift; sourceTree = "<group>"; };
+		8B7281B62776755A009050D9 /* EventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
+		8B7281B72776755A009050D9 /* EventRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRouter.swift; sourceTree = "<group>"; };
+		8B7281B82776755A009050D9 /* EventBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBuilder.swift; sourceTree = "<group>"; };
+		8B7281B92776755A009050D9 /* EventInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInteractor.swift; sourceTree = "<group>"; };
 		8B7281C0277675DB009050D9 /* SettingsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		8B7281C1277675DB009050D9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8B7281C2277675DB009050D9 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
@@ -213,7 +213,9 @@
 				8BD9F3C327769D24001312A9 /* Components */,
 				8B728194277666F3009050D9 /* LaunchScreen */,
 				8B72819627766829009050D9 /* RocketLaunch */,
-				8B7281972776698C009050D9 /* Events */,
+				8BE852C52777D1120007EA6F /* RocketLaunchInformation */,
+				8B7281972776698C009050D9 /* Event */,
+				8BE852C62777D1230007EA6F /* EventInformation */,
 				8B7281982776699E009050D9 /* Settings */,
 			);
 			path = Modules;
@@ -258,17 +260,17 @@
 			path = RocketLaunch;
 			sourceTree = "<group>";
 		};
-		8B7281972776698C009050D9 /* Events */ = {
+		8B7281972776698C009050D9 /* Event */ = {
 			isa = PBXGroup;
 			children = (
-				8B7281B82776755A009050D9 /* EventsBuilder.swift */,
-				8B7281B42776755A009050D9 /* EventsViewController.swift */,
-				8B7281B62776755A009050D9 /* EventsPresenter.swift */,
-				8B7281B92776755A009050D9 /* EventsInteractor.swift */,
-				8B7281B72776755A009050D9 /* EventsRouter.swift */,
-				8B7281B52776755A009050D9 /* EventsModels.swift */,
+				8B7281B82776755A009050D9 /* EventBuilder.swift */,
+				8B7281B42776755A009050D9 /* EventViewController.swift */,
+				8B7281B62776755A009050D9 /* EventPresenter.swift */,
+				8B7281B92776755A009050D9 /* EventInteractor.swift */,
+				8B7281B72776755A009050D9 /* EventRouter.swift */,
+				8B7281B52776755A009050D9 /* EventModels.swift */,
 			);
-			path = Events;
+			path = Event;
 			sourceTree = "<group>";
 		};
 		8B7281982776699E009050D9 /* Settings */ = {
@@ -339,6 +341,20 @@
 				8B4E28DC27776CEA00B83DB8 /* Table */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		8BE852C52777D1120007EA6F /* RocketLaunchInformation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RocketLaunchInformation;
+			sourceTree = "<group>";
+		};
+		8BE852C62777D1230007EA6F /* EventInformation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EventInformation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,16 +499,16 @@
 			files = (
 				8BD9F3C027768655001312A9 /* SpaceModels.swift in Sources */,
 				8B72819E27766A97009050D9 /* RocketLaunchPresenter.swift in Sources */,
-				8B7281BC2776755B009050D9 /* EventsPresenter.swift in Sources */,
+				8B7281BC2776755B009050D9 /* EventPresenter.swift in Sources */,
 				8B7281A927766C41009050D9 /* BasePresenter.swift in Sources */,
-				8B7281BA2776755B009050D9 /* EventsViewController.swift in Sources */,
-				8B7281BB2776755B009050D9 /* EventsModels.swift in Sources */,
+				8B7281BA2776755B009050D9 /* EventViewController.swift in Sources */,
+				8B7281BB2776755B009050D9 /* EventModels.swift in Sources */,
 				8B1B93DE27765F7E00398B5C /* RocketLaunch.xcdatamodeld in Sources */,
 				8B1B93D427765F7E00398B5C /* AppDelegate.swift in Sources */,
 				8BD9F3B52776841E001312A9 /* Constants.swift in Sources */,
 				8B7281A027766A97009050D9 /* RocketLaunchModels.swift in Sources */,
-				8B7281BF2776755B009050D9 /* EventsInteractor.swift in Sources */,
-				8B7281BD2776755B009050D9 /* EventsRouter.swift in Sources */,
+				8B7281BF2776755B009050D9 /* EventInteractor.swift in Sources */,
+				8B7281BD2776755B009050D9 /* EventRouter.swift in Sources */,
 				8BE852C42777BD610007EA6F /* EventTableViewCell.swift in Sources */,
 				8B7281A227766A97009050D9 /* RocketLaunchBuilder.swift in Sources */,
 				8B7281AF277670D9009050D9 /* RocketLaunchInteractor.swift in Sources */,
@@ -510,7 +526,7 @@
 				8B72819F27766A97009050D9 /* RocketLaunchRouter.swift in Sources */,
 				8B4E28DF27776D1E00B83DB8 /* HeaderView.swift in Sources */,
 				8B7281A727766BC8009050D9 /* BaseBuilder.swift in Sources */,
-				8B7281BE2776755B009050D9 /* EventsBuilder.swift in Sources */,
+				8B7281BE2776755B009050D9 /* EventBuilder.swift in Sources */,
 				8B7281CA277675DB009050D9 /* SettingsBuilder.swift in Sources */,
 				8B7281B12776711F009050D9 /* BaseInteractor.swift in Sources */,
 			);

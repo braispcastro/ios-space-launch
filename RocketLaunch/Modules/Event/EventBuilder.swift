@@ -8,16 +8,16 @@
 import Foundation
 import UIKit.UIViewController
 
-final class EventsBuilder: BaseBuilder {
+final class EventBuilder: BaseBuilder {
 
     static func build() -> UIViewController {
 
-        let viewController: EventsViewController = EventsViewController()
-        let router: EventsRouter = EventsRouter(viewController: viewController)
-        let interactor: EventsInteractor = EventsInteractor()
-        let presenter: EventsPresenter = EventsPresenter(viewController: viewController,
-                                                                     router: router,
-                                                                     interactor: interactor)
+        let viewController: EventViewController = EventViewController()
+        let router: EventRouter = EventRouter(viewController: viewController)
+        let interactor: EventInteractor = EventInteractor()
+        let presenter: EventPresenter = EventPresenter(viewController: viewController,
+                                                       router: router,
+                                                       interactor: interactor)
         
         
         viewController.presenter = presenter

@@ -13,7 +13,7 @@ protocol RocketLaunchInteractorProtocol: BaseInteractorProtocol {
 }
 
 protocol RocketLaunchInteractorCallbackProtocol: BaseInteractorCallbackProtocol {
-    func setLaunchList(launchList: [RocketLaunch.Launch])
+    func setLaunchList(launchList: [RocketLaunch.LaunchViewModel])
 }
 
 class RocketLaunchInteractor: BaseInteractor {
@@ -28,18 +28,18 @@ class RocketLaunchInteractor: BaseInteractor {
 extension RocketLaunchInteractor: RocketLaunchInteractorProtocol {
     
     func getLaunchList() {
-        var launchList: [RocketLaunch.Launch] = []
+        var launchList: [RocketLaunch.LaunchViewModel] = []
         SpaceService.shared.launches() { launch in
             if let results = launch.results {
                 for result in results {
-                    launchList.append(RocketLaunch.Launch(imageUrl: result.image ?? Constants.kRocketLaunchPlaceholderImage,
-                                                          rocket: result.rocket?.configuration?.name ?? "-",
-                                                          mission: result.mission?.name ?? "-",
-                                                          provider: result.launchServiceProvider?.name ?? "-",
-                                                          pad: result.pad?.name ?? "-",
-                                                          windowStart: result.windowStart ?? "-",
-                                                          status: result.status?.name ?? "-",
-                                                          rawData: result))
+                    launchList.append(RocketLaunch.LaunchViewModel(imageUrl: result.image ?? Constants.kRocketLaunchPlaceholderImage,
+                                                                   rocket: result.rocket?.configuration?.name ?? "-",
+                                                                   mission: result.mission?.name ?? "-",
+                                                                   provider: result.launchServiceProvider?.name ?? "-",
+                                                                   pad: result.pad?.name ?? "-",
+                                                                   windowStart: result.windowStart ?? "-",
+                                                                   status: result.status?.name ?? "-",
+                                                                   rawData: result))
                 }
             }
             self.presenter.setLaunchList(launchList: launchList)
