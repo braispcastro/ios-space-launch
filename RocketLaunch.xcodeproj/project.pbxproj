@@ -43,6 +43,8 @@
 		8BD9F3B7277684BF001312A9 /* SpaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3B6277684BF001312A9 /* SpaceService.swift */; };
 		8BD9F3BB277685E4001312A9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8BD9F3BA277685E4001312A9 /* Alamofire */; };
 		8BD9F3BE277685FB001312A9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8BD9F3BD277685FB001312A9 /* Kingfisher */; };
+		8BD9F3C027768655001312A9 /* SpaceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3BF27768655001312A9 /* SpaceModels.swift */; };
+		8BD9F3C227768C4C001312A9 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3C127768C4C001312A9 /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		8BD9F3B227768266001312A9 /* Services.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Services.plist; sourceTree = "<group>"; };
 		8BD9F3B42776841E001312A9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8BD9F3B6277684BF001312A9 /* SpaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceService.swift; sourceTree = "<group>"; };
+		8BD9F3BF27768655001312A9 /* SpaceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceModels.swift; sourceTree = "<group>"; };
+		8BD9F3C127768C4C001312A9 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +278,7 @@
 			children = (
 				8B7281B32776752E009050D9 /* Services */,
 				8BD9F3B42776841E001312A9 /* Constants.swift */,
+				8BD9F3C127768C4C001312A9 /* UserDefaultsManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 		8BD9F3B8277684E0001312A9 /* TheSpaceDevs */ = {
 			isa = PBXGroup;
 			children = (
+				8BD9F3BF27768655001312A9 /* SpaceModels.swift */,
 				8BD9F3B6277684BF001312A9 /* SpaceService.swift */,
 			);
 			path = TheSpaceDevs;
@@ -434,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BD9F3C027768655001312A9 /* SpaceModels.swift in Sources */,
 				8B72819E27766A97009050D9 /* RocketLaunchPresenter.swift in Sources */,
 				8B7281BC2776755B009050D9 /* EventsPresenter.swift in Sources */,
 				8B7281A927766C41009050D9 /* BasePresenter.swift in Sources */,
@@ -456,6 +463,7 @@
 				8B7281CB277675DB009050D9 /* SettingsInteractor.swift in Sources */,
 				8B7281C6277675DB009050D9 /* SettingsRouter.swift in Sources */,
 				8B7281C7277675DB009050D9 /* SettingsViewController.swift in Sources */,
+				8BD9F3C227768C4C001312A9 /* UserDefaultsManager.swift in Sources */,
 				8B72819F27766A97009050D9 /* RocketLaunchRouter.swift in Sources */,
 				8B7281A727766BC8009050D9 /* BaseBuilder.swift in Sources */,
 				8B7281BE2776755B009050D9 /* EventsBuilder.swift in Sources */,
