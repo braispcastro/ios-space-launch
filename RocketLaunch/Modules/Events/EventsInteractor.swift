@@ -37,7 +37,8 @@ extension EventsInteractor: EventsInteractorProtocol {
                                                   location: result.location ?? "-",
                                                   type: result.type?.name ?? "-",
                                                   description: result.description ?? "-",
-                                                  date: result.date ?? "-"))
+                                                  date: result.date ?? "-",
+                                                  rawData: result))
                 }
             }
             self.presenter.setEventList(eventList: eventList)

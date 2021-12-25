@@ -22,6 +22,7 @@ enum RocketLaunch {
         let pad: String
         let windowStart: String
         let status: String
+        let rawData: Space.Launch.Result
     }
 
 }

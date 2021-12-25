@@ -23,9 +23,9 @@ class SpaceService {
             
             switch self {
             case .launches:
-                return URL(string: "\(Constants.kLaunchBaseUrlDev)/launch/upcoming?format=json")
+                return URL(string: "\(Constants.kLaunchBaseUrlDev)/launch/upcoming?format=json&limit=20")
             case .events:
-                return URL(string: "\(Constants.kLaunchBaseUrlDev)/event/upcoming?format=json")
+                return URL(string: "\(Constants.kLaunchBaseUrlDev)/event/upcoming?format=json&limit=20")
             }
             
         }

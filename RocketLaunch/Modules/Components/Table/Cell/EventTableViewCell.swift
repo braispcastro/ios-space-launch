@@ -109,7 +109,7 @@ class EventTableViewCell: UITableViewCell {
         dateLabel.textAlignment = .center
         vStackView.addArrangedSubview(dateLabel)
     }
-
+    
     func setupConstraints() {
         NSLayoutConstraint.activate([
             mainImageView.topAnchor.constraint(equalTo: self.topAnchor),

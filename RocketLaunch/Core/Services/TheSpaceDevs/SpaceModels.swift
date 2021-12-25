@@ -9,14 +9,14 @@ import Foundation
 
 struct Space {
 
-    struct Launch: Decodable {
+    struct Launch: Decodable, Equatable {
         
         let count: Int?
         let next: String?
         let previous: String?
         let results: [Result]?
         
-        struct Result: Decodable {
+        struct Result: Decodable, Equatable {
             
             enum CodingKeys: String, CodingKey {
                 case id, url, slug, name, status, net, probability, holdreason, failreason, rocket, mission, pad, image
@@ -47,7 +47,7 @@ struct Space {
             let image: String?
             
             
-            struct Status: Decodable {
+            struct Status: Decodable, Equatable {
                 
                 let id: Int
                 let name: String?
@@ -55,7 +55,7 @@ struct Space {
                 
             }
             
-            struct LaunchServiceProvider: Decodable {
+            struct LaunchServiceProvider: Decodable, Equatable {
                 
                 let id: Int
                 let url: String?
@@ -64,12 +64,12 @@ struct Space {
                 
             }
             
-            struct Rocket: Decodable {
+            struct Rocket: Decodable, Equatable {
                 
                 let id: Int
                 let configuration: Configuration?
                 
-                struct Configuration: Decodable {
+                struct Configuration: Decodable, Equatable {
                     
                     enum CodingKeys: String, CodingKey {
                         case id, url, name, family, variant
@@ -87,7 +87,7 @@ struct Space {
                 
             }
             
-            struct Mission: Decodable {
+            struct Mission: Decodable, Equatable {
                 
                 let id: Int
                 let name: String?
@@ -95,7 +95,7 @@ struct Space {
                 let type: String?
                 let orbit: Orbit?
                 
-                struct Orbit: Decodable {
+                struct Orbit: Decodable, Equatable {
                     
                     let id: Int
                     let name: String?
@@ -105,7 +105,7 @@ struct Space {
                 
             }
             
-            struct Pad: Decodable {
+            struct Pad: Decodable, Equatable {
                 
                 enum CodingKeys: String, CodingKey {
                     case id, url, name, latitude, longitude, location
@@ -130,7 +130,7 @@ struct Space {
                 let mapImage: String?
                 let totalLaunchCount: Int?
                 
-                struct Location: Decodable {
+                struct Location: Decodable, Equatable {
                     
                     enum CodingKeys: String, CodingKey {
                         case id, url, name
@@ -156,14 +156,14 @@ struct Space {
         
     }
     
-    struct Event: Decodable {
+    struct Event: Decodable, Equatable {
         
         let count: Int?
         let next: String?
         let previous: String?
         let results: [Result]?
         
-        struct Result: Decodable {
+        struct Result: Decodable, Equatable {
             
             enum CodingKeys: String, CodingKey {
                 case id, url, slug, name, type, description, location, date
@@ -186,7 +186,7 @@ struct Space {
             let featureImage: String?
             let date: String?
             
-            struct EventType: Decodable {
+            struct EventType: Decodable, Equatable {
                 
                 let id: Int
                 let name: String?

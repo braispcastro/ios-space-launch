@@ -38,7 +38,8 @@ extension RocketLaunchInteractor: RocketLaunchInteractorProtocol {
                                                           provider: result.launchServiceProvider?.name ?? "-",
                                                           pad: result.pad?.name ?? "-",
                                                           windowStart: result.windowStart ?? "-",
-                                                          status: result.status?.name ?? "-"))
+                                                          status: result.status?.name ?? "-",
+                                                          rawData: result))
                 }
             }
             self.presenter.setLaunchList(launchList: launchList)

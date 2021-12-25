@@ -21,6 +21,7 @@ enum Events {
         let type: String
         let description: String
         let date: String
+        let rawData: Space.Event.Result
     }
 
 }
