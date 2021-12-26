@@ -9,9 +9,14 @@
 import Foundation
 
 protocol EventRouterProtocol: BaseRouterProtocol {
-
+    func navigateToEventInformation(event: Space.Event.Result)
 }
 
 class EventRouter: BaseRouter, EventRouterProtocol {
+    
+    func navigateToEventInformation(event: Space.Event.Result) {
+        let vc = EventInformationBuilder.build(event: event)
+        viewController.navigationController?.pushViewController(vc, animated: true)
+    }
 
 }

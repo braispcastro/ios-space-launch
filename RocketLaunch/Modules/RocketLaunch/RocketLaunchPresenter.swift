@@ -15,6 +15,7 @@ protocol RocketLaunchViewControllerProtocol: BaseViewControllerProtocol {
 protocol RocketLaunchPresenterProtocol: BasePresenterProtocol {
     func prepareView()
     func getLaunchesToShow()
+    func launchTapped(launch: Space.Launch.Result)
 }
 
 final class RocketLaunchPresenter<T: RocketLaunchViewControllerProtocol, U: RocketLaunchRouterProtocol>: BasePresenter<T, U> {
@@ -37,6 +38,10 @@ extension RocketLaunchPresenter: RocketLaunchPresenterProtocol {
     
     func getLaunchesToShow() {
         interactor.getLaunchList()
+    }
+    
+    func launchTapped(launch: Space.Launch.Result) {
+        router.navigateToRocketLaunchInformation(launch: launch)
     }
     
 }

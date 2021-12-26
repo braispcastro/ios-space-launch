@@ -15,6 +15,7 @@ protocol EventViewControllerProtocol: BaseViewControllerProtocol {
 protocol EventPresenterProtocol: BasePresenterProtocol {
     func prepareView()
     func getEventsToShow()
+    func eventTapped(event: Space.Event.Result)
 }
 
 final class EventPresenter<T: EventViewControllerProtocol, U: EventRouterProtocol>: BasePresenter<T, U> {
@@ -37,6 +38,10 @@ extension EventPresenter: EventPresenterProtocol {
     
     func getEventsToShow() {
         interactor.getEventList()
+    }
+    
+    func eventTapped(event: Space.Event.Result) {
+        router.navigateToEventInformation(event: event)
     }
     
 }

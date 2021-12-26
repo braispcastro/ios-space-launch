@@ -19,7 +19,6 @@ final class EventBuilder: BaseBuilder {
                                                        router: router,
                                                        interactor: interactor)
         
-        
         viewController.presenter = presenter
         interactor.presenter = presenter
         
