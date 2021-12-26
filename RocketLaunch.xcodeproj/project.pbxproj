@@ -353,8 +353,8 @@
 		8BD9F3B8277684E0001312A9 /* TheSpaceDevs */ = {
 			isa = PBXGroup;
 			children = (
-				8BD9F3BF27768655001312A9 /* SpaceModels.swift */,
 				8BD9F3B6277684BF001312A9 /* SpaceService.swift */,
+				8BD9F3BF27768655001312A9 /* SpaceModels.swift */,
 			);
 			path = TheSpaceDevs;
 			sourceTree = "<group>";

@@ -9,6 +9,8 @@ import Foundation
 
 struct Space {
 
+    // MARK: - Launch
+    
     struct Launch: Decodable, Equatable {
         
         let count: Int?
@@ -19,7 +21,7 @@ struct Space {
         struct Result: Decodable, Equatable {
             
             enum CodingKeys: String, CodingKey {
-                case id, url, slug, name, status, net, probability, holdreason, failreason, rocket, mission, pad, image
+                case id, url, name, status, net, probability, holdreason, failreason, rocket, mission, pad, image
                 case lastUpdated = "last_updated"
                 case windowEnd = "window_end"
                 case windowStart = "window_start"
@@ -29,7 +31,6 @@ struct Space {
             
             let id: String
             let url: String?
-            let slug: String?
             let name: String?
             let status: Status?
             let lastUpdated: String?
@@ -51,16 +52,31 @@ struct Space {
                 
                 let id: Int
                 let name: String?
+                let abbrev: String?
                 let description: String?
                 
             }
             
             struct LaunchServiceProvider: Decodable, Equatable {
                 
+                enum CondigKeys: String, CodingKey {
+                    case id, url, name, abbrev, type, description
+                    case foundingYear = "founding_year"
+                    case logoUrl = "logo_url"
+                    case infoUrl = "info_url"
+                    case wikiUrl = "wiki_url"
+                }
+                
                 let id: Int
                 let url: String?
                 let name: String?
+                let abbrev: String?
                 let type: String?
+                let description: String?
+                let foundingYear: String?
+                let logoUrl: String?
+                let infoUrl: String?
+                let wikiUrl: String?
                 
             }
             
@@ -72,16 +88,43 @@ struct Space {
                 struct Configuration: Decodable, Equatable {
                     
                     enum CodingKeys: String, CodingKey {
-                        case id, url, name, family, variant
+                        case id, url, name, description, family, variant, manufacturer
                         case fullName = "full_name"
                     }
                     
                     let id: Int
                     let url: String?
                     let name: String?
+                    let description: String?
                     let family: String?
                     let fullName: String?
                     let variant: String?
+                    let manufacturer: Manufacturer?
+                    
+                }
+                
+                struct Manufacturer: Decodable, Equatable {
+                    
+                    enum CodingKeys: String, CodingKey {
+                        case id, url, name, abbrev, type, description
+                        case countryCode = "country_code"
+                        case foundingYear = "founding_year"
+                        case logoUrl = "logo_url"
+                        case infoUrl = "info_url"
+                        case wikiUrl = "wiki_url"
+                    }
+                    
+                    let id: Int
+                    let url: String?
+                    let name: String?
+                    let abbrev: String?
+                    let type: String?
+                    let countryCode: String?
+                    let description: String?
+                    let foundingYear: String?
+                    let logoUrl: String?
+                    let infoUrl: String?
+                    let wikiUrl: String?
                     
                 }
                 
@@ -156,6 +199,8 @@ struct Space {
         
     }
     
+    // MARK: - Event
+    
     struct Event: Decodable, Equatable {
         
         let count: Int?
@@ -166,7 +211,7 @@ struct Space {
         struct Result: Decodable, Equatable {
             
             enum CodingKeys: String, CodingKey {
-                case id, url, slug, name, type, description, location, date
+                case id, url, name, type, description, location, date
                 case webcastLive = "webcast_live"
                 case newsUrl = "news_url"
                 case videoUrl = "video_url"
@@ -175,7 +220,6 @@ struct Space {
             
             let id: Int
             let url: String?
-            let slug: String?
             let name: String?
             let type: EventType?
             let description: String?
