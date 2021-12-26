@@ -13,6 +13,8 @@ final class RocketLaunchInformationViewController: BaseViewController {
     private var viewModel: RocketLaunchInformation.ViewModel!
 
     // MARK: - Component Declaration
+    
+    private var tableView: UITableView!
 
     private enum ViewTraits {
         static let margins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -20,6 +22,7 @@ final class RocketLaunchInformationViewController: BaseViewController {
     
     public enum AccessibilityIds {
         static let view: String = "rocket-launch-information-view"
+        static let tableView: String = "rocket-launch-information-tableview"
     }
     
     // MARK: - Init
@@ -43,15 +46,28 @@ final class RocketLaunchInformationViewController: BaseViewController {
     // MARK: - Setup
 
     override func setupComponents() {
-
+        tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
+        tableView.register(RocketLaunchTableViewCell.self, forCellReuseIdentifier: RocketLaunchTableViewCell.kReuseIdentifier)
+        view.addSubview(tableView)
+        
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 
     override func setupConstraints() {
-
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
     }
     
     override func setupAccessibilityIdentifiers() {
         view.accessibilityIdentifier = AccessibilityIds.view
+        tableView.accessibilityIdentifier = AccessibilityIds.tableView
     }
 
     // MARK: - Actions
@@ -68,5 +84,81 @@ extension RocketLaunchInformationViewController: RocketLaunchInformationViewCont
         self.viewModel = viewModel
         self.title = viewModel.title
     }
+    
+    func getLaunchCell() -> RocketLaunchTableViewCell {
+        guard let cell: RocketLaunchTableViewCell = tableView.dequeueReusableCell(withIdentifier: RocketLaunchTableViewCell.kReuseIdentifier) as? RocketLaunchTableViewCell else {
+            fatalError("Not registered for tableView")
+        }
+        
+        cell.mainImageView.kf.setImage(with: URL(string: viewModel.launch.imageUrl))
+        cell.rocketLabel.text = viewModel.launch.rocket
+        cell.missionLabel.text = viewModel.launch.mission
+        cell.providerLabel.text = viewModel.launch.provider
+        cell.padLabel.text = viewModel.launch.pad
+        cell.windowStartLabel.text = viewModel.launch.windowStart
+        cell.statusLabel.text = viewModel.launch.status
+        
+        return cell
+    }
+    
+    func getProviderCell() -> UITableViewCell{
+        return UITableViewCell()
+    }
+    
+    func getMissionCell() -> UITableViewCell{
+        return UITableViewCell()
+    }
+    
+    func getPadCell() -> UITableViewCell{
+        return UITableViewCell()
+    }
  
+}
+
+extension RocketLaunchInformationViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.sections.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return .leastNormalMagnitude
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return .leastNormalMagnitude
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch viewModel.sections[indexPath.section] {
+        case .launch:
+            return getLaunchCell()
+        case .provider:
+            return getProviderCell()
+        case .mission:
+            return getMissionCell()
+        case .pad:
+            return getPadCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 180
+        default:
+            return UITableView.automaticDimension
+        }
+    }
+    
 }

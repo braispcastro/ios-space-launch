@@ -99,7 +99,7 @@ class EventTableViewCell: UITableViewCell {
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         descriptionLabel.textAlignment = .center
-        descriptionLabel.numberOfLines = 3
+        descriptionLabel.numberOfLines = 10
         vStackView.addArrangedSubview(descriptionLabel)
         
         dateLabel = UILabel()

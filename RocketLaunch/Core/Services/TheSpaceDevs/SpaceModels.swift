@@ -27,6 +27,7 @@ struct Space {
                 case windowStart = "window_start"
                 case launchServiceProvider = "launch_service_provider"
                 case webcastLive = "webcast_live"
+                case missionPatches = "mission_patches"
             }
             
             let id: String
@@ -46,6 +47,7 @@ struct Space {
             let pad: Pad?
             let webcastLive: Bool?
             let image: String?
+            let missionPatches: [MissionPatch]?
             
             
             struct Status: Decodable, Equatable {
@@ -61,6 +63,7 @@ struct Space {
                 
                 enum CondigKeys: String, CodingKey {
                     case id, url, name, abbrev, type, description
+                    case countryCode = "country_code"
                     case foundingYear = "founding_year"
                     case logoUrl = "logo_url"
                     case infoUrl = "info_url"
@@ -72,6 +75,7 @@ struct Space {
                 let name: String?
                 let abbrev: String?
                 let type: String?
+                let countryCode: String?
                 let description: String?
                 let foundingYear: String?
                 let logoUrl: String?
@@ -192,6 +196,19 @@ struct Space {
                     let totalLandingCount: Int?
                     
                 }
+                
+            }
+            
+            struct MissionPatch: Decodable, Equatable {
+                
+                enum CodingKeys: String, CodingKey {
+                    case id, name
+                    case imageUrl = "image_url"
+                }
+                
+                let id: Int
+                let name: String?
+                let imageUrl: String?
                 
             }
             
