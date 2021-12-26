@@ -50,6 +50,7 @@ final class RocketLaunchInformationViewController: BaseViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         tableView.register(RocketLaunchTableViewCell.self, forCellReuseIdentifier: RocketLaunchTableViewCell.kReuseIdentifier)
+        tableView.register(ProviderTableViewCell.self, forCellReuseIdentifier: ProviderTableViewCell.kReuseIdentifier)
         view.addSubview(tableView)
         
         tableView.dataSource = self
@@ -97,12 +98,22 @@ extension RocketLaunchInformationViewController: RocketLaunchInformationViewCont
         cell.padLabel.text = viewModel.launch.pad
         cell.windowStartLabel.text = viewModel.launch.windowStart
         cell.statusLabel.text = viewModel.launch.status
+        cell.isUserInteractionEnabled = false
         
         return cell
     }
     
-    func getProviderCell() -> UITableViewCell{
-        return UITableViewCell()
+    func getProviderCell() -> ProviderTableViewCell{
+        guard let cell: ProviderTableViewCell = tableView.dequeueReusableCell(withIdentifier: ProviderTableViewCell.kReuseIdentifier) as? ProviderTableViewCell else {
+            fatalError("Not registered for tableView")
+        }
+        
+        cell.logoImageView.kf.setImage(with: URL(string: viewModel.provider!.logoUrl))
+        cell.titleLabel.text = viewModel.provider!.name
+        cell.descriptionLabel.text = viewModel.provider!.description
+        cell.isUserInteractionEnabled = false
+        
+        return cell
     }
     
     func getMissionCell() -> UITableViewCell{
@@ -153,12 +164,16 @@ extension RocketLaunchInformationViewController: UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0:
+        switch viewModel.sections[indexPath.section] {
+        case .launch:
             return 180
         default:
             return UITableView.automaticDimension
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }

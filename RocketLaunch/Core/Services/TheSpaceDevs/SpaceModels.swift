@@ -61,7 +61,7 @@ struct Space {
             
             struct LaunchServiceProvider: Decodable, Equatable {
                 
-                enum CondigKeys: String, CodingKey {
+                enum CodingKeys: String, CodingKey {
                     case id, url, name, abbrev, type, description
                     case countryCode = "country_code"
                     case foundingYear = "founding_year"
