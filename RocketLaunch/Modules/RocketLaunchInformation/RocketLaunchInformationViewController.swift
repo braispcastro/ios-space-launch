@@ -112,7 +112,7 @@ extension RocketLaunchInformationViewController: RocketLaunchInformationViewCont
         }
         
         cell.logoImageView.kf.setImage(with: URL(string: viewModel.provider!.logoUrl))
-        cell.titleLabel.text = viewModel.provider!.name
+        //cell.titleLabel.text = viewModel.provider!.name
         cell.descriptionLabel.text = viewModel.provider!.description
         cell.isUserInteractionEnabled = false
         

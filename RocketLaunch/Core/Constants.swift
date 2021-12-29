@@ -19,7 +19,7 @@ struct Constants {
     // Placeholders
     static let kRocketLaunchPlaceholderImage = "https://via.placeholder.com/300x540"
     static let kEventPlaceholderImage = "https://via.placeholder.com/1200x450"
-    static let kProviderPlaceholderImage = "https://via.placeholder.com/300x540"
-    static let kMissionPlaceholderImage = "https://via.placeholder.com/300x540"
+    static let kProviderPlaceholderImage = "https://via.placeholder.com/1200x450"
+    static let kMissionPlaceholderImage = "https://via.placeholder.com/1200x450"
     
 }

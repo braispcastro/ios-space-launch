@@ -41,7 +41,7 @@ extension EventPresenter: EventPresenterProtocol {
     }
     
     func eventTapped(event: Space.Event.Result) {
-        router.navigateToEventInformation(event: event)
+        
     }
     
 }
