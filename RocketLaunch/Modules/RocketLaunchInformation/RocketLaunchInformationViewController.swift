@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 final class RocketLaunchInformationViewController: BaseViewController {
 
@@ -52,6 +53,7 @@ final class RocketLaunchInformationViewController: BaseViewController {
         tableView.register(RocketLaunchTableViewCell.self, forCellReuseIdentifier: RocketLaunchTableViewCell.kReuseIdentifier)
         tableView.register(ProviderTableViewCell.self, forCellReuseIdentifier: ProviderTableViewCell.kReuseIdentifier)
         tableView.register(MissionTableViewCell.self, forCellReuseIdentifier: MissionTableViewCell.kReuseIdentifier)
+        tableView.register(PadTableViewCell.self, forCellReuseIdentifier: PadTableViewCell.kReuseIdentifier)
         view.addSubview(tableView)
         
         tableView.dataSource = self
@@ -104,7 +106,7 @@ extension RocketLaunchInformationViewController: RocketLaunchInformationViewCont
         return cell
     }
     
-    func getProviderCell() -> ProviderTableViewCell{
+    func getProviderCell() -> ProviderTableViewCell {
         guard let cell: ProviderTableViewCell = tableView.dequeueReusableCell(withIdentifier: ProviderTableViewCell.kReuseIdentifier) as? ProviderTableViewCell else {
             fatalError("Not registered for tableView")
         }
@@ -117,7 +119,7 @@ extension RocketLaunchInformationViewController: RocketLaunchInformationViewCont
         return cell
     }
     
-    func getMissionCell() -> UITableViewCell{
+    func getMissionCell() -> UITableViewCell {
         guard let cell: MissionTableViewCell = tableView.dequeueReusableCell(withIdentifier: MissionTableViewCell.kReuseIdentifier) as? MissionTableViewCell else {
             fatalError("Not registered for tableView")
         }
@@ -131,8 +133,30 @@ extension RocketLaunchInformationViewController: RocketLaunchInformationViewCont
         return cell
     }
     
-    func getPadCell() -> UITableViewCell{
-        return UITableViewCell()
+    func getPadCell() -> UITableViewCell {
+        guard let cell: PadTableViewCell = tableView.dequeueReusableCell(withIdentifier: PadTableViewCell.kReuseIdentifier) as? PadTableViewCell else {
+            fatalError("Not registered for tableView")
+        }
+        
+        if let lat = viewModel.pad!.latitude, let lon = viewModel.pad!.longitude {
+            let center = CLLocationCoordinate2D(latitude: CLLocationDegrees(Double(lat)!), longitude: CLLocationDegrees(Double(lon)!))
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1.0, longitudeDelta: 1.0))
+            
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = center
+            
+            cell.mapView.addAnnotation(annotation)
+            
+            cell.mapView.setRegion(region, animated: true)
+        } else {
+            cell.mapView.isHidden = true
+        }
+        
+        cell.titleLabel.text = viewModel.pad!.name
+        cell.locationLabel.text = viewModel.pad!.location
+        cell.isUserInteractionEnabled = false
+        
+        return cell
     }
  
 }
