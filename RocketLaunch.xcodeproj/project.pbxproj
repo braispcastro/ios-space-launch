@@ -45,12 +45,6 @@
 		8BBC1C5C2778B97A009F9DF5 /* RocketLaunchInformationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C562778B97A009F9DF5 /* RocketLaunchInformationPresenter.swift */; };
 		8BBC1C5D2778B97A009F9DF5 /* RocketLaunchInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C572778B97A009F9DF5 /* RocketLaunchInformationViewController.swift */; };
 		8BBC1C5E2778B97A009F9DF5 /* RocketLaunchInformationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C582778B97A009F9DF5 /* RocketLaunchInformationBuilder.swift */; };
-		8BBC1C652778B98A009F9DF5 /* EventInformationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C5F2778B98A009F9DF5 /* EventInformationBuilder.swift */; };
-		8BBC1C662778B98A009F9DF5 /* EventInformationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C602778B98A009F9DF5 /* EventInformationInteractor.swift */; };
-		8BBC1C672778B98A009F9DF5 /* EventInformationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C612778B98A009F9DF5 /* EventInformationRouter.swift */; };
-		8BBC1C682778B98A009F9DF5 /* EventInformationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C622778B98A009F9DF5 /* EventInformationModels.swift */; };
-		8BBC1C692778B98A009F9DF5 /* EventInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C632778B98A009F9DF5 /* EventInformationViewController.swift */; };
-		8BBC1C6A2778B98A009F9DF5 /* EventInformationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C642778B98A009F9DF5 /* EventInformationPresenter.swift */; };
 		8BBC1C6C27790447009F9DF5 /* ProviderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C6B27790447009F9DF5 /* ProviderTableViewCell.swift */; };
 		8BBC1C6E27790469009F9DF5 /* MissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C6D27790469009F9DF5 /* MissionTableViewCell.swift */; };
 		8BBC1C7027790489009F9DF5 /* PadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C6F27790489009F9DF5 /* PadTableViewCell.swift */; };
@@ -125,12 +119,6 @@
 		8BBC1C562778B97A009F9DF5 /* RocketLaunchInformationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketLaunchInformationPresenter.swift; sourceTree = "<group>"; };
 		8BBC1C572778B97A009F9DF5 /* RocketLaunchInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketLaunchInformationViewController.swift; sourceTree = "<group>"; };
 		8BBC1C582778B97A009F9DF5 /* RocketLaunchInformationBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketLaunchInformationBuilder.swift; sourceTree = "<group>"; };
-		8BBC1C5F2778B98A009F9DF5 /* EventInformationBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInformationBuilder.swift; sourceTree = "<group>"; };
-		8BBC1C602778B98A009F9DF5 /* EventInformationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInformationInteractor.swift; sourceTree = "<group>"; };
-		8BBC1C612778B98A009F9DF5 /* EventInformationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInformationRouter.swift; sourceTree = "<group>"; };
-		8BBC1C622778B98A009F9DF5 /* EventInformationModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInformationModels.swift; sourceTree = "<group>"; };
-		8BBC1C632778B98A009F9DF5 /* EventInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInformationViewController.swift; sourceTree = "<group>"; };
-		8BBC1C642778B98A009F9DF5 /* EventInformationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInformationPresenter.swift; sourceTree = "<group>"; };
 		8BBC1C6B27790447009F9DF5 /* ProviderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderTableViewCell.swift; sourceTree = "<group>"; };
 		8BBC1C6D27790469009F9DF5 /* MissionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionTableViewCell.swift; sourceTree = "<group>"; };
 		8BBC1C6F27790489009F9DF5 /* PadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadTableViewCell.swift; sourceTree = "<group>"; };
@@ -245,7 +233,6 @@
 				8B72819627766829009050D9 /* RocketLaunch */,
 				8BE852C52777D1120007EA6F /* RocketLaunchInformation */,
 				8B7281972776698C009050D9 /* Event */,
-				8BE852C62777D1230007EA6F /* EventInformation */,
 				8B7281982776699E009050D9 /* Settings */,
 			);
 			path = Modules;
@@ -387,19 +374,6 @@
 				8BBC1C552778B97A009F9DF5 /* RocketLaunchInformationModels.swift */,
 			);
 			path = RocketLaunchInformation;
-			sourceTree = "<group>";
-		};
-		8BE852C62777D1230007EA6F /* EventInformation */ = {
-			isa = PBXGroup;
-			children = (
-				8BBC1C5F2778B98A009F9DF5 /* EventInformationBuilder.swift */,
-				8BBC1C632778B98A009F9DF5 /* EventInformationViewController.swift */,
-				8BBC1C642778B98A009F9DF5 /* EventInformationPresenter.swift */,
-				8BBC1C602778B98A009F9DF5 /* EventInformationInteractor.swift */,
-				8BBC1C612778B98A009F9DF5 /* EventInformationRouter.swift */,
-				8BBC1C622778B98A009F9DF5 /* EventInformationModels.swift */,
-			);
-			path = EventInformation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,7 +523,6 @@
 				8B7281BA2776755B009050D9 /* EventViewController.swift in Sources */,
 				8B7281BB2776755B009050D9 /* EventModels.swift in Sources */,
 				8B1B93DE27765F7E00398B5C /* RocketLaunch.xcdatamodeld in Sources */,
-				8BBC1C6A2778B98A009F9DF5 /* EventInformationPresenter.swift in Sources */,
 				8BBC1C6E27790469009F9DF5 /* MissionTableViewCell.swift in Sources */,
 				8B1B93D427765F7E00398B5C /* AppDelegate.swift in Sources */,
 				8BD9F3B52776841E001312A9 /* Constants.swift in Sources */,
@@ -565,20 +538,15 @@
 				8B7281A527766B36009050D9 /* BaseViewController.swift in Sources */,
 				8B7281AB27766DAC009050D9 /* BaseRouter.swift in Sources */,
 				8B7281A127766A97009050D9 /* RocketLaunchViewController.swift in Sources */,
-				8BBC1C652778B98A009F9DF5 /* EventInformationBuilder.swift in Sources */,
 				8BD9F3B7277684BF001312A9 /* SpaceService.swift in Sources */,
-				8BBC1C682778B98A009F9DF5 /* EventInformationModels.swift in Sources */,
 				8B7281C8277675DB009050D9 /* SettingsPresenter.swift in Sources */,
-				8BBC1C662778B98A009F9DF5 /* EventInformationInteractor.swift in Sources */,
 				8B7281C9277675DB009050D9 /* SettingsModels.swift in Sources */,
-				8BBC1C672778B98A009F9DF5 /* EventInformationRouter.swift in Sources */,
 				8BBC1C5C2778B97A009F9DF5 /* RocketLaunchInformationPresenter.swift in Sources */,
 				8BC3A6AC27777C1800F88D8D /* RocketLaunchTableViewCell.swift in Sources */,
 				8BBC1C5D2778B97A009F9DF5 /* RocketLaunchInformationViewController.swift in Sources */,
 				8B7281CB277675DB009050D9 /* SettingsInteractor.swift in Sources */,
 				8B7281C6277675DB009050D9 /* SettingsRouter.swift in Sources */,
 				8B7281C7277675DB009050D9 /* SettingsViewController.swift in Sources */,
-				8BBC1C692778B98A009F9DF5 /* EventInformationViewController.swift in Sources */,
 				8BD9F3C227768C4C001312A9 /* UserDefaultsManager.swift in Sources */,
 				8BBC1C5E2778B97A009F9DF5 /* RocketLaunchInformationBuilder.swift in Sources */,
 				8B72819F27766A97009050D9 /* RocketLaunchRouter.swift in Sources */,
