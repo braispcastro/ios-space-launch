@@ -51,6 +51,7 @@ final class RocketLaunchInformationViewController: BaseViewController {
         tableView.separatorStyle = .none
         tableView.register(RocketLaunchTableViewCell.self, forCellReuseIdentifier: RocketLaunchTableViewCell.kReuseIdentifier)
         tableView.register(ProviderTableViewCell.self, forCellReuseIdentifier: ProviderTableViewCell.kReuseIdentifier)
+        tableView.register(MissionTableViewCell.self, forCellReuseIdentifier: MissionTableViewCell.kReuseIdentifier)
         view.addSubview(tableView)
         
         tableView.dataSource = self
@@ -117,7 +118,17 @@ extension RocketLaunchInformationViewController: RocketLaunchInformationViewCont
     }
     
     func getMissionCell() -> UITableViewCell{
-        return UITableViewCell()
+        guard let cell: MissionTableViewCell = tableView.dequeueReusableCell(withIdentifier: MissionTableViewCell.kReuseIdentifier) as? MissionTableViewCell else {
+            fatalError("Not registered for tableView")
+        }
+        
+        cell.logoImageView.kf.setImage(with: URL(string: viewModel.mission!.logoUrl))
+        cell.titleLabel.text = viewModel.mission!.name
+        cell.typeLabel.text = viewModel.mission!.type
+        cell.descriptionLabel.text = viewModel.mission!.description
+        cell.isUserInteractionEnabled = false
+        
+        return cell
     }
     
     func getPadCell() -> UITableViewCell{
