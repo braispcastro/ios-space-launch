@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 final class EventViewController: BaseViewController {
 
@@ -15,14 +16,17 @@ final class EventViewController: BaseViewController {
 
     // MARK: - Component Declaration
     
+    private var rocketAnimationView: AnimationView!
     private var tableView: UITableView!
 
     private enum ViewTraits {
         static let margins = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: -15)
+        static let lottieMargins = UIEdgeInsets(top: 96, left: 96, bottom: -96, right: -96)
     }
     
     public enum AccessibilityIds {
         static let view: String = "events-view"
+        static let rocketAnimationView: String = "rocket-animation-view"
         static let tableView: String = "events-tableview"
     }
     
@@ -51,9 +55,20 @@ final class EventViewController: BaseViewController {
     override func setupComponents() {
         tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.isHidden = true
         tableView.separatorStyle = .none
         tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.kReuseIdentifier)
         view.addSubview(tableView)
+        
+        let rocketAnimation = Animation.named("rgb-rocket-loading")
+        rocketAnimationView = AnimationView(animation: rocketAnimation)
+        rocketAnimationView.translatesAutoresizingMaskIntoConstraints = false
+        rocketAnimationView.backgroundColor = UIColor.clear
+        rocketAnimationView.clipsToBounds = true
+        rocketAnimationView.contentMode = .scaleAspectFit
+        rocketAnimationView.loopMode = .loop
+        rocketAnimationView.play(completion: nil)
+        view.addSubview(rocketAnimationView)
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -61,6 +76,11 @@ final class EventViewController: BaseViewController {
 
     override func setupConstraints() {
         NSLayoutConstraint.activate([
+            rocketAnimationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            rocketAnimationView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            rocketAnimationView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ViewTraits.lottieMargins.left),
+            rocketAnimationView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ViewTraits.lottieMargins.right),
+            
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -70,6 +90,7 @@ final class EventViewController: BaseViewController {
     
     override func setupAccessibilityIdentifiers() {
         view.accessibilityIdentifier = AccessibilityIds.view
+        rocketAnimationView.accessibilityIdentifier = AccessibilityIds.rocketAnimationView
         tableView.accessibilityIdentifier = AccessibilityIds.tableView
     }
 
@@ -90,6 +111,9 @@ extension EventViewController: EventViewControllerProtocol {
     
     func showEvents(eventList: [Event.EventViewModel]) {
         self.eventList = eventList
+        rocketAnimationView.stop()
+        rocketAnimationView.isHidden = true
+        tableView.isHidden = false
         tableView.reloadData()
     }
  

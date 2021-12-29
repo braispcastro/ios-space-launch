@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import Lottie
 
 final class RocketLaunchViewController: BaseViewController {
 
@@ -16,14 +17,17 @@ final class RocketLaunchViewController: BaseViewController {
 
     // MARK: - Component Declaration
     
+    private var rocketAnimationView: AnimationView!
     private var tableView: UITableView!
 
     private enum ViewTraits {
-        static let margins = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: -15)
+        static let margins = UIEdgeInsets(top: 15, left: 15, bottom: -15, right: -15)
+        static let lottieMargins = UIEdgeInsets(top: 96, left: 96, bottom: -96, right: -96)
     }
     
     public enum AccessibilityIds {
         static let view: String = "rocket-launch-view"
+        static let rocketAnimationView: String = "rocket-animation-view"
         static let tableView: String = "rocket-launch-tableview"
     }
     
@@ -52,9 +56,20 @@ final class RocketLaunchViewController: BaseViewController {
     override func setupComponents() {
         tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.isHidden = true
         tableView.separatorStyle = .none
         tableView.register(RocketLaunchTableViewCell.self, forCellReuseIdentifier: RocketLaunchTableViewCell.kReuseIdentifier)
         view.addSubview(tableView)
+        
+        let rocketAnimation = Animation.named("rgb-rocket-loading")
+        rocketAnimationView = AnimationView(animation: rocketAnimation)
+        rocketAnimationView.translatesAutoresizingMaskIntoConstraints = false
+        rocketAnimationView.backgroundColor = UIColor.clear
+        rocketAnimationView.clipsToBounds = true
+        rocketAnimationView.contentMode = .scaleAspectFit
+        rocketAnimationView.loopMode = .loop
+        rocketAnimationView.play(completion: nil)
+        view.addSubview(rocketAnimationView)
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -62,6 +77,11 @@ final class RocketLaunchViewController: BaseViewController {
 
     override func setupConstraints() {
         NSLayoutConstraint.activate([
+            rocketAnimationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            rocketAnimationView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            rocketAnimationView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ViewTraits.lottieMargins.left),
+            rocketAnimationView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ViewTraits.lottieMargins.right),
+            
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -71,6 +91,7 @@ final class RocketLaunchViewController: BaseViewController {
     
     override func setupAccessibilityIdentifiers() {
         view.accessibilityIdentifier = AccessibilityIds.view
+        rocketAnimationView.accessibilityIdentifier = AccessibilityIds.rocketAnimationView
         tableView.accessibilityIdentifier = AccessibilityIds.tableView
     }
 
@@ -91,6 +112,9 @@ extension RocketLaunchViewController: RocketLaunchViewControllerProtocol {
     
     func showLaunches(launchList: [RocketLaunch.LaunchViewModel]) {
         self.launchList = launchList
+        rocketAnimationView.stop()
+        rocketAnimationView.isHidden = true
+        tableView.isHidden = false
         tableView.reloadData()
     }
  
