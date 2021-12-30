@@ -55,7 +55,7 @@ class ProviderTableViewCell: UITableViewCell {
     
     // MARK: - Setup
     
-    func setupComponents() {
+    private func setupComponents() {
         vStackView = UIStackView()
         vStackView.translatesAutoresizingMaskIntoConstraints = false
         vStackView.axis = .vertical
@@ -83,7 +83,7 @@ class ProviderTableViewCell: UITableViewCell {
         vStackView.addArrangedSubview(descriptionLabel)
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             vStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: ViewTraits.margins.top),
             vStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: ViewTraits.margins.bottom),
@@ -97,7 +97,7 @@ class ProviderTableViewCell: UITableViewCell {
         ])
     }
     
-    func setupAccessibilityIdentifiers() {
+    private func setupAccessibilityIdentifiers() {
         self.accessibilityIdentifier = AccessibilityIds.cell
         vStackView.accessibilityIdentifier = AccessibilityIds.vStackView
         logoImageView.accessibilityIdentifier = AccessibilityIds.logoImageView

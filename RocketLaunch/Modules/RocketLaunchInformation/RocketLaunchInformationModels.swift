@@ -34,6 +34,7 @@ enum RocketLaunchInformation {
         let pad: String
         let windowStart: String
         let status: String
+        let statusType: Space.Launch.Result.Status.StatusType
     }
     
     struct Provider: Equatable {

@@ -11,6 +11,8 @@ class RocketLaunchTableViewCell: UITableViewCell {
 
     static let kReuseIdentifier: String = "rocket-launch-table-view-cell"
     
+    private var timer: Timer!
+    
     // MARK: - Component Declaration
     
     internal var hStackView: UIStackView!
@@ -65,7 +67,7 @@ class RocketLaunchTableViewCell: UITableViewCell {
     
     // MARK: - Setup
     
-    func setupComponents() {
+    private func setupComponents() {
         hStackView = UIStackView()
         hStackView.translatesAutoresizingMaskIntoConstraints = false
         hStackView.axis = .horizontal
@@ -126,7 +128,7 @@ class RocketLaunchTableViewCell: UITableViewCell {
         vStackView.addArrangedSubview(statusLabel)
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             hStackView.topAnchor.constraint(equalTo: self.topAnchor),
             hStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
@@ -150,7 +152,7 @@ class RocketLaunchTableViewCell: UITableViewCell {
         ])
     }
     
-    func setupAccessibilityIdentifiers() {
+    private func setupAccessibilityIdentifiers() {
         self.accessibilityIdentifier = AccessibilityIds.cell
         hStackView.accessibilityIdentifier = AccessibilityIds.hStackView
         mainImageView.accessibilityIdentifier = AccessibilityIds.mainImageView
@@ -161,6 +163,25 @@ class RocketLaunchTableViewCell: UITableViewCell {
         padLabel.accessibilityIdentifier = AccessibilityIds.padLabel
         windowStartLabel.accessibilityIdentifier = AccessibilityIds.windowStartLabel
         statusLabel.accessibilityIdentifier = AccessibilityIds.statusLabel
+    }
+    
+    // MARK: - Public Methods
+    
+    func setupTimer() {
+        if let tMinusZero = windowStartLabel.text {
+            if let tMinusZeroDate = ISO8601DateFormatter().date(from: tMinusZero) {
+                let interval = tMinusZeroDate.timeIntervalSinceReferenceDate - Date().timeIntervalSinceReferenceDate
+                if interval > 0 {
+                    let ti = NSInteger(interval)
+                    let seconds = ti % 60
+                    let minutes = (ti / 60) % 60
+                    let hours = (ti / 3600)
+                    if hours < 25 {
+                        windowStartLabel.text = "T - \(hours)H : \(minutes)M : \(seconds)S"
+                    }
+                }
+            }
+        }
     }
 
 }

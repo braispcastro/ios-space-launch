@@ -56,7 +56,7 @@ class PadTableViewCell: UITableViewCell {
     
     // MARK: - Setup
     
-    func setupComponents() {
+    private func setupComponents() {
         vStackView = UIStackView()
         vStackView.translatesAutoresizingMaskIntoConstraints = false
         vStackView.axis = .vertical
@@ -81,7 +81,7 @@ class PadTableViewCell: UITableViewCell {
         vStackView.addArrangedSubview(mapView)
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             vStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: ViewTraits.margins.top),
             vStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: ViewTraits.margins.bottom),
@@ -95,7 +95,7 @@ class PadTableViewCell: UITableViewCell {
         ])
     }
     
-    func setupAccessibilityIdentifiers() {
+    private func setupAccessibilityIdentifiers() {
         self.accessibilityIdentifier = AccessibilityIds.cell
         vStackView.accessibilityIdentifier = AccessibilityIds.vStackView
         titleLabel.accessibilityIdentifier = AccessibilityIds.titleLabel

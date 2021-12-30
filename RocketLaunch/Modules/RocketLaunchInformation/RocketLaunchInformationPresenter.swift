@@ -39,7 +39,8 @@ final class RocketLaunchInformationPresenter<T: RocketLaunchInformationViewContr
                                                     provider: fullLaunch.launchServiceProvider?.name ?? "-",
                                                     pad: fullLaunch.pad?.name ?? "-",
                                                     windowStart: fullLaunch.windowStart ?? "-",
-                                                    status: fullLaunch.status?.name ?? "-")
+                                                    status: fullLaunch.status?.name ?? "-",
+                                                    statusType: fullLaunch.status?.type ?? .unknown)
         
         var provider: RocketLaunchInformation.Provider?
         if let rawProvider = fullLaunch.launchServiceProvider {

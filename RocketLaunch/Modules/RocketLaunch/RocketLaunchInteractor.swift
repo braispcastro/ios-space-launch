@@ -39,6 +39,7 @@ extension RocketLaunchInteractor: RocketLaunchInteractorProtocol {
                                                                    pad: result.pad?.name ?? "-",
                                                                    windowStart: result.windowStart ?? "-",
                                                                    status: result.status?.name ?? "-",
+                                                                   statusType: result.status?.type ?? .unknown,
                                                                    rawData: result))
                 }
             }

@@ -61,7 +61,7 @@ class EventTableViewCell: UITableViewCell {
     
     // MARK: - Setup
     
-    func setupComponents() {
+    private func setupComponents() {
         mainImageView = UIImageView()
         mainImageView.translatesAutoresizingMaskIntoConstraints = false
         mainImageView.backgroundColor = UIColor.init(named: "AccentColor")
@@ -111,7 +111,7 @@ class EventTableViewCell: UITableViewCell {
         vStackView.addArrangedSubview(dateLabel)
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             mainImageView.topAnchor.constraint(equalTo: self.topAnchor),
             mainImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
@@ -130,7 +130,7 @@ class EventTableViewCell: UITableViewCell {
         ])
     }
     
-    func setupAccessibilityIdentifiers() {
+    private func setupAccessibilityIdentifiers() {
         self.accessibilityIdentifier = AccessibilityIds.cell
         vStackView.accessibilityIdentifier = AccessibilityIds.vStackView
         mainImageView.accessibilityIdentifier = AccessibilityIds.mainImageView

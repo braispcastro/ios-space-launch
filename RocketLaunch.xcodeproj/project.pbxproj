@@ -15,6 +15,7 @@
 		8B1B93F827765F8000398B5C /* RocketLaunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93F727765F8000398B5C /* RocketLaunchUITests.swift */; };
 		8B1B93FA27765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93F927765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift */; };
 		8B4E28DF27776D1E00B83DB8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */; };
+		8B5ECA8F277E06A300BE1EA4 /* UIColor+LaunchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5ECA8E277E06A300BE1EA4 /* UIColor+LaunchStatus.swift */; };
 		8B72819E27766A97009050D9 /* RocketLaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819927766A97009050D9 /* RocketLaunchPresenter.swift */; };
 		8B72819F27766A97009050D9 /* RocketLaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819A27766A97009050D9 /* RocketLaunchRouter.swift */; };
 		8B7281A027766A97009050D9 /* RocketLaunchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819B27766A97009050D9 /* RocketLaunchModels.swift */; };
@@ -92,6 +93,7 @@
 		8B1B93F727765F8000398B5C /* RocketLaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchUITests.swift; sourceTree = "<group>"; };
 		8B1B93F927765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		8B5ECA8E277E06A300BE1EA4 /* UIColor+LaunchStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+LaunchStatus.swift"; sourceTree = "<group>"; };
 		8B72819927766A97009050D9 /* RocketLaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchPresenter.swift; sourceTree = "<group>"; };
 		8B72819A27766A97009050D9 /* RocketLaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchRouter.swift; sourceTree = "<group>"; };
 		8B72819B27766A97009050D9 /* RocketLaunchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchModels.swift; sourceTree = "<group>"; };
@@ -230,6 +232,14 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		8B5ECA8D277E066900BE1EA4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8B5ECA8E277E06A300BE1EA4 /* UIColor+LaunchStatus.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		8B728192277666D0009050D9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +335,7 @@
 		8B7281B227767520009050D9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8B5ECA8D277E066900BE1EA4 /* Extensions */,
 				8B7281B32776752E009050D9 /* Services */,
 				8BD9F3B42776841E001312A9 /* Constants.swift */,
 				8BD9F3C127768C4C001312A9 /* UserDefaultsManager.swift */,
@@ -575,6 +586,7 @@
 				8BBC1C6C27790447009F9DF5 /* ProviderTableViewCell.swift in Sources */,
 				8B7281A727766BC8009050D9 /* BaseBuilder.swift in Sources */,
 				8B7281BE2776755B009050D9 /* EventBuilder.swift in Sources */,
+				8B5ECA8F277E06A300BE1EA4 /* UIColor+LaunchStatus.swift in Sources */,
 				8B7281CA277675DB009050D9 /* SettingsBuilder.swift in Sources */,
 				8B7281B12776711F009050D9 /* BaseInteractor.swift in Sources */,
 			);

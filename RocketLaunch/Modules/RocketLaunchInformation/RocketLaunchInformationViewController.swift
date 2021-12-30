@@ -101,6 +101,7 @@ extension RocketLaunchInformationViewController: RocketLaunchInformationViewCont
         cell.padLabel.text = viewModel.launch.pad
         cell.windowStartLabel.text = viewModel.launch.windowStart
         cell.statusLabel.text = viewModel.launch.status
+        cell.statusLabel.textColor = UIColor.fromLaunchStatus(launchStatus: viewModel.launch.statusType)
         cell.isUserInteractionEnabled = false
         
         return cell

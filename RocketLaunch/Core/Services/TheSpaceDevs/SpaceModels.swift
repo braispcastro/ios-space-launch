@@ -52,10 +52,28 @@ struct Space {
             
             struct Status: Decodable, Equatable {
                 
-                let id: Int
+                enum CodingKeys: String, CodingKey {
+                    case name, abbrev, description
+                    case type = "id"
+                }
+                
+                //let id: Int
                 let name: String?
                 let abbrev: String?
                 let description: String?
+                let type: StatusType?
+                
+                enum StatusType: Int, Codable {
+                    case go = 1
+                    case toBeDetermined = 2
+                    case success = 3
+                    case failure = 4
+                    case hold = 5
+                    case inFlight = 6
+                    case partialFailure = 7
+                    case toBeConfirmed = 8
+                    case unknown
+                }
                 
             }
             
