@@ -73,6 +73,7 @@ class RocketLaunchTableViewCell: UITableViewCell {
         
         mainImageView = UIImageView()
         mainImageView.translatesAutoresizingMaskIntoConstraints = false
+        mainImageView.backgroundColor = UIColor.init(named: "AccentColor")
         mainImageView.contentMode = .scaleAspectFill
         mainImageView.clipsToBounds = true
         hStackView.addArrangedSubview(mainImageView)

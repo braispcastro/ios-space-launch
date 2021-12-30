@@ -33,7 +33,7 @@ final class RocketLaunchInformationPresenter<T: RocketLaunchInformationViewContr
         var sections: [RocketLaunchInformation.InformationType] = []
         
         sections.append(RocketLaunchInformation.InformationType.launch)
-        let launch = RocketLaunchInformation.Launch(imageUrl: fullLaunch.image ?? Constants.kRocketLaunchPlaceholderImage,
+        let launch = RocketLaunchInformation.Launch(imageUrl: fullLaunch.image,
                                                     rocket: fullLaunch.rocket?.configuration?.name ?? "-",
                                                     mission: fullLaunch.mission?.name ?? "-",
                                                     provider: fullLaunch.launchServiceProvider?.name ?? "-",
@@ -44,7 +44,7 @@ final class RocketLaunchInformationPresenter<T: RocketLaunchInformationViewContr
         var provider: RocketLaunchInformation.Provider?
         if let rawProvider = fullLaunch.launchServiceProvider {
             sections.append(RocketLaunchInformation.InformationType.provider)
-            provider = RocketLaunchInformation.Provider(logoUrl: rawProvider.logoUrl ?? Constants.kProviderPlaceholderImage,
+            provider = RocketLaunchInformation.Provider(logoUrl: rawProvider.logoUrl,
                                                         name: rawProvider.name ?? "-",
                                                         description: rawProvider.description ?? "-",
                                                         countryCode: rawProvider.countryCode ?? "-",
@@ -56,7 +56,7 @@ final class RocketLaunchInformationPresenter<T: RocketLaunchInformationViewContr
         var mission: RocketLaunchInformation.Mission?
         if let rawMission = fullLaunch.mission {
             sections.append(RocketLaunchInformation.InformationType.mission)
-            mission = RocketLaunchInformation.Mission(logoUrl: fullLaunch.missionPatches?.first?.imageUrl ?? Constants.kMissionPlaceholderImage,
+            mission = RocketLaunchInformation.Mission(logoUrl: fullLaunch.missionPatches?.first?.imageUrl,
                                                       name: rawMission.name ?? "-",
                                                       type: rawMission.type ?? "-",
                                                       description: rawMission.description ?? "-")

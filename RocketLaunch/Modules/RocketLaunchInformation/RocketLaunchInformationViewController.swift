@@ -94,7 +94,7 @@ extension RocketLaunchInformationViewController: RocketLaunchInformationViewCont
             fatalError("Not registered for tableView")
         }
         
-        cell.mainImageView.kf.setImage(with: URL(string: viewModel.launch.imageUrl))
+        cell.mainImageView.kf.setImage(with: URL(string: viewModel.launch.imageUrl ?? ""), placeholder: UIImage(named: "Rocket"))
         cell.rocketLabel.text = viewModel.launch.rocket
         cell.missionLabel.text = viewModel.launch.mission
         cell.providerLabel.text = viewModel.launch.provider
@@ -111,7 +111,12 @@ extension RocketLaunchInformationViewController: RocketLaunchInformationViewCont
             fatalError("Not registered for tableView")
         }
         
-        cell.logoImageView.kf.setImage(with: URL(string: viewModel.provider!.logoUrl))
+        if let image = viewModel.provider!.logoUrl {
+            cell.logoImageView.kf.setImage(with: URL(string: image))
+        } else {
+            cell.logoImageView.isHidden = true
+        }
+        
         //cell.titleLabel.text = viewModel.provider!.name
         cell.descriptionLabel.text = viewModel.provider!.description
         cell.isUserInteractionEnabled = false
@@ -124,7 +129,12 @@ extension RocketLaunchInformationViewController: RocketLaunchInformationViewCont
             fatalError("Not registered for tableView")
         }
         
-        cell.logoImageView.kf.setImage(with: URL(string: viewModel.mission!.logoUrl))
+        if let image = viewModel.mission!.logoUrl {
+            cell.logoImageView.kf.setImage(with: URL(string: image))
+        } else {
+            cell.logoImageView.isHidden = true
+        }
+        
         cell.titleLabel.text = viewModel.mission!.name
         cell.typeLabel.text = viewModel.mission!.type
         cell.descriptionLabel.text = viewModel.mission!.description

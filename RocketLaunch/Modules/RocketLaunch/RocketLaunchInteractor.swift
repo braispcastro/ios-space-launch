@@ -32,7 +32,7 @@ extension RocketLaunchInteractor: RocketLaunchInteractorProtocol {
         SpaceService.shared.launches() { launch in
             if let results = launch.results {
                 for result in results {
-                    launchList.append(RocketLaunch.LaunchViewModel(imageUrl: result.image ?? Constants.kRocketLaunchPlaceholderImage,
+                    launchList.append(RocketLaunch.LaunchViewModel(imageUrl: result.image,
                                                                    rocket: result.rocket?.configuration?.name ?? "-",
                                                                    mission: result.mission?.name ?? "-",
                                                                    provider: result.launchServiceProvider?.name ?? "-",

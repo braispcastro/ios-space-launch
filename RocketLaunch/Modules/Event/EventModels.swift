@@ -15,7 +15,7 @@ enum Event {
     }
     
     struct EventViewModel: Equatable {
-        let imageUrl: String
+        let imageUrl: String?
         let name: String
         let location: String
         let type: String

@@ -150,7 +150,7 @@ extension EventViewController: UITableViewDataSource, UITableViewDelegate {
             fatalError("Not registered for tableView")
         }
         
-        cell.mainImageView.kf.setImage(with: URL(string: eventList[indexPath.section].imageUrl))
+        cell.mainImageView.kf.setImage(with: URL(string: eventList[indexPath.section].imageUrl ?? ""), placeholder: UIImage(named: "Rocket"))
         cell.nameLabel.text = eventList[indexPath.section].name
         cell.locationLabel.text = eventList[indexPath.section].location
         cell.typeLabel.text = eventList[indexPath.section].type

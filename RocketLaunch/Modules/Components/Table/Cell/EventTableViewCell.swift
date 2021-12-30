@@ -64,6 +64,7 @@ class EventTableViewCell: UITableViewCell {
     func setupComponents() {
         mainImageView = UIImageView()
         mainImageView.translatesAutoresizingMaskIntoConstraints = false
+        mainImageView.backgroundColor = UIColor.init(named: "AccentColor")
         mainImageView.setContentHuggingPriority(.defaultHigh, for: .vertical)
         mainImageView.contentMode = .scaleAspectFill
         mainImageView.clipsToBounds = true

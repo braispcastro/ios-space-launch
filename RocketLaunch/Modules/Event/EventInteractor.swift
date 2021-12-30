@@ -32,7 +32,7 @@ extension EventInteractor: EventInteractorProtocol {
         SpaceService.shared.events() { event in
             if let results = event.results {
                 for result in results {
-                    eventList.append(Event.EventViewModel(imageUrl: result.featureImage ?? Constants.kEventPlaceholderImage,
+                    eventList.append(Event.EventViewModel(imageUrl: result.featureImage,
                                                           name: result.name ?? "-",
                                                           location: result.location ?? "-",
                                                           type: result.type?.name ?? "-",
