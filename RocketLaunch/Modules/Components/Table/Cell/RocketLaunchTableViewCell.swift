@@ -128,6 +128,7 @@ class RocketLaunchTableViewCell: UITableViewCell {
         windowStartLabel = UILabel()
         windowStartLabel.translatesAutoresizingMaskIntoConstraints = false
         windowStartLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+        windowStartLabel.adjustsFontSizeToFitWidth = true
         windowStartLabel.textAlignment = .center
         vStackView.addArrangedSubview(windowStartLabel)
         
@@ -194,7 +195,7 @@ class RocketLaunchTableViewCell: UITableViewCell {
                         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(refreshTimer), userInfo: nil, repeats: true)
                     } else {
                         let formatter = DateFormatter()
-                        formatter.dateStyle = .short
+                        formatter.dateStyle = .medium
                         formatter.timeStyle = .short
                         windowStartLabel.text = formatter.string(from: tMinusZeroDate)
                     }

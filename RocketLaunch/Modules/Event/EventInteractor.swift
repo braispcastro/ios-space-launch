@@ -32,12 +32,21 @@ extension EventInteractor: EventInteractorProtocol {
         SpaceService.shared.events() { event in
             if let results = event.results {
                 for result in results {
+                    var stringEventDate = "-"
+                    if let date = result.date {
+                        if let eventDate = ISO8601DateFormatter().date(from: date) {
+                            let formatter = DateFormatter()
+                            formatter.dateStyle = .medium
+                            formatter.timeStyle = .short
+                            stringEventDate = formatter.string(from: eventDate)
+                        }
+                    }
                     eventList.append(Event.EventViewModel(imageUrl: result.featureImage,
                                                           name: result.name ?? "-",
                                                           location: result.location ?? "-",
                                                           type: result.type?.name ?? "-",
                                                           description: result.description ?? "-",
-                                                          date: result.date ?? "-",
+                                                          date: stringEventDate,
                                                           rawData: result))
                 }
             }

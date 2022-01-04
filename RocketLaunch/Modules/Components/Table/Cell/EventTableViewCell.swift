@@ -106,7 +106,7 @@ class EventTableViewCell: UITableViewCell {
         dateLabel = UILabel()
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         dateLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        dateLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        dateLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         dateLabel.textAlignment = .center
         vStackView.addArrangedSubview(dateLabel)
     }

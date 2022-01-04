@@ -41,7 +41,7 @@ extension RocketLaunchPresenter: RocketLaunchPresenterProtocol {
     }
     
     func launchTapped(launch: Space.Launch.Result) {
-        router.navigateToRocketLaunchInformation(launch: launch)
+        router.navigateToInformation(launch: launch)
     }
     
 }

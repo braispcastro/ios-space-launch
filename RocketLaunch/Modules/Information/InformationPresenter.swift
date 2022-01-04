@@ -1,39 +1,39 @@
 //
-//  RocketLaunchInformationPresenter.swift
-//  RocketLaunchInformation
+//  InformationPresenter.swift
+//  Information
 //
 //  Created by Brais Castro on 26/12/21.
 //
 
 import Foundation
 
-protocol RocketLaunchInformationViewControllerProtocol: BaseViewControllerProtocol {
-    func show(viewModel: RocketLaunchInformation.ViewModel)
+protocol InformationViewControllerProtocol: BaseViewControllerProtocol {
+    func show(viewModel: Information.ViewModel)
 }
 
-protocol RocketLaunchInformationPresenterProtocol: BasePresenterProtocol {
+protocol InformationPresenterProtocol: BasePresenterProtocol {
     func prepareView()
 }
 
-final class RocketLaunchInformationPresenter<T: RocketLaunchInformationViewControllerProtocol, U: RocketLaunchInformationRouterProtocol>: BasePresenter<T, U> {
+final class InformationPresenter<T: InformationViewControllerProtocol, U: InformationRouterProtocol>: BasePresenter<T, U> {
     
-    let interactor: RocketLaunchInformationInteractorProtocol
+    let interactor: InformationInteractorProtocol
     let fullLaunch: Space.Launch.Result
     
     init(viewController: T,
          router: U,
-         interactor: RocketLaunchInformationInteractorProtocol,
+         interactor: InformationInteractorProtocol,
          launch: Space.Launch.Result) {
         self.interactor = interactor
         self.fullLaunch = launch
         super.init(viewController: viewController, router: router)
     }
     
-    private func buildViewModel() -> RocketLaunchInformation.ViewModel {
-        var sections: [RocketLaunchInformation.InformationType] = []
+    private func buildViewModel() -> Information.ViewModel {
+        var sections: [Information.InformationType] = []
         
-        sections.append(RocketLaunchInformation.InformationType.launch)
-        let launch = RocketLaunchInformation.Launch(imageUrl: fullLaunch.image,
+        sections.append(Information.InformationType.launch)
+        let launch = Information.Launch(imageUrl: fullLaunch.image,
                                                     rocket: fullLaunch.rocket?.configuration?.name ?? "-",
                                                     mission: fullLaunch.mission?.name ?? "-",
                                                     provider: fullLaunch.launchServiceProvider?.name ?? "-",
@@ -42,10 +42,10 @@ final class RocketLaunchInformationPresenter<T: RocketLaunchInformationViewContr
                                                     status: fullLaunch.status?.name ?? "-",
                                                     statusType: fullLaunch.status?.type ?? .unknown)
         
-        var provider: RocketLaunchInformation.Provider?
+        var provider: Information.Provider?
         if let rawProvider = fullLaunch.launchServiceProvider {
-            sections.append(RocketLaunchInformation.InformationType.provider)
-            provider = RocketLaunchInformation.Provider(logoUrl: rawProvider.logoUrl,
+            sections.append(Information.InformationType.provider)
+            provider = Information.Provider(logoUrl: rawProvider.logoUrl,
                                                         name: rawProvider.name ?? "-",
                                                         description: rawProvider.description ?? "-",
                                                         countryCode: rawProvider.countryCode ?? "-",
@@ -54,25 +54,25 @@ final class RocketLaunchInformationPresenter<T: RocketLaunchInformationViewContr
                                                         wikiUrl: rawProvider.wikiUrl)
         }
         
-        var mission: RocketLaunchInformation.Mission?
+        var mission: Information.Mission?
         if let rawMission = fullLaunch.mission {
-            sections.append(RocketLaunchInformation.InformationType.mission)
-            mission = RocketLaunchInformation.Mission(logoUrl: fullLaunch.missionPatches?.first?.imageUrl,
+            sections.append(Information.InformationType.mission)
+            mission = Information.Mission(logoUrl: fullLaunch.missionPatches?.first?.imageUrl,
                                                       name: rawMission.name ?? "-",
                                                       type: rawMission.type ?? "-",
                                                       description: rawMission.description ?? "-")
         }
         
-        var pad: RocketLaunchInformation.Pad?
+        var pad: Information.Pad?
         if let rawPad = fullLaunch.pad {
-            sections.append(RocketLaunchInformation.InformationType.pad)
-            pad = RocketLaunchInformation.Pad(name: rawPad.name ?? "-",
+            sections.append(Information.InformationType.pad)
+            pad = Information.Pad(name: rawPad.name ?? "-",
                                               location: rawPad.location?.name ?? "-",
                                               latitude: rawPad.latitude,
                                               longitude: rawPad.longitude)
         }
         
-        return RocketLaunchInformation.ViewModel(title: "Information",
+        return Information.ViewModel(title: "Information",
                                                  sections: sections,
                                                  launch: launch,
                                                  provider: provider,
@@ -82,7 +82,7 @@ final class RocketLaunchInformationPresenter<T: RocketLaunchInformationViewContr
     
 }
 
-extension RocketLaunchInformationPresenter: RocketLaunchInformationPresenterProtocol {
+extension InformationPresenter: InformationPresenterProtocol {
     
     func prepareView() {
         let viewModel = buildViewModel()
@@ -91,6 +91,6 @@ extension RocketLaunchInformationPresenter: RocketLaunchInformationPresenterProt
     
 }
 
-extension RocketLaunchInformationPresenter: RocketLaunchInformationInteractorCallbackProtocol {
+extension InformationPresenter: InformationInteractorCallbackProtocol {
     
 }

@@ -9,13 +9,13 @@
 import Foundation
 
 protocol RocketLaunchRouterProtocol: BaseRouterProtocol {
-    func navigateToRocketLaunchInformation(launch: Space.Launch.Result)
+    func navigateToInformation(launch: Space.Launch.Result)
 }
 
 class RocketLaunchRouter: BaseRouter, RocketLaunchRouterProtocol {
 
-    func navigateToRocketLaunchInformation(launch: Space.Launch.Result) {
-        let vc = RocketLaunchInformationBuilder.build(launch: launch)
+    func navigateToInformation(launch: Space.Launch.Result) {
+        let vc = InformationBuilder.build(launch: launch)
         viewController.navigationController?.pushViewController(vc, animated: true)
     }
     

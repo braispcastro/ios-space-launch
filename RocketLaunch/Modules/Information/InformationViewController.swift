@@ -1,6 +1,6 @@
 //
-//  RocketLaunchInformationViewController.swift
-//  RocketLaunchInformation
+//  InformationViewController.swift
+//  Information
 //
 //  Created by Brais Castro on 26/12/21.
 //
@@ -8,10 +8,10 @@
 import UIKit
 import MapKit
 
-final class RocketLaunchInformationViewController: BaseViewController {
+final class InformationViewController: BaseViewController {
 
-    var presenter: RocketLaunchInformationPresenterProtocol!
-    private var viewModel: RocketLaunchInformation.ViewModel!
+    var presenter: InformationPresenterProtocol!
+    private var viewModel: Information.ViewModel!
 
     // MARK: - Component Declaration
     
@@ -80,11 +80,11 @@ final class RocketLaunchInformationViewController: BaseViewController {
 
 }
 
-// MARK: - RocketLaunchInformationViewControllerProtocol
+// MARK: - InformationViewControllerProtocol
 
-extension RocketLaunchInformationViewController: RocketLaunchInformationViewControllerProtocol {
+extension InformationViewController: InformationViewControllerProtocol {
     
-    func show(viewModel: RocketLaunchInformation.ViewModel) {
+    func show(viewModel: Information.ViewModel) {
         self.viewModel = viewModel
         self.title = viewModel.title
     }
@@ -173,7 +173,7 @@ extension RocketLaunchInformationViewController: RocketLaunchInformationViewCont
  
 }
 
-extension RocketLaunchInformationViewController: UITableViewDataSource, UITableViewDelegate {
+extension InformationViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.sections.count
