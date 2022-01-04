@@ -16,9 +16,9 @@ final class InformationBuilder: BaseBuilder {
         let router: InformationRouter = InformationRouter(viewController: viewController)
         let interactor: InformationInteractor = InformationInteractor()
         let presenter: InformationPresenter = InformationPresenter(viewController: viewController,
-                                                                                           router: router,
-                                                                                           interactor: interactor,
-                                                                                           launch: launch)
+                                                                   router: router,
+                                                                   interactor: interactor,
+                                                                   launch: launch)
         
         viewController.presenter = presenter
         interactor.presenter = presenter

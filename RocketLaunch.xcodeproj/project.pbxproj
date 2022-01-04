@@ -14,6 +14,11 @@
 		8B1B93EE27765F8000398B5C /* RocketLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93ED27765F8000398B5C /* RocketLaunchTests.swift */; };
 		8B1B93F827765F8000398B5C /* RocketLaunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93F727765F8000398B5C /* RocketLaunchUITests.swift */; };
 		8B1B93FA27765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93F927765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift */; };
+		8B217C742784D97600978CA9 /* LaunchPadLocatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C6F2784D97600978CA9 /* LaunchPadLocatorPresenter.swift */; };
+		8B217C752784D97600978CA9 /* LaunchPadLocatorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C702784D97600978CA9 /* LaunchPadLocatorRouter.swift */; };
+		8B217C762784D97600978CA9 /* LaunchPadLocatorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C712784D97600978CA9 /* LaunchPadLocatorModels.swift */; };
+		8B217C772784D97600978CA9 /* LaunchPadLocatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C722784D97600978CA9 /* LaunchPadLocatorViewController.swift */; };
+		8B217C782784D97600978CA9 /* LaunchPadLocatorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C732784D97600978CA9 /* LaunchPadLocatorBuilder.swift */; };
 		8B4E28DF27776D1E00B83DB8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */; };
 		8B5ECA8F277E06A300BE1EA4 /* UIColor+LaunchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5ECA8E277E06A300BE1EA4 /* UIColor+LaunchStatus.swift */; };
 		8B72819E27766A97009050D9 /* RocketLaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819927766A97009050D9 /* RocketLaunchPresenter.swift */; };
@@ -92,6 +97,11 @@
 		8B1B93F327765F8000398B5C /* RocketLaunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketLaunchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1B93F727765F8000398B5C /* RocketLaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchUITests.swift; sourceTree = "<group>"; };
 		8B1B93F927765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8B217C6F2784D97600978CA9 /* LaunchPadLocatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorPresenter.swift; sourceTree = "<group>"; };
+		8B217C702784D97600978CA9 /* LaunchPadLocatorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorRouter.swift; sourceTree = "<group>"; };
+		8B217C712784D97600978CA9 /* LaunchPadLocatorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorModels.swift; sourceTree = "<group>"; };
+		8B217C722784D97600978CA9 /* LaunchPadLocatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorViewController.swift; sourceTree = "<group>"; };
+		8B217C732784D97600978CA9 /* LaunchPadLocatorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorBuilder.swift; sourceTree = "<group>"; };
 		8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		8B5ECA8E277E06A300BE1EA4 /* UIColor+LaunchStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+LaunchStatus.swift"; sourceTree = "<group>"; };
 		8B72819927766A97009050D9 /* RocketLaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchPresenter.swift; sourceTree = "<group>"; };
@@ -215,6 +225,18 @@
 			path = RocketLaunchUITests;
 			sourceTree = "<group>";
 		};
+		8B217C6E2784D8EB00978CA9 /* LaunchPadLocator */ = {
+			isa = PBXGroup;
+			children = (
+				8B217C732784D97600978CA9 /* LaunchPadLocatorBuilder.swift */,
+				8B217C722784D97600978CA9 /* LaunchPadLocatorViewController.swift */,
+				8B217C6F2784D97600978CA9 /* LaunchPadLocatorPresenter.swift */,
+				8B217C702784D97600978CA9 /* LaunchPadLocatorRouter.swift */,
+				8B217C712784D97600978CA9 /* LaunchPadLocatorModels.swift */,
+			);
+			path = LaunchPadLocator;
+			sourceTree = "<group>";
+		};
 		8B4E28DC27776CEA00B83DB8 /* Table */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +270,7 @@
 				8B728194277666F3009050D9 /* LaunchScreen */,
 				8B72819627766829009050D9 /* RocketLaunch */,
 				8BE852C52777D1120007EA6F /* Information */,
+				8B217C6E2784D8EB00978CA9 /* LaunchPadLocator */,
 				8B7281972776698C009050D9 /* Event */,
 				8B7281982776699E009050D9 /* Settings */,
 			);
@@ -557,8 +580,10 @@
 				8BBC1C6E27790469009F9DF5 /* MissionTableViewCell.swift in Sources */,
 				8B1B93D427765F7E00398B5C /* AppDelegate.swift in Sources */,
 				8BD9F3B52776841E001312A9 /* Constants.swift in Sources */,
+				8B217C762784D97600978CA9 /* LaunchPadLocatorModels.swift in Sources */,
 				8B7281A027766A97009050D9 /* RocketLaunchModels.swift in Sources */,
 				8B7281BF2776755B009050D9 /* EventInteractor.swift in Sources */,
+				8B217C742784D97600978CA9 /* LaunchPadLocatorPresenter.swift in Sources */,
 				8BBC1C7027790489009F9DF5 /* PadTableViewCell.swift in Sources */,
 				8B7281BD2776755B009050D9 /* EventRouter.swift in Sources */,
 				8BE852C42777BD610007EA6F /* EventTableViewCell.swift in Sources */,
@@ -569,12 +594,14 @@
 				8B7281A527766B36009050D9 /* BaseViewController.swift in Sources */,
 				8B7281AB27766DAC009050D9 /* BaseRouter.swift in Sources */,
 				8B7281A127766A97009050D9 /* RocketLaunchViewController.swift in Sources */,
+				8B217C782784D97600978CA9 /* LaunchPadLocatorBuilder.swift in Sources */,
 				8BD9F3B7277684BF001312A9 /* SpaceService.swift in Sources */,
 				8B7281C8277675DB009050D9 /* SettingsPresenter.swift in Sources */,
 				8B7281C9277675DB009050D9 /* SettingsModels.swift in Sources */,
 				8BBC1C5C2778B97A009F9DF5 /* InformationPresenter.swift in Sources */,
 				8BC3A6AC27777C1800F88D8D /* RocketLaunchTableViewCell.swift in Sources */,
 				8BBC1C5D2778B97A009F9DF5 /* InformationViewController.swift in Sources */,
+				8B217C772784D97600978CA9 /* LaunchPadLocatorViewController.swift in Sources */,
 				8B7281CB277675DB009050D9 /* SettingsInteractor.swift in Sources */,
 				8B7281C6277675DB009050D9 /* SettingsRouter.swift in Sources */,
 				8B7281C7277675DB009050D9 /* SettingsViewController.swift in Sources */,
@@ -586,6 +613,7 @@
 				8BBC1C6C27790447009F9DF5 /* ProviderTableViewCell.swift in Sources */,
 				8B7281A727766BC8009050D9 /* BaseBuilder.swift in Sources */,
 				8B7281BE2776755B009050D9 /* EventBuilder.swift in Sources */,
+				8B217C752784D97600978CA9 /* LaunchPadLocatorRouter.swift in Sources */,
 				8B5ECA8F277E06A300BE1EA4 /* UIColor+LaunchStatus.swift in Sources */,
 				8B7281CA277675DB009050D9 /* SettingsBuilder.swift in Sources */,
 				8B7281B12776711F009050D9 /* BaseInteractor.swift in Sources */,

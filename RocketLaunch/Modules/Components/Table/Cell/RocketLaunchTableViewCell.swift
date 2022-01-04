@@ -182,8 +182,14 @@ class RocketLaunchTableViewCell: UITableViewCell {
     
     func setupTimer(stringDate: String?) {
         if let tMinusZero = stringDate {
-            if let date = ISO8601DateFormatter().date(from: tMinusZero) {
-                tMinusZeroDate = date
+            if let tMinusZeroDate = ISO8601DateFormatter().date(from: tMinusZero) {
+                self.tMinusZeroDate = tMinusZeroDate
+                
+                let formatter = DateFormatter()
+                formatter.dateStyle = .medium
+                formatter.timeStyle = .short
+                windowStartLabel.text = formatter.string(from: tMinusZeroDate)
+                
                 let interval = tMinusZeroDate.timeIntervalSinceReferenceDate - Date().timeIntervalSinceReferenceDate
                 if interval > 0 {
                     let ti = NSInteger(interval)
@@ -193,11 +199,6 @@ class RocketLaunchTableViewCell: UITableViewCell {
                     if hours < 25 {
                         windowStartLabel.text = String(format: "T - %02d : %02d : %02d", hours, minutes, seconds)
                         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(refreshTimer), userInfo: nil, repeats: true)
-                    } else {
-                        let formatter = DateFormatter()
-                        formatter.dateStyle = .medium
-                        formatter.timeStyle = .short
-                        windowStartLabel.text = formatter.string(from: tMinusZeroDate)
                     }
                 }
             }
