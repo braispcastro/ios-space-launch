@@ -11,7 +11,8 @@ class RocketLaunchTableViewCell: UITableViewCell {
 
     static let kReuseIdentifier: String = "rocket-launch-table-view-cell"
     
-    private var timer: Timer!
+    private var timer: Timer?
+    private var tMinusZeroDate: Date!
     
     // MARK: - Component Declaration
     
@@ -53,6 +54,17 @@ class RocketLaunchTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        timer?.invalidate()
+        timer = nil
     }
     
     override func awakeFromNib() {
@@ -167,21 +179,46 @@ class RocketLaunchTableViewCell: UITableViewCell {
     
     // MARK: - Public Methods
     
-    func setupTimer() {
-        if let tMinusZero = windowStartLabel.text {
-            if let tMinusZeroDate = ISO8601DateFormatter().date(from: tMinusZero) {
+    func setupTimer(stringDate: String?) {
+        if let tMinusZero = stringDate {
+            if let date = ISO8601DateFormatter().date(from: tMinusZero) {
+                tMinusZeroDate = date
                 let interval = tMinusZeroDate.timeIntervalSinceReferenceDate - Date().timeIntervalSinceReferenceDate
                 if interval > 0 {
                     let ti = NSInteger(interval)
                     let seconds = ti % 60
                     let minutes = (ti / 60) % 60
-                    let hours = (ti / 3600)
+                    let hours = ti / 3600
                     if hours < 25 {
-                        windowStartLabel.text = "T - \(hours)H : \(minutes)M : \(seconds)S"
+                        windowStartLabel.text = String(format: "T - %02d : %02d : %02d", hours, minutes, seconds)
+                        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(refreshTimer), userInfo: nil, repeats: true)
+                    } else {
+                        let formatter = DateFormatter()
+                        formatter.dateStyle = .short
+                        formatter.timeStyle = .short
+                        windowStartLabel.text = formatter.string(from: tMinusZeroDate)
                     }
                 }
             }
         }
+    }
+    
+    // MARK: - Private Methods
+    
+    @objc private func refreshTimer() {
+        var hours = 0, minutes = 0, seconds = 0
+        let interval = tMinusZeroDate.timeIntervalSinceReferenceDate - Date().timeIntervalSinceReferenceDate
+        if interval > 0 {
+            let ti = NSInteger(interval)
+            seconds = ti % 60
+            minutes = (ti / 60) % 60
+            hours = ti / 3600
+        } else {
+            timer?.invalidate()
+            timer = nil
+        }
+        
+        windowStartLabel.text = String(format: "T - %02d : %02d : %02d", hours, minutes, seconds)
     }
 
 }

@@ -159,7 +159,7 @@ extension RocketLaunchViewController: UITableViewDataSource, UITableViewDelegate
         cell.windowStartLabel.text = launchList[indexPath.section].windowStart
         cell.statusLabel.text = launchList[indexPath.section].status
         cell.statusLabel.textColor = UIColor.fromLaunchStatus(launchStatus: launchList[indexPath.section].statusType)
-        cell.setupTimer()
+        cell.setupTimer(stringDate: launchList[indexPath.section].windowStart)
         
         return cell
     }
