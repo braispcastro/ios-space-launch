@@ -13,18 +13,16 @@ protocol InformationViewControllerProtocol: BaseViewControllerProtocol {
 
 protocol InformationPresenterProtocol: BasePresenterProtocol {
     func prepareView()
+    func padCellTapped(pad: Information.Pad)
 }
 
 final class InformationPresenter<T: InformationViewControllerProtocol, U: InformationRouterProtocol>: BasePresenter<T, U> {
     
-    let interactor: InformationInteractorProtocol
     let fullLaunch: Space.Launch.Result
     
     init(viewController: T,
          router: U,
-         interactor: InformationInteractorProtocol,
          launch: Space.Launch.Result) {
-        self.interactor = interactor
         self.fullLaunch = launch
         super.init(viewController: viewController, router: router)
     }
@@ -89,8 +87,10 @@ extension InformationPresenter: InformationPresenterProtocol {
         viewController.show(viewModel: viewModel)
     }
     
-}
-
-extension InformationPresenter: InformationInteractorCallbackProtocol {
+    func padCellTapped(pad: Information.Pad) {
+        if let latitude = pad.latitude, let longitude = pad.longitude {
+            router.navigateToLaunchPadLocator(name: pad.name, lat: latitude, lon: longitude)
+        }
+    }
     
 }

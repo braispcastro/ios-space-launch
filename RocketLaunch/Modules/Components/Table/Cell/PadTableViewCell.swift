@@ -77,6 +77,7 @@ class PadTableViewCell: UITableViewCell {
         vStackView.addArrangedSubview(locationLabel)
         
         mapView = MKMapView()
+        mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.isUserInteractionEnabled = false
         vStackView.addArrangedSubview(mapView)
     }
@@ -100,6 +101,7 @@ class PadTableViewCell: UITableViewCell {
         vStackView.accessibilityIdentifier = AccessibilityIds.vStackView
         titleLabel.accessibilityIdentifier = AccessibilityIds.titleLabel
         locationLabel.accessibilityIdentifier = AccessibilityIds.locationLabel
+        mapView.accessibilityIdentifier = AccessibilityIds.mapView
     }
 
 }

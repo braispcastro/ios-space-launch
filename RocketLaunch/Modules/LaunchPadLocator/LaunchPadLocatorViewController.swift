@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 final class LaunchPadLocatorViewController: BaseViewController {
 
@@ -13,13 +14,16 @@ final class LaunchPadLocatorViewController: BaseViewController {
     private var viewModel: LaunchPadLocator.ViewModel!
 
     // MARK: - Component Declaration
+    
+    private var mapView: MKMapView!
 
     private enum ViewTraits {
         static let margins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     public enum AccessibilityIds {
-        
+        static let view: String = "launch-pad-locator-view"
+        static let mapView: String = "launch-pad-locator-map-view"
     }
     
     // MARK: - Init
@@ -43,15 +47,23 @@ final class LaunchPadLocatorViewController: BaseViewController {
     // MARK: - Setup
 
     override func setupComponents() {
-
+        mapView = MKMapView()
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(mapView)
     }
 
     override func setupConstraints() {
-
+        NSLayoutConstraint.activate([
+            mapView.topAnchor.constraint(equalTo: view.topAnchor),
+            mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
     }
     
     override func setupAccessibilityIdentifiers() {
-        
+        view.accessibilityIdentifier = AccessibilityIds.view
+        mapView.accessibilityIdentifier = AccessibilityIds.mapView
     }
 
     // MARK: - Actions
@@ -65,7 +77,17 @@ final class LaunchPadLocatorViewController: BaseViewController {
 extension LaunchPadLocatorViewController: LaunchPadLocatorViewControllerProtocol {
     
     func show(viewModel: LaunchPadLocator.ViewModel) {
+        let center = CLLocationCoordinate2D(latitude: CLLocationDegrees(Double(viewModel.latitude)!),
+                                            longitude: CLLocationDegrees(Double(viewModel.longitude)!))
         
+        let region = MKCoordinateRegion(center: center,
+                                        span: MKCoordinateSpan(latitudeDelta: 0.6, longitudeDelta: 0.6))
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = center
+        
+        mapView.addAnnotation(annotation)
+        mapView.setRegion(region, animated: true)
     }
  
 }

@@ -166,7 +166,6 @@ extension InformationViewController: InformationViewControllerProtocol {
         
         cell.titleLabel.text = viewModel.pad!.name
         cell.locationLabel.text = viewModel.pad!.location
-        cell.isUserInteractionEnabled = false
         
         return cell
     }
@@ -221,6 +220,11 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let tappedCell = tableView.cellForRow(at: indexPath)!
+        if tappedCell.isKind(of: PadTableViewCell.self) {
+            presenter.padCellTapped(pad: viewModel.pad!)
+        }
     }
     
 }

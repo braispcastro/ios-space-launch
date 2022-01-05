@@ -20,6 +20,7 @@
 		8B217C772784D97600978CA9 /* LaunchPadLocatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C722784D97600978CA9 /* LaunchPadLocatorViewController.swift */; };
 		8B217C782784D97600978CA9 /* LaunchPadLocatorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C732784D97600978CA9 /* LaunchPadLocatorBuilder.swift */; };
 		8B4E28DF27776D1E00B83DB8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */; };
+		8B5078EA27862C3D007E6C48 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5078E927862C3D007E6C48 /* NavigationController.swift */; };
 		8B5ECA8F277E06A300BE1EA4 /* UIColor+LaunchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5ECA8E277E06A300BE1EA4 /* UIColor+LaunchStatus.swift */; };
 		8B72819E27766A97009050D9 /* RocketLaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819927766A97009050D9 /* RocketLaunchPresenter.swift */; };
 		8B72819F27766A97009050D9 /* RocketLaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819A27766A97009050D9 /* RocketLaunchRouter.swift */; };
@@ -49,7 +50,6 @@
 		8BAE06FF277CF3D200E1EF51 /* rgb-rocket-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE06FD277CF3D200E1EF51 /* rgb-rocket-loading.json */; };
 		8BAE0700277CF3D200E1EF51 /* bw-rocket-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE06FE277CF3D200E1EF51 /* bw-rocket-loading.json */; };
 		8BBC1C592778B97A009F9DF5 /* InformationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C532778B97A009F9DF5 /* InformationRouter.swift */; };
-		8BBC1C5A2778B97A009F9DF5 /* InformationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C542778B97A009F9DF5 /* InformationInteractor.swift */; };
 		8BBC1C5B2778B97A009F9DF5 /* InformationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C552778B97A009F9DF5 /* InformationModels.swift */; };
 		8BBC1C5C2778B97A009F9DF5 /* InformationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C562778B97A009F9DF5 /* InformationPresenter.swift */; };
 		8BBC1C5D2778B97A009F9DF5 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C572778B97A009F9DF5 /* InformationViewController.swift */; };
@@ -103,6 +103,7 @@
 		8B217C722784D97600978CA9 /* LaunchPadLocatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorViewController.swift; sourceTree = "<group>"; };
 		8B217C732784D97600978CA9 /* LaunchPadLocatorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorBuilder.swift; sourceTree = "<group>"; };
 		8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		8B5078E927862C3D007E6C48 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		8B5ECA8E277E06A300BE1EA4 /* UIColor+LaunchStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+LaunchStatus.swift"; sourceTree = "<group>"; };
 		8B72819927766A97009050D9 /* RocketLaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchPresenter.swift; sourceTree = "<group>"; };
 		8B72819A27766A97009050D9 /* RocketLaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchRouter.swift; sourceTree = "<group>"; };
@@ -131,7 +132,6 @@
 		8BAE06FD277CF3D200E1EF51 /* rgb-rocket-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "rgb-rocket-loading.json"; sourceTree = "<group>"; };
 		8BAE06FE277CF3D200E1EF51 /* bw-rocket-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "bw-rocket-loading.json"; sourceTree = "<group>"; };
 		8BBC1C532778B97A009F9DF5 /* InformationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationRouter.swift; sourceTree = "<group>"; };
-		8BBC1C542778B97A009F9DF5 /* InformationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationInteractor.swift; sourceTree = "<group>"; };
 		8BBC1C552778B97A009F9DF5 /* InformationModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationModels.swift; sourceTree = "<group>"; };
 		8BBC1C562778B97A009F9DF5 /* InformationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPresenter.swift; sourceTree = "<group>"; };
 		8BBC1C572778B97A009F9DF5 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
@@ -409,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				8B4E28DC27776CEA00B83DB8 /* Table */,
+				8B5078E927862C3D007E6C48 /* NavigationController.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -419,7 +420,6 @@
 				8BBC1C582778B97A009F9DF5 /* InformationBuilder.swift */,
 				8BBC1C572778B97A009F9DF5 /* InformationViewController.swift */,
 				8BBC1C562778B97A009F9DF5 /* InformationPresenter.swift */,
-				8BBC1C542778B97A009F9DF5 /* InformationInteractor.swift */,
 				8BBC1C532778B97A009F9DF5 /* InformationRouter.swift */,
 				8BBC1C552778B97A009F9DF5 /* InformationModels.swift */,
 			);
@@ -580,6 +580,7 @@
 				8BBC1C6E27790469009F9DF5 /* MissionTableViewCell.swift in Sources */,
 				8B1B93D427765F7E00398B5C /* AppDelegate.swift in Sources */,
 				8BD9F3B52776841E001312A9 /* Constants.swift in Sources */,
+				8B5078EA27862C3D007E6C48 /* NavigationController.swift in Sources */,
 				8B217C762784D97600978CA9 /* LaunchPadLocatorModels.swift in Sources */,
 				8B7281A027766A97009050D9 /* RocketLaunchModels.swift in Sources */,
 				8B7281BF2776755B009050D9 /* EventInteractor.swift in Sources */,
@@ -587,7 +588,6 @@
 				8BBC1C7027790489009F9DF5 /* PadTableViewCell.swift in Sources */,
 				8B7281BD2776755B009050D9 /* EventRouter.swift in Sources */,
 				8BE852C42777BD610007EA6F /* EventTableViewCell.swift in Sources */,
-				8BBC1C5A2778B97A009F9DF5 /* InformationInteractor.swift in Sources */,
 				8B7281A227766A97009050D9 /* RocketLaunchBuilder.swift in Sources */,
 				8B7281AF277670D9009050D9 /* RocketLaunchInteractor.swift in Sources */,
 				8BBC1C592778B97A009F9DF5 /* InformationRouter.swift in Sources */,

@@ -9,9 +9,14 @@
 import Foundation
 
 protocol InformationRouterProtocol: BaseRouterProtocol {
-
+    func navigateToLaunchPadLocator(name: String, lat: String, lon: String)
 }
 
 class InformationRouter: BaseRouter, InformationRouterProtocol {
 
+    func navigateToLaunchPadLocator(name: String, lat: String, lon: String) {
+        let vc = LaunchPadLocatorBuilder.build(name: name, latitude: lat, longitude: lon)
+        viewController.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
