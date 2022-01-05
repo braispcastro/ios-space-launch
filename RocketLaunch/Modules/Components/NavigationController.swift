@@ -29,6 +29,7 @@ class NavigationController: UINavigationController {
         let backButtonImage = UIImage(systemName: "arrow.backward")
         self.navigationBar.backIndicatorImage = backButtonImage
         self.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
+        self.navigationBar.tintColor = UIColor(named: "TextColor")
         self.navigationBar.prefersLargeTitles = true
     }
 
