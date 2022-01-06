@@ -22,4 +22,8 @@ struct Constants {
     static let kProviderPlaceholderImage = "https://via.placeholder.com/1200x450"
     static let kMissionPlaceholderImage = "https://via.placeholder.com/1200x450"
     
+    // Firebase RC keys
+    static let kRemoteSpaceBaseUrl = "SpaceBaseUrl"
+    static let kRemoteSpaceResultLimit = "SpaceResultLimit"
+    
 }

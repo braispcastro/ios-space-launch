@@ -2,7 +2,7 @@
 //  MissionTableViewCell.swift
 //  RocketLaunch
 //
-//  Created by Castro, Brais on 26/12/21.
+//  Created by Brais Castro on 26/12/21.
 //
 
 import UIKit

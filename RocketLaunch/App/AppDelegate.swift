@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = setupTabBarController()
         self.window?.makeKeyAndVisible()
         
+        initializeLibraries()
+        
         return true
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        FirebaseRCService.shared.fetch()
     }
     
     // MARK: - Private Methods
@@ -33,6 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         bottomNavigator.setViewControllers([rocketLaunch, events, settings], animated: true)
         
         return bottomNavigator
+    }
+    
+    private func initializeLibraries() {
+        FirebaseApp.configure()
     }
 
     // MARK: - Core Data stack

@@ -21,11 +21,14 @@ class SpaceService {
         
         func url() -> URL? {
             
+            let baseUrl = FirebaseRCService.shared.spaceBaseUrl!
+            let limit = FirebaseRCService.shared.spaceResultLimit!
+            
             switch self {
             case .launches:
-                return URL(string: "\(Constants.kLaunchBaseUrlDev)/launch/upcoming?mode=detailed&limit=20&format=json")
+                return URL(string: "\(baseUrl)/launch/upcoming?mode=detailed&limit=\(limit)&format=json")
             case .events:
-                return URL(string: "\(Constants.kLaunchBaseUrlDev)/event/upcoming?mode=detailed&limit=20&format=json")
+                return URL(string: "\(baseUrl)/event/upcoming?mode=detailed&limit=\(limit)&format=json")
             }
             
         }

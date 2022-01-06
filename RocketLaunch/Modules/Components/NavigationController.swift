@@ -2,7 +2,7 @@
 //  NavigationController.swift
 //  RocketLaunch
 //
-//  Created by Castro, Brais on 5/1/22.
+//  Created by Brais Castro on 5/1/22.
 //
 
 import UIKit
