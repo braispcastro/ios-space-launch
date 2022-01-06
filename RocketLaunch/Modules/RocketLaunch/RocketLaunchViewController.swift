@@ -19,7 +19,8 @@ final class RocketLaunchViewController: BaseViewController {
     
     private var rocketAnimationView: AnimationView!
     private var tableView: UITableView!
-
+    private var refreshControl: UIRefreshControl!
+    
     private enum ViewTraits {
         static let margins = UIEdgeInsets(top: 15, left: 15, bottom: -15, right: -15)
         static let lottieMargins = UIEdgeInsets(top: 96, left: 96, bottom: -96, right: -96)
@@ -61,6 +62,10 @@ final class RocketLaunchViewController: BaseViewController {
         tableView.register(RocketLaunchTableViewCell.self, forCellReuseIdentifier: RocketLaunchTableViewCell.kReuseIdentifier)
         view.addSubview(tableView)
         
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+        
         let rocketAnimation = Animation.named("rgb-rocket-loading")
         rocketAnimationView = AnimationView(animation: rocketAnimation)
         rocketAnimationView.translatesAutoresizingMaskIntoConstraints = false
@@ -99,6 +104,10 @@ final class RocketLaunchViewController: BaseViewController {
 
     // MARK: Private Methods
 
+    @objc func refresh(_ sender: AnyObject) {
+        presenter.getLaunchesToShow()
+    }
+    
 }
 
 // MARK: - RocketLaunchViewControllerProtocol
@@ -116,6 +125,7 @@ extension RocketLaunchViewController: RocketLaunchViewControllerProtocol {
         rocketAnimationView.isHidden = true
         tableView.isHidden = false
         tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
  
 }

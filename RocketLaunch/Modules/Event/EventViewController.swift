@@ -18,6 +18,7 @@ final class EventViewController: BaseViewController {
     
     private var rocketAnimationView: AnimationView!
     private var tableView: UITableView!
+    private var refreshControl: UIRefreshControl!
 
     private enum ViewTraits {
         static let margins = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: -15)
@@ -60,6 +61,10 @@ final class EventViewController: BaseViewController {
         tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.kReuseIdentifier)
         view.addSubview(tableView)
         
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+        
         let rocketAnimation = Animation.named("rgb-rocket-loading")
         rocketAnimationView = AnimationView(animation: rocketAnimation)
         rocketAnimationView.translatesAutoresizingMaskIntoConstraints = false
@@ -97,6 +102,10 @@ final class EventViewController: BaseViewController {
     // MARK: - Actions
 
     // MARK: Private Methods
+    
+    @objc func refresh(_ sender: AnyObject) {
+        presenter.getEventsToShow()
+    }
 
 }
 
@@ -115,6 +124,7 @@ extension EventViewController: EventViewControllerProtocol {
         rocketAnimationView.isHidden = true
         tableView.isHidden = false
         tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
  
 }
