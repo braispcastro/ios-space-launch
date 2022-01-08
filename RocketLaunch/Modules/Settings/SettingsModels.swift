@@ -12,6 +12,18 @@ enum Settings {
 
     struct ViewModel {
         let title: String
+        let sections: [Section]
+    }
+    
+    struct Section {
+        let title: String
+        let rows: [Row]
+    }
+    
+    struct Row {
+        let title: String
+        let subtitle: String
+        let enabled: Bool
     }
 
 }

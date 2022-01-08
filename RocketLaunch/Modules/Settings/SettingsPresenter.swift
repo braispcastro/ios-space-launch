@@ -24,12 +24,24 @@ final class SettingsPresenter<T: SettingsViewControllerProtocol, U: SettingsRout
         super.init(viewController: viewController, router: router)
     }
     
+    func buildViewModel() -> Settings.ViewModel {
+        
+        let aboutSection = Settings.Section(title: "About", rows: [
+            Settings.Row(title: "Application", subtitle: "Rocket Launch Calendar", enabled: false),
+            Settings.Row(title: "Developer", subtitle: "Brais Castro", enabled: false),
+            Settings.Row(title: "Version", subtitle: "1.0.0", enabled: false)
+        ])
+        
+        let viewModel = Settings.ViewModel(title: "Settings", sections: [aboutSection])
+        return viewModel
+    }
+    
 }
 
 extension SettingsPresenter: SettingsPresenterProtocol {
     
     func prepareView() {
-        let viewModel = Settings.ViewModel(title: "Settings")
+        let viewModel = buildViewModel()
         viewController.show(viewModel: viewModel)
     }
     

@@ -13,13 +13,16 @@ final class SettingsViewController: BaseViewController {
     private var viewModel: Settings.ViewModel!
 
     // MARK: - Component Declaration
+    
+    private var tableView: UITableView!
 
     private enum ViewTraits {
-        static let margins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        static let margins = UIEdgeInsets(top: 15, left: 15, bottom: -15, right: -15)
     }
     
     public enum AccessibilityIds {
         static let view: String = "settings-view"
+        static let tableView: String = "settings-table-view"
     }
     
     // MARK: - Init
@@ -44,15 +47,29 @@ final class SettingsViewController: BaseViewController {
     // MARK: - Setup
 
     override func setupComponents() {
-
+        tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        tableView.separatorStyle = .singleLine
+        //tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.kReuseIdentifier)
+        view.addSubview(tableView)
+        
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 
     override func setupConstraints() {
-
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
     }
     
     override func setupAccessibilityIdentifiers() {
         view.accessibilityIdentifier = AccessibilityIds.view
+        tableView.accessibilityIdentifier = AccessibilityIds.tableView
     }
 
     // MARK: - Actions
@@ -70,4 +87,50 @@ extension SettingsViewController: SettingsViewControllerProtocol {
         self.title = viewModel.title
     }
  
+}
+
+// MARK: - UITableViewDataSource, UITableViewDelegate
+
+extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.sections.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = HeaderView()
+        header.textLabel?.text = viewModel.sections[section].title
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return .leastNormalMagnitude
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.sections[section].rows.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = viewModel.sections[indexPath.section].rows[indexPath.row]
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        cell.separatorInset = UIEdgeInsets.zero
+        cell.textLabel?.text = item.title
+        cell.detailTextLabel?.text = item.subtitle
+        cell.isUserInteractionEnabled = item.enabled
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }

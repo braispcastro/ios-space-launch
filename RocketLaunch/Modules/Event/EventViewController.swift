@@ -175,11 +175,4 @@ extension EventViewController: UITableViewDataSource, UITableViewDelegate {
         return UITableView.automaticDimension
     }
     
-    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        let event = eventList[indexPath.section].rawData
-        presenter.eventTapped(event: event)
-    }*/
-    
 }
