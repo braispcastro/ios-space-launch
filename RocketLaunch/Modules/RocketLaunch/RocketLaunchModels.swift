@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GoogleMobileAds
 
 enum RocketLaunch {
 
@@ -14,7 +15,8 @@ enum RocketLaunch {
         let title: String
     }
     
-    struct LaunchViewModel: Equatable {
+    struct LaunchViewModel: Equatable, LaunchListProtocol {
+        var isAd = false
         let imageUrl: String?
         let rocket: String
         let mission: String
@@ -25,5 +27,13 @@ enum RocketLaunch {
         let statusType: Space.Launch.Result.Status.StatusType
         let rawData: Space.Launch.Result
     }
+    
+    struct GoogleNativeAd: Equatable, LaunchListProtocol {
+        var isAd = true
+    }
 
+}
+
+protocol LaunchListProtocol {
+    var isAd: Bool { get set }
 }

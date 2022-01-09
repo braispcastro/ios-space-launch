@@ -7,13 +7,14 @@
 
 import UIKit
 import CoreData
+import GoogleMobileAds
 
 protocol RocketLaunchInteractorProtocol: BaseInteractorProtocol {
     func getLaunchList()
 }
 
 protocol RocketLaunchInteractorCallbackProtocol: BaseInteractorCallbackProtocol {
-    func setLaunchList(launchList: [RocketLaunch.LaunchViewModel])
+    func setLaunchList(launchList: [LaunchListProtocol])
 }
 
 class RocketLaunchInteractor: BaseInteractor {
@@ -28,10 +29,18 @@ class RocketLaunchInteractor: BaseInteractor {
 extension RocketLaunchInteractor: RocketLaunchInteractorProtocol {
     
     func getLaunchList() {
-        var launchList: [RocketLaunch.LaunchViewModel] = []
+        var counter = 0
+        var launchList: [LaunchListProtocol] = []
         SpaceService.shared.launches() { launch in
             if let results = launch.results {
                 for result in results {
+                    counter += 1
+                    if counter == 3 {
+                        launchList.append(RocketLaunch.GoogleNativeAd())
+                    } else if counter == 4 {
+                        counter = 0
+                    }
+                    
                     launchList.append(RocketLaunch.LaunchViewModel(imageUrl: result.image,
                                                                    rocket: result.rocket?.configuration?.name ?? "-",
                                                                    mission: result.mission?.name ?? "-",

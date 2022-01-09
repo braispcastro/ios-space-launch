@@ -18,6 +18,7 @@ final class FirebaseRCService {
     
     private(set) var spaceBaseUrl: String!
     private(set) var spaceResultLimit: String!
+    private(set) var spaceAdsLimit: String!
     
     // MARK: - Initialization
     
@@ -41,6 +42,7 @@ final class FirebaseRCService {
     private func setupValues() {
         self.spaceBaseUrl = self.remoteConfig.configValue(forKey: Constants.kRemoteSpaceBaseUrl).stringValue!
         self.spaceResultLimit = self.remoteConfig.configValue(forKey: Constants.kRemoteSpaceResultLimit).stringValue!
+        self.spaceAdsLimit = self.remoteConfig.configValue(forKey: Constants.kRemoteSpaceAdsLimit).stringValue!
     }
     
     // MARK: - Public methods

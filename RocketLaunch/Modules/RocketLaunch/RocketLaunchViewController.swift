@@ -8,12 +8,13 @@
 import UIKit
 import Kingfisher
 import Lottie
+import GoogleMobileAds
 
 final class RocketLaunchViewController: BaseViewController {
 
-    var presenter: RocketLaunchPresenterProtocol!
+    var presenter: RocketLaunchPresenterProtocol!    
     private var viewModel: RocketLaunch.ViewModel!
-    private var launchList: [RocketLaunch.LaunchViewModel] = []
+    private var launchList: [LaunchListProtocol] = []
 
     // MARK: - Component Declaration
     
@@ -60,6 +61,7 @@ final class RocketLaunchViewController: BaseViewController {
         tableView.isHidden = true
         tableView.separatorStyle = .none
         tableView.register(RocketLaunchTableViewCell.self, forCellReuseIdentifier: RocketLaunchTableViewCell.kReuseIdentifier)
+        tableView.register(GoogleAdTableViewCell.self, forCellReuseIdentifier: GoogleAdTableViewCell.kReuseIdentifier)
         view.addSubview(tableView)
         
         refreshControl = UIRefreshControl()
@@ -101,13 +103,41 @@ final class RocketLaunchViewController: BaseViewController {
     }
 
     // MARK: - Actions
-
-    // MARK: Private Methods
-
+    
     @objc func refresh(_ sender: AnyObject) {
         presenter.getLaunchesToShow()
     }
+
+    // MARK: Private Methods
     
+    private func getLaunchCell(_ launch: RocketLaunch.LaunchViewModel) -> RocketLaunchTableViewCell {
+        guard let cell: RocketLaunchTableViewCell = tableView.dequeueReusableCell(withIdentifier: RocketLaunchTableViewCell.kReuseIdentifier) as? RocketLaunchTableViewCell else {
+            fatalError("Not registered for tableView")
+        }
+        
+        cell.mainImageView.kf.setImage(with: URL(string: launch.imageUrl ?? ""), placeholder: UIImage(named: "Rocket"))
+        cell.rocketLabel.text = launch.rocket
+        cell.missionLabel.text = launch.mission
+        cell.providerLabel.text = launch.provider
+        cell.padLabel.text = launch.pad
+        cell.windowStartLabel.text = launch.windowStart
+        cell.statusLabel.text = launch.status
+        cell.statusLabel.textColor = UIColor.fromLaunchStatus(launchStatus: launch.statusType)
+        cell.setupTimer(stringDate: launch.windowStart)
+        
+        return cell
+    }
+    
+    private func getAdCell(_ ad: RocketLaunch.GoogleNativeAd) -> GoogleAdTableViewCell {
+        guard let cell: GoogleAdTableViewCell = tableView.dequeueReusableCell(withIdentifier: GoogleAdTableViewCell.kReuseIdentifier) as? GoogleAdTableViewCell else {
+            fatalError("Not registered for tableView")
+        }
+        
+        cell.googleAdView.rootViewController = self
+        cell.googleAdView.load(GADRequest())
+        
+        return cell
+    }
 }
 
 // MARK: - RocketLaunchViewControllerProtocol
@@ -119,7 +149,7 @@ extension RocketLaunchViewController: RocketLaunchViewControllerProtocol {
         self.title = viewModel.title
     }
     
-    func showLaunches(launchList: [RocketLaunch.LaunchViewModel]) {
+    func showLaunches(launchList: [LaunchListProtocol]) {
         self.launchList = launchList
         rocketAnimationView.stop()
         rocketAnimationView.isHidden = true
@@ -157,32 +187,32 @@ extension RocketLaunchViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: RocketLaunchTableViewCell = tableView.dequeueReusableCell(withIdentifier: RocketLaunchTableViewCell.kReuseIdentifier) as? RocketLaunchTableViewCell else {
-            fatalError("Not registered for tableView")
+        let item = launchList[indexPath.section]
+        if let launch = item as? RocketLaunch.LaunchViewModel {
+            return getLaunchCell(launch)
+        } else if let ad = item as? RocketLaunch.GoogleNativeAd {
+            return getAdCell(ad)
+        } else {
+            fatalError("Only two types allowed")
         }
-        
-        cell.mainImageView.kf.setImage(with: URL(string: launchList[indexPath.section].imageUrl ?? ""), placeholder: UIImage(named: "Rocket"))
-        cell.rocketLabel.text = launchList[indexPath.section].rocket
-        cell.missionLabel.text = launchList[indexPath.section].mission
-        cell.providerLabel.text = launchList[indexPath.section].provider
-        cell.padLabel.text = launchList[indexPath.section].pad
-        cell.windowStartLabel.text = launchList[indexPath.section].windowStart
-        cell.statusLabel.text = launchList[indexPath.section].status
-        cell.statusLabel.textColor = UIColor.fromLaunchStatus(launchStatus: launchList[indexPath.section].statusType)
-        cell.setupTimer(stringDate: launchList[indexPath.section].windowStart)
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
+        let item = launchList[indexPath.section]
+        if item.isAd {
+            return UITableView.automaticDimension
+        } else {
+            return 180
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let launch = launchList[indexPath.section].rawData
-        presenter.launchTapped(launch: launch)
+        let item = launchList[indexPath.section]
+        if let launch = item as? RocketLaunch.LaunchViewModel {
+            presenter.launchTapped(launch: launch.rawData)
+        }
     }
     
 }

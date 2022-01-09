@@ -14,7 +14,7 @@ class GoogleAdTableViewCell: UITableViewCell {
     
     // MARK: - Component Declaration
     
-    internal var googleAdView: GADNativeAdView!
+    internal var googleAdView: GADBannerView!
     
     private enum ViewTraits {
         static let margins = UIEdgeInsets(top: 8, left: 8, bottom: -8, right: -8)
@@ -50,17 +50,20 @@ class GoogleAdTableViewCell: UITableViewCell {
     // MARK: - Setup
     
     private func setupComponents() {
-        googleAdView = GADNativeAdView()
+        let adSize = GADAdSizeFromCGSize(CGSize(width: self.bounds.width, height: 250))
+        googleAdView = GADBannerView(adSize: adSize)
+        googleAdView.adUnitID = Constants.kAdBannerTest
+        googleAdView.delegate = self
         googleAdView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(googleAdView)
     }
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            googleAdView.topAnchor.constraint(equalTo: self.topAnchor, constant: ViewTraits.margins.top),
-            googleAdView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: ViewTraits.margins.bottom),
-            googleAdView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: ViewTraits.margins.left),
-            googleAdView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: ViewTraits.margins.right)
+            googleAdView.topAnchor.constraint(equalTo: self.topAnchor),
+            googleAdView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            googleAdView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            googleAdView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
     
@@ -69,4 +72,32 @@ class GoogleAdTableViewCell: UITableViewCell {
         googleAdView.accessibilityIdentifier = AccessibilityIds.googleAdView
     }
 
+}
+
+extension GoogleAdTableViewCell: GADBannerViewDelegate {
+    
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("bannerViewDidReceiveAd")
+    }
+
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+        print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+        print("bannerViewDidRecordImpression")
+    }
+
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+        print("bannerViewWillPresentScreen")
+    }
+
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+        print("bannerViewWillDIsmissScreen")
+    }
+
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+        print("bannerViewDidDismissScreen")
+    }
+    
 }
