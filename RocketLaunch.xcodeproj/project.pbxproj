@@ -56,6 +56,7 @@
 		8BAE06F7277CE11C00E1EF51 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8BAE06F6277CE11C00E1EF51 /* Lottie */; };
 		8BAE06FF277CF3D200E1EF51 /* rgb-rocket-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE06FD277CF3D200E1EF51 /* rgb-rocket-loading.json */; };
 		8BAE0700277CF3D200E1EF51 /* bw-rocket-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE06FE277CF3D200E1EF51 /* bw-rocket-loading.json */; };
+		8BB6B990278B6DB200E53EBB /* GoogleAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B98F278B6DB200E53EBB /* GoogleAdTableViewCell.swift */; };
 		8BBC1C592778B97A009F9DF5 /* InformationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C532778B97A009F9DF5 /* InformationRouter.swift */; };
 		8BBC1C5B2778B97A009F9DF5 /* InformationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C552778B97A009F9DF5 /* InformationModels.swift */; };
 		8BBC1C5C2778B97A009F9DF5 /* InformationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C562778B97A009F9DF5 /* InformationPresenter.swift */; };
@@ -147,6 +148,7 @@
 		8BA1050D27875A3600C30A45 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		8BAE06FD277CF3D200E1EF51 /* rgb-rocket-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "rgb-rocket-loading.json"; sourceTree = "<group>"; };
 		8BAE06FE277CF3D200E1EF51 /* bw-rocket-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "bw-rocket-loading.json"; sourceTree = "<group>"; };
+		8BB6B98F278B6DB200E53EBB /* GoogleAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdTableViewCell.swift; sourceTree = "<group>"; };
 		8BBC1C532778B97A009F9DF5 /* InformationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationRouter.swift; sourceTree = "<group>"; };
 		8BBC1C552778B97A009F9DF5 /* InformationModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationModels.swift; sourceTree = "<group>"; };
 		8BBC1C562778B97A009F9DF5 /* InformationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPresenter.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				8BBC1C6B27790447009F9DF5 /* ProviderTableViewCell.swift */,
 				8BBC1C6D27790469009F9DF5 /* MissionTableViewCell.swift */,
 				8BBC1C6F27790489009F9DF5 /* PadTableViewCell.swift */,
+				8BB6B98F278B6DB200E53EBB /* GoogleAdTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -491,7 +494,6 @@
 				1EE897474FF94F3694C34447 /* Pods-RocketLaunchTests.debug.xcconfig */,
 				A8F01796D482A48FA02A532A /* Pods-RocketLaunchTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -597,9 +599,9 @@
 			);
 			mainGroup = 8B1B93C727765F7E00398B5C;
 			packageReferences = (
-				8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
-				8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher.git" */,
-				8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios.git" */,
+				8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				8B57FB5527874B9700AF4A95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 8B1B93D127765F7E00398B5C /* Products */;
@@ -773,6 +775,7 @@
 				8B7281A227766A97009050D9 /* RocketLaunchBuilder.swift in Sources */,
 				8B7281AF277670D9009050D9 /* RocketLaunchInteractor.swift in Sources */,
 				8BBC1C592778B97A009F9DF5 /* InformationRouter.swift in Sources */,
+				8BB6B990278B6DB200E53EBB /* GoogleAdTableViewCell.swift in Sources */,
 				8B7281A527766B36009050D9 /* BaseViewController.swift in Sources */,
 				8B7281AB27766DAC009050D9 /* BaseRouter.swift in Sources */,
 				8B7281A127766A97009050D9 /* RocketLaunchViewController.swift in Sources */,
@@ -902,6 +905,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -956,6 +960,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -970,11 +975,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 20220109;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Launch Calendar";
+				INFOPLIST_KEY_CFBundleDisplayName = RocketLaunch;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -985,8 +990,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
-				OTHER_LDFLAGS = "-ObjC";
+				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = (
+					"$(inherited),",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braispcastro.rocket-launch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1002,11 +1010,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 20220109;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Launch Calendar";
+				INFOPLIST_KEY_CFBundleDisplayName = RocketLaunch;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1017,8 +1025,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
-				OTHER_LDFLAGS = "-ObjC";
+				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = (
+					"$(inherited),",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braispcastro.rocket-launch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1157,7 +1168,7 @@
 				version = 8.9.1;
 			};
 		};
-		8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios.git" */ = {
+		8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
 			requirement = {
@@ -1165,7 +1176,7 @@
 				version = 3.3.0;
 			};
 		};
-		8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
+		8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -1173,7 +1184,7 @@
 				version = 5.5.0;
 			};
 		};
-		8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher.git" */ = {
+		8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
@@ -1201,17 +1212,17 @@
 		};
 		8BAE06F6277CE11C00E1EF51 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios.git" */;
+			package = 8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
 		};
 		8BD9F3BA277685E4001312A9 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
+			package = 8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 		8BD9F3BD277685FB001312A9 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher.git" */;
+			package = 8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */

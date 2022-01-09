@@ -26,10 +26,11 @@ final class SettingsPresenter<T: SettingsViewControllerProtocol, U: SettingsRout
     
     func buildViewModel() -> Settings.ViewModel {
         
+        let appVersion: String = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let aboutSection = Settings.Section(title: "About", rows: [
             Settings.Row(title: "Application", subtitle: "Rocket Launch Calendar", enabled: false),
             Settings.Row(title: "Developer", subtitle: "Brais Castro", enabled: false),
-            Settings.Row(title: "Version", subtitle: "1.0.0", enabled: false)
+            Settings.Row(title: "Version", subtitle: appVersion, enabled: false)
         ])
         
         let viewModel = Settings.ViewModel(title: "Settings", sections: [aboutSection])

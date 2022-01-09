@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 import Firebase
+import GoogleMobileAds
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -43,7 +44,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func initializeLibraries() {
+        
+        // Firebase
         FirebaseApp.configure()
+        
+        // Google ADs
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
     }
 
     // MARK: - Core Data stack
