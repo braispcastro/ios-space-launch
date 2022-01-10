@@ -79,6 +79,7 @@ class PadTableViewCell: UITableViewCell {
         mapView = MKMapView()
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.isUserInteractionEnabled = false
+        mapView.mapType = .hybrid
         vStackView.addArrangedSubview(mapView)
     }
 

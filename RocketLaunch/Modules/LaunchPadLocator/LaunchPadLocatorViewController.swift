@@ -48,6 +48,7 @@ final class LaunchPadLocatorViewController: BaseViewController {
     override func setupComponents() {
         mapView = MKMapView()
         mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.mapType = .hybridFlyover
         view.addSubview(mapView)
     }
 
