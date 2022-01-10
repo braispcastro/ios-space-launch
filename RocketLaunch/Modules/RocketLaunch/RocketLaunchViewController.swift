@@ -50,7 +50,9 @@ final class RocketLaunchViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.prepareView()
-        presenter.getLaunchesToShow()
+        FirebaseRCService.shared.fetch() {
+            self.presenter.getLaunchesToShow()
+        }
     }
 
     // MARK: - Setup

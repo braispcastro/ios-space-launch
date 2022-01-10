@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        FirebaseRCService.shared.fetch()
+        FirebaseRCService.shared.fetch(completion: { })
     }
     
     // MARK: - Private Methods

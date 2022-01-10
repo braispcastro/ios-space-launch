@@ -13,7 +13,7 @@ protocol EventInteractorProtocol: BaseInteractorProtocol {
 }
 
 protocol EventInteractorCallbackProtocol: BaseInteractorCallbackProtocol {
-    func setEventList(eventList: [Event.EventViewModel])
+    func setEventList(eventList: [EventListProtocol])
 }
 
 class EventInteractor: BaseInteractor {
@@ -28,10 +28,17 @@ class EventInteractor: BaseInteractor {
 extension EventInteractor: EventInteractorProtocol {
     
     func getEventList() {
-        var eventList: [Event.EventViewModel] = []
+        var counter = 0
+        var eventList: [EventListProtocol] = []
         SpaceService.shared.events() { event in
             if let results = event.results {
                 for result in results {
+                    counter += 1
+                    if counter == 3 {
+                        eventList.append(Event.GoogleNativeAd())
+                    } else if counter == 4 {
+                        counter = 0
+                    }
                     var stringEventDate = "-"
                     if let date = result.date {
                         if let eventDate = ISO8601DateFormatter().date(from: date) {

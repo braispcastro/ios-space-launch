@@ -50,9 +50,13 @@ class GoogleAdTableViewCell: UITableViewCell {
     // MARK: - Setup
     
     private func setupComponents() {
-        let adSize = GADAdSizeFromCGSize(CGSize(width: self.bounds.width, height: 250))
+        let adSize = GADAdSizeFromCGSize(CGSize(width: 320, height: 280))
         googleAdView = GADBannerView(adSize: adSize)
+        #if DEBUG
         googleAdView.adUnitID = Constants.kAdBannerTest
+        #else
+        googleAdView.adUnitID = FirebaseRCService.shared.googleAdBannerId!
+        #endif
         googleAdView.delegate = self
         googleAdView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(googleAdView)

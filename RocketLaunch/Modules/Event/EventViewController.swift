@@ -7,12 +7,13 @@
 
 import UIKit
 import Lottie
+import GoogleMobileAds
 
 final class EventViewController: BaseViewController {
 
     var presenter: EventPresenterProtocol!
     private var viewModel: Event.ViewModel!
-    private var eventList: [Event.EventViewModel] = []
+    private var eventList: [EventListProtocol] = []
 
     // MARK: - Component Declaration
     
@@ -59,6 +60,7 @@ final class EventViewController: BaseViewController {
         tableView.isHidden = true
         tableView.separatorStyle = .none
         tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.kReuseIdentifier)
+        tableView.register(GoogleAdTableViewCell.self, forCellReuseIdentifier: GoogleAdTableViewCell.kReuseIdentifier)
         view.addSubview(tableView)
         
         refreshControl = UIRefreshControl()
@@ -100,11 +102,38 @@ final class EventViewController: BaseViewController {
     }
 
     // MARK: - Actions
-
-    // MARK: Private Methods
     
     @objc func refresh(_ sender: AnyObject) {
         presenter.getEventsToShow()
+    }
+
+    // MARK: Private Methods
+    
+    private func getEventCell(_ event: Event.EventViewModel) -> EventTableViewCell {
+        guard let cell: EventTableViewCell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.kReuseIdentifier) as? EventTableViewCell else {
+            fatalError("Not registered for tableView")
+        }
+        
+        cell.mainImageView.kf.setImage(with: URL(string: event.imageUrl ?? ""), placeholder: UIImage(named: "Rocket"))
+        cell.nameLabel.text = event.name
+        cell.locationLabel.text = event.location
+        cell.typeLabel.text = event.type
+        cell.descriptionLabel.text = event.description
+        cell.dateLabel.text = event.date
+        cell.isUserInteractionEnabled = false
+        
+        return cell
+    }
+    
+    private func getAdCell(_ ad: Event.GoogleNativeAd) -> GoogleAdTableViewCell {
+        guard let cell: GoogleAdTableViewCell = tableView.dequeueReusableCell(withIdentifier: GoogleAdTableViewCell.kReuseIdentifier) as? GoogleAdTableViewCell else {
+            fatalError("Not registered for tableView")
+        }
+        
+        cell.googleAdView.rootViewController = self
+        cell.googleAdView.load(GADRequest())
+        
+        return cell
     }
 
 }
@@ -118,7 +147,7 @@ extension EventViewController: EventViewControllerProtocol {
         self.title = viewModel.title
     }
     
-    func showEvents(eventList: [Event.EventViewModel]) {
+    func showEvents(eventList: [EventListProtocol]) {
         self.eventList = eventList
         rocketAnimationView.stop()
         rocketAnimationView.isHidden = true
@@ -156,19 +185,14 @@ extension EventViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: EventTableViewCell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.kReuseIdentifier) as? EventTableViewCell else {
-            fatalError("Not registered for tableView")
+        let item = eventList[indexPath.section]
+        if let launch = item as? Event.EventViewModel {
+            return getEventCell(launch)
+        } else if let ad = item as? Event.GoogleNativeAd {
+            return getAdCell(ad)
+        } else {
+            fatalError("Only two types allowed")
         }
-        
-        cell.mainImageView.kf.setImage(with: URL(string: eventList[indexPath.section].imageUrl ?? ""), placeholder: UIImage(named: "Rocket"))
-        cell.nameLabel.text = eventList[indexPath.section].name
-        cell.locationLabel.text = eventList[indexPath.section].location
-        cell.typeLabel.text = eventList[indexPath.section].type
-        cell.descriptionLabel.text = eventList[indexPath.section].description
-        cell.dateLabel.text = eventList[indexPath.section].date
-        cell.isUserInteractionEnabled = false
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

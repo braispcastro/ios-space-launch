@@ -25,7 +25,7 @@ struct Constants {
     // Firebase RC keys
     static let kRemoteSpaceBaseUrl = "SpaceBaseUrl"
     static let kRemoteSpaceResultLimit = "SpaceResultLimit"
-    static let kRemoteSpaceAdsLimit = "SpaceAdsLimit"
+    static let kRemoteGoogleAdBannerId = "GoogleAdBannerId"
     
     // AdMob
     static let kAdBannerTest = "ca-app-pub-3940256099942544/2934735716"

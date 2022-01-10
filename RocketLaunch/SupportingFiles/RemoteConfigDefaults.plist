@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SpaceAdsLimit</key>
-	<string>5</string>
+	<key>GoogleAdBannerId</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
 	<key>SpaceResultLimit</key>
 	<string>20</string>
 	<key>SpaceBaseUrl</key>

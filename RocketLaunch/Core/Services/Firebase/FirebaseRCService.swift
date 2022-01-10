@@ -18,7 +18,7 @@ final class FirebaseRCService {
     
     private(set) var spaceBaseUrl: String!
     private(set) var spaceResultLimit: String!
-    private(set) var spaceAdsLimit: String!
+    private(set) var googleAdBannerId: String!
     
     // MARK: - Initialization
     
@@ -26,9 +26,9 @@ final class FirebaseRCService {
         let settings = RemoteConfigSettings()
         
         #if DEBUG
-            settings.minimumFetchInterval = 0
+        settings.minimumFetchInterval = 0
         #else
-            settings.minimumFetchInterval = 12
+        settings.minimumFetchInterval = 12
         #endif
         
         remoteConfig.configSettings = settings
@@ -42,16 +42,17 @@ final class FirebaseRCService {
     private func setupValues() {
         self.spaceBaseUrl = self.remoteConfig.configValue(forKey: Constants.kRemoteSpaceBaseUrl).stringValue!
         self.spaceResultLimit = self.remoteConfig.configValue(forKey: Constants.kRemoteSpaceResultLimit).stringValue!
-        self.spaceAdsLimit = self.remoteConfig.configValue(forKey: Constants.kRemoteSpaceAdsLimit).stringValue!
+        self.googleAdBannerId = self.remoteConfig.configValue(forKey: Constants.kRemoteGoogleAdBannerId).stringValue!
     }
     
     // MARK: - Public methods
     
-    func fetch() {
+    func fetch(completion: @escaping () -> Void) {
         remoteConfig.fetchAndActivate() { status, error in
             if status != .error {
                 self.setupValues()
             }
+            completion()
         }
     }
 }
