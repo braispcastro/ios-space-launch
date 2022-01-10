@@ -50,7 +50,7 @@ class GoogleAdTableViewCell: UITableViewCell {
     // MARK: - Setup
     
     private func setupComponents() {
-        let adSize = GADAdSizeFromCGSize(CGSize(width: 320, height: 280))
+        let adSize = GADAdSizeFromCGSize(CGSize(width: 320, height: 266))
         googleAdView = GADBannerView(adSize: adSize)
         #if DEBUG
         googleAdView.adUnitID = Constants.kAdBannerTest
