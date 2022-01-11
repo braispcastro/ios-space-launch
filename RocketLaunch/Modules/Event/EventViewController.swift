@@ -8,6 +8,7 @@
 import UIKit
 import Lottie
 import GoogleMobileAds
+import AppTrackingTransparency
 
 final class EventViewController: BaseViewController {
 
@@ -131,7 +132,13 @@ final class EventViewController: BaseViewController {
         }
         
         cell.googleAdView.rootViewController = self
-        cell.googleAdView.load(GADRequest())
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                cell.googleAdView.load(GADRequest())
+            })
+        } else {
+            cell.googleAdView.load(GADRequest())
+        }
         
         return cell
     }

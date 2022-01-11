@@ -9,6 +9,7 @@ import UIKit
 import Kingfisher
 import Lottie
 import GoogleMobileAds
+import AppTrackingTransparency
 
 final class RocketLaunchViewController: BaseViewController {
 
@@ -136,7 +137,13 @@ final class RocketLaunchViewController: BaseViewController {
         }
         
         cell.googleAdView.rootViewController = self
-        cell.googleAdView.load(GADRequest())
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                cell.googleAdView.load(GADRequest())
+            })
+        } else {
+            cell.googleAdView.load(GADRequest())
+        }
         
         return cell
     }
