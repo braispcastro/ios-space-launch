@@ -139,7 +139,9 @@ final class RocketLaunchViewController: BaseViewController {
         cell.googleAdView.rootViewController = self
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                cell.googleAdView.load(GADRequest())
+                DispatchQueue.main.async {
+                    cell.googleAdView.load(GADRequest())
+                }
             })
         } else {
             cell.googleAdView.load(GADRequest())
