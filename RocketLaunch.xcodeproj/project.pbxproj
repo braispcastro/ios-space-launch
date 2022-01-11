@@ -7,16 +7,74 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CB40CD2624828C826FF65CD /* Pods_RocketLaunch_RocketLaunchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD74AC0DDFFA491A9404327 /* Pods_RocketLaunch_RocketLaunchUITests.framework */; };
 		8B1B93D427765F7E00398B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93D327765F7E00398B5C /* AppDelegate.swift */; };
-		8B1B93D627765F7E00398B5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93D527765F7E00398B5C /* SceneDelegate.swift */; };
-		8B1B93D827765F7E00398B5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93D727765F7E00398B5C /* ViewController.swift */; };
-		8B1B93DB27765F7E00398B5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1B93D927765F7E00398B5C /* Main.storyboard */; };
 		8B1B93DE27765F7E00398B5C /* RocketLaunch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93DC27765F7E00398B5C /* RocketLaunch.xcdatamodeld */; };
 		8B1B93E027765F8000398B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B1B93DF27765F8000398B5C /* Assets.xcassets */; };
 		8B1B93E327765F8000398B5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1B93E127765F8000398B5C /* LaunchScreen.storyboard */; };
 		8B1B93EE27765F8000398B5C /* RocketLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93ED27765F8000398B5C /* RocketLaunchTests.swift */; };
 		8B1B93F827765F8000398B5C /* RocketLaunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93F727765F8000398B5C /* RocketLaunchUITests.swift */; };
 		8B1B93FA27765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B93F927765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift */; };
+		8B217C742784D97600978CA9 /* LaunchPadLocatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C6F2784D97600978CA9 /* LaunchPadLocatorPresenter.swift */; };
+		8B217C752784D97600978CA9 /* LaunchPadLocatorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C702784D97600978CA9 /* LaunchPadLocatorRouter.swift */; };
+		8B217C762784D97600978CA9 /* LaunchPadLocatorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C712784D97600978CA9 /* LaunchPadLocatorModels.swift */; };
+		8B217C772784D97600978CA9 /* LaunchPadLocatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C722784D97600978CA9 /* LaunchPadLocatorViewController.swift */; };
+		8B217C782784D97600978CA9 /* LaunchPadLocatorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C732784D97600978CA9 /* LaunchPadLocatorBuilder.swift */; };
+		8B4E28DF27776D1E00B83DB8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */; };
+		8B5078EA27862C3D007E6C48 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5078E927862C3D007E6C48 /* NavigationController.swift */; };
+		8B57FB4E27873F4600AF4A95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B57FB4D27873F4600AF4A95 /* GoogleService-Info.plist */; };
+		8B57FB5727874B9700AF4A95 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8B57FB5627874B9700AF4A95 /* FirebaseAnalytics */; };
+		8B57FB5927874B9700AF4A95 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8B57FB5827874B9700AF4A95 /* FirebaseCrashlytics */; };
+		8B57FB5B27874B9700AF4A95 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 8B57FB5A27874B9700AF4A95 /* FirebaseRemoteConfig */; };
+		8B57FB5E27874CC400AF4A95 /* FirebaseRCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B57FB5D27874CC400AF4A95 /* FirebaseRCService.swift */; };
+		8B5ECA8F277E06A300BE1EA4 /* UIColor+LaunchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5ECA8E277E06A300BE1EA4 /* UIColor+LaunchStatus.swift */; };
+		8B72819E27766A97009050D9 /* RocketLaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819927766A97009050D9 /* RocketLaunchPresenter.swift */; };
+		8B72819F27766A97009050D9 /* RocketLaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819A27766A97009050D9 /* RocketLaunchRouter.swift */; };
+		8B7281A027766A97009050D9 /* RocketLaunchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819B27766A97009050D9 /* RocketLaunchModels.swift */; };
+		8B7281A127766A97009050D9 /* RocketLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819C27766A97009050D9 /* RocketLaunchViewController.swift */; };
+		8B7281A227766A97009050D9 /* RocketLaunchBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72819D27766A97009050D9 /* RocketLaunchBuilder.swift */; };
+		8B7281A527766B36009050D9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281A427766B36009050D9 /* BaseViewController.swift */; };
+		8B7281A727766BC8009050D9 /* BaseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281A627766BC8009050D9 /* BaseBuilder.swift */; };
+		8B7281A927766C41009050D9 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281A827766C41009050D9 /* BasePresenter.swift */; };
+		8B7281AB27766DAC009050D9 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281AA27766DAC009050D9 /* BaseRouter.swift */; };
+		8B7281AF277670D9009050D9 /* RocketLaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281AD277670D9009050D9 /* RocketLaunchInteractor.swift */; };
+		8B7281B12776711F009050D9 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B02776711F009050D9 /* BaseInteractor.swift */; };
+		8B7281BA2776755B009050D9 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B42776755A009050D9 /* EventViewController.swift */; };
+		8B7281BB2776755B009050D9 /* EventModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B52776755A009050D9 /* EventModels.swift */; };
+		8B7281BC2776755B009050D9 /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B62776755A009050D9 /* EventPresenter.swift */; };
+		8B7281BD2776755B009050D9 /* EventRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B72776755A009050D9 /* EventRouter.swift */; };
+		8B7281BE2776755B009050D9 /* EventBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B82776755A009050D9 /* EventBuilder.swift */; };
+		8B7281BF2776755B009050D9 /* EventInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281B92776755A009050D9 /* EventInteractor.swift */; };
+		8B7281C6277675DB009050D9 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C0277675DB009050D9 /* SettingsRouter.swift */; };
+		8B7281C7277675DB009050D9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C1277675DB009050D9 /* SettingsViewController.swift */; };
+		8B7281C8277675DB009050D9 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C2277675DB009050D9 /* SettingsPresenter.swift */; };
+		8B7281C9277675DB009050D9 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C3277675DB009050D9 /* SettingsModels.swift */; };
+		8B7281CA277675DB009050D9 /* SettingsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C4277675DB009050D9 /* SettingsBuilder.swift */; };
+		8B7281CB277675DB009050D9 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7281C5277675DB009050D9 /* SettingsInteractor.swift */; };
+		8B7281CD27767D72009050D9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8B7281CC27767D72009050D9 /* Settings.bundle */; };
+		8BA1050E27875A3600C30A45 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BA1050D27875A3600C30A45 /* RemoteConfigDefaults.plist */; };
+		8BAE06F7277CE11C00E1EF51 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8BAE06F6277CE11C00E1EF51 /* Lottie */; };
+		8BAE06FF277CF3D200E1EF51 /* rgb-rocket-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE06FD277CF3D200E1EF51 /* rgb-rocket-loading.json */; };
+		8BAE0700277CF3D200E1EF51 /* bw-rocket-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE06FE277CF3D200E1EF51 /* bw-rocket-loading.json */; };
+		8BB6B990278B6DB200E53EBB /* GoogleAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B98F278B6DB200E53EBB /* GoogleAdTableViewCell.swift */; };
+		8BBC1C592778B97A009F9DF5 /* InformationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C532778B97A009F9DF5 /* InformationRouter.swift */; };
+		8BBC1C5B2778B97A009F9DF5 /* InformationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C552778B97A009F9DF5 /* InformationModels.swift */; };
+		8BBC1C5C2778B97A009F9DF5 /* InformationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C562778B97A009F9DF5 /* InformationPresenter.swift */; };
+		8BBC1C5D2778B97A009F9DF5 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C572778B97A009F9DF5 /* InformationViewController.swift */; };
+		8BBC1C5E2778B97A009F9DF5 /* InformationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C582778B97A009F9DF5 /* InformationBuilder.swift */; };
+		8BBC1C6C27790447009F9DF5 /* ProviderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C6B27790447009F9DF5 /* ProviderTableViewCell.swift */; };
+		8BBC1C6E27790469009F9DF5 /* MissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C6D27790469009F9DF5 /* MissionTableViewCell.swift */; };
+		8BBC1C7027790489009F9DF5 /* PadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C6F27790489009F9DF5 /* PadTableViewCell.swift */; };
+		8BC3A6AC27777C1800F88D8D /* RocketLaunchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3A6AB27777C1800F88D8D /* RocketLaunchTableViewCell.swift */; };
+		8BD9F3B52776841E001312A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3B42776841E001312A9 /* Constants.swift */; };
+		8BD9F3B7277684BF001312A9 /* SpaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3B6277684BF001312A9 /* SpaceService.swift */; };
+		8BD9F3BB277685E4001312A9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8BD9F3BA277685E4001312A9 /* Alamofire */; };
+		8BD9F3BE277685FB001312A9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8BD9F3BD277685FB001312A9 /* Kingfisher */; };
+		8BD9F3C027768655001312A9 /* SpaceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3BF27768655001312A9 /* SpaceModels.swift */; };
+		8BD9F3C227768C4C001312A9 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3C127768C4C001312A9 /* UserDefaultsManager.swift */; };
+		8BE852C42777BD610007EA6F /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE852C32777BD610007EA6F /* EventTableViewCell.swift */; };
+		CD684E8F1E45B95121CC1813 /* Pods_RocketLaunchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC16D69A4CFD30D6F6A40A29 /* Pods_RocketLaunchTests.framework */; };
+		D136DC4DD2C1CBCE1F045525 /* Pods_RocketLaunch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59C4C152F12A3094D36DCF4 /* Pods_RocketLaunch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +95,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1EE897474FF94F3694C34447 /* Pods-RocketLaunchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketLaunchTests.debug.xcconfig"; path = "Target Support Files/Pods-RocketLaunchTests/Pods-RocketLaunchTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2244FA85EF535306B17584EF /* Pods-RocketLaunch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketLaunch.debug.xcconfig"; path = "Target Support Files/Pods-RocketLaunch/Pods-RocketLaunch.debug.xcconfig"; sourceTree = "<group>"; };
+		2FD74AC0DDFFA491A9404327 /* Pods_RocketLaunch_RocketLaunchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RocketLaunch_RocketLaunchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43B7903872D2F3E5F0E72EE2 /* Pods-RocketLaunch-RocketLaunchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketLaunch-RocketLaunchUITests.release.xcconfig"; path = "Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6E43ABE14987ADFB79A54BFF /* Pods-RocketLaunch-RocketLaunchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketLaunch-RocketLaunchUITests.debug.xcconfig"; path = "Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B1B93D027765F7E00398B5C /* RocketLaunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketLaunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1B93D327765F7E00398B5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B1B93D527765F7E00398B5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8B1B93D727765F7E00398B5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8B1B93DA27765F7E00398B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B1B93DD27765F7E00398B5C /* RocketLaunch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RocketLaunch.xcdatamodel; sourceTree = "<group>"; };
 		8B1B93DF27765F8000398B5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B1B93E227765F8000398B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +111,62 @@
 		8B1B93F327765F8000398B5C /* RocketLaunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketLaunchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1B93F727765F8000398B5C /* RocketLaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchUITests.swift; sourceTree = "<group>"; };
 		8B1B93F927765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8B217C6F2784D97600978CA9 /* LaunchPadLocatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorPresenter.swift; sourceTree = "<group>"; };
+		8B217C702784D97600978CA9 /* LaunchPadLocatorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorRouter.swift; sourceTree = "<group>"; };
+		8B217C712784D97600978CA9 /* LaunchPadLocatorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorModels.swift; sourceTree = "<group>"; };
+		8B217C722784D97600978CA9 /* LaunchPadLocatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorViewController.swift; sourceTree = "<group>"; };
+		8B217C732784D97600978CA9 /* LaunchPadLocatorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorBuilder.swift; sourceTree = "<group>"; };
+		8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		8B5078E927862C3D007E6C48 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		8B57FB4D27873F4600AF4A95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8B57FB5D27874CC400AF4A95 /* FirebaseRCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRCService.swift; sourceTree = "<group>"; };
+		8B5ECA8E277E06A300BE1EA4 /* UIColor+LaunchStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+LaunchStatus.swift"; sourceTree = "<group>"; };
+		8B72819927766A97009050D9 /* RocketLaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchPresenter.swift; sourceTree = "<group>"; };
+		8B72819A27766A97009050D9 /* RocketLaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchRouter.swift; sourceTree = "<group>"; };
+		8B72819B27766A97009050D9 /* RocketLaunchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchModels.swift; sourceTree = "<group>"; };
+		8B72819C27766A97009050D9 /* RocketLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchViewController.swift; sourceTree = "<group>"; };
+		8B72819D27766A97009050D9 /* RocketLaunchBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchBuilder.swift; sourceTree = "<group>"; };
+		8B7281A427766B36009050D9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		8B7281A627766BC8009050D9 /* BaseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBuilder.swift; sourceTree = "<group>"; };
+		8B7281A827766C41009050D9 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		8B7281AA27766DAC009050D9 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		8B7281AD277670D9009050D9 /* RocketLaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchInteractor.swift; sourceTree = "<group>"; };
+		8B7281B02776711F009050D9 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
+		8B7281B42776755A009050D9 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		8B7281B52776755A009050D9 /* EventModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModels.swift; sourceTree = "<group>"; };
+		8B7281B62776755A009050D9 /* EventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
+		8B7281B72776755A009050D9 /* EventRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRouter.swift; sourceTree = "<group>"; };
+		8B7281B82776755A009050D9 /* EventBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBuilder.swift; sourceTree = "<group>"; };
+		8B7281B92776755A009050D9 /* EventInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInteractor.swift; sourceTree = "<group>"; };
+		8B7281C0277675DB009050D9 /* SettingsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		8B7281C1277675DB009050D9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8B7281C2277675DB009050D9 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		8B7281C3277675DB009050D9 /* SettingsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
+		8B7281C4277675DB009050D9 /* SettingsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsBuilder.swift; sourceTree = "<group>"; };
+		8B7281C5277675DB009050D9 /* SettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		8B7281CC27767D72009050D9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		8BA1050D27875A3600C30A45 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
+		8BAE06FD277CF3D200E1EF51 /* rgb-rocket-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "rgb-rocket-loading.json"; sourceTree = "<group>"; };
+		8BAE06FE277CF3D200E1EF51 /* bw-rocket-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "bw-rocket-loading.json"; sourceTree = "<group>"; };
+		8BB6B98F278B6DB200E53EBB /* GoogleAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdTableViewCell.swift; sourceTree = "<group>"; };
+		8BBC1C532778B97A009F9DF5 /* InformationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationRouter.swift; sourceTree = "<group>"; };
+		8BBC1C552778B97A009F9DF5 /* InformationModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationModels.swift; sourceTree = "<group>"; };
+		8BBC1C562778B97A009F9DF5 /* InformationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPresenter.swift; sourceTree = "<group>"; };
+		8BBC1C572778B97A009F9DF5 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		8BBC1C582778B97A009F9DF5 /* InformationBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationBuilder.swift; sourceTree = "<group>"; };
+		8BBC1C6B27790447009F9DF5 /* ProviderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderTableViewCell.swift; sourceTree = "<group>"; };
+		8BBC1C6D27790469009F9DF5 /* MissionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionTableViewCell.swift; sourceTree = "<group>"; };
+		8BBC1C6F27790489009F9DF5 /* PadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadTableViewCell.swift; sourceTree = "<group>"; };
+		8BC3A6AB27777C1800F88D8D /* RocketLaunchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchTableViewCell.swift; sourceTree = "<group>"; };
+		8BD9F3B42776841E001312A9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8BD9F3B6277684BF001312A9 /* SpaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceService.swift; sourceTree = "<group>"; };
+		8BD9F3BF27768655001312A9 /* SpaceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceModels.swift; sourceTree = "<group>"; };
+		8BD9F3C127768C4C001312A9 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		8BE852C32777BD610007EA6F /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		A8F01796D482A48FA02A532A /* Pods-RocketLaunchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketLaunchTests.release.xcconfig"; path = "Target Support Files/Pods-RocketLaunchTests/Pods-RocketLaunchTests.release.xcconfig"; sourceTree = "<group>"; };
+		B59C4C152F12A3094D36DCF4 /* Pods_RocketLaunch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RocketLaunch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC16D69A4CFD30D6F6A40A29 /* Pods_RocketLaunchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RocketLaunchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C224C68A750844BFDCC8C868 /* Pods-RocketLaunch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketLaunch.release.xcconfig"; path = "Target Support Files/Pods-RocketLaunch/Pods-RocketLaunch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +174,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BD9F3BE277685FB001312A9 /* Kingfisher in Frameworks */,
+				8BD9F3BB277685E4001312A9 /* Alamofire in Frameworks */,
+				8B57FB5927874B9700AF4A95 /* FirebaseCrashlytics in Frameworks */,
+				8B57FB5B27874B9700AF4A95 /* FirebaseRemoteConfig in Frameworks */,
+				8B57FB5727874B9700AF4A95 /* FirebaseAnalytics in Frameworks */,
+				8BAE06F7277CE11C00E1EF51 /* Lottie in Frameworks */,
+				D136DC4DD2C1CBCE1F045525 /* Pods_RocketLaunch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD684E8F1E45B95121CC1813 /* Pods_RocketLaunchTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +196,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CB40CD2624828C826FF65CD /* Pods_RocketLaunch_RocketLaunchUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44A6AE5911992E7D9CF5A0A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B59C4C152F12A3094D36DCF4 /* Pods_RocketLaunch.framework */,
+				2FD74AC0DDFFA491A9404327 /* Pods_RocketLaunch_RocketLaunchUITests.framework */,
+				BC16D69A4CFD30D6F6A40A29 /* Pods_RocketLaunchTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8B1B93C727765F7E00398B5C = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +220,8 @@
 				8B1B93EC27765F8000398B5C /* RocketLaunchTests */,
 				8B1B93F627765F8000398B5C /* RocketLaunchUITests */,
 				8B1B93D127765F7E00398B5C /* Products */,
+				9AF1493AFA7D26529061780F /* Pods */,
+				44A6AE5911992E7D9CF5A0A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,14 +238,11 @@
 		8B1B93D227765F7E00398B5C /* RocketLaunch */ = {
 			isa = PBXGroup;
 			children = (
-				8B1B93D327765F7E00398B5C /* AppDelegate.swift */,
-				8B1B93D527765F7E00398B5C /* SceneDelegate.swift */,
-				8B1B93D727765F7E00398B5C /* ViewController.swift */,
-				8B1B93D927765F7E00398B5C /* Main.storyboard */,
-				8B1B93DF27765F8000398B5C /* Assets.xcassets */,
-				8B1B93E127765F8000398B5C /* LaunchScreen.storyboard */,
-				8B1B93E427765F8000398B5C /* Info.plist */,
-				8B1B93DC27765F7E00398B5C /* RocketLaunch.xcdatamodeld */,
+				8B57FB542787494F00AF4A95 /* App */,
+				8B7281B227767520009050D9 /* Core */,
+				8B728192277666D0009050D9 /* Modules */,
+				8B72819527766704009050D9 /* Resources */,
+				8B728193277666D7009050D9 /* SupportingFiles */,
 			);
 			path = RocketLaunch;
 			sourceTree = "<group>";
@@ -130,6 +264,239 @@
 			path = RocketLaunchUITests;
 			sourceTree = "<group>";
 		};
+		8B217C6E2784D8EB00978CA9 /* LaunchPadLocator */ = {
+			isa = PBXGroup;
+			children = (
+				8B217C732784D97600978CA9 /* LaunchPadLocatorBuilder.swift */,
+				8B217C722784D97600978CA9 /* LaunchPadLocatorViewController.swift */,
+				8B217C6F2784D97600978CA9 /* LaunchPadLocatorPresenter.swift */,
+				8B217C702784D97600978CA9 /* LaunchPadLocatorRouter.swift */,
+				8B217C712784D97600978CA9 /* LaunchPadLocatorModels.swift */,
+			);
+			path = LaunchPadLocator;
+			sourceTree = "<group>";
+		};
+		8B4E28DC27776CEA00B83DB8 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				8B4E28DD27776CF200B83DB8 /* Header */,
+				8BC3A6AA27777BF100F88D8D /* Cell */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		8B4E28DD27776CF200B83DB8 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		8B57FB542787494F00AF4A95 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8B1B93D327765F7E00398B5C /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8B57FB5C27874CA600AF4A95 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				8B57FB5D27874CC400AF4A95 /* FirebaseRCService.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		8B5ECA8D277E066900BE1EA4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8B5ECA8E277E06A300BE1EA4 /* UIColor+LaunchStatus.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8B728192277666D0009050D9 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8B7281A327766B13009050D9 /* Common */,
+				8BD9F3C327769D24001312A9 /* Components */,
+				8B728194277666F3009050D9 /* LaunchScreen */,
+				8B72819627766829009050D9 /* RocketLaunch */,
+				8BE852C52777D1120007EA6F /* Information */,
+				8B217C6E2784D8EB00978CA9 /* LaunchPadLocator */,
+				8B7281972776698C009050D9 /* Event */,
+				8B7281982776699E009050D9 /* Settings */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8B728193277666D7009050D9 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8B1B93E427765F8000398B5C /* Info.plist */,
+				8B57FB4D27873F4600AF4A95 /* GoogleService-Info.plist */,
+				8BA1050D27875A3600C30A45 /* RemoteConfigDefaults.plist */,
+				8B7281CC27767D72009050D9 /* Settings.bundle */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		8B728194277666F3009050D9 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8B1B93E127765F8000398B5C /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		8B72819527766704009050D9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B1B93DF27765F8000398B5C /* Assets.xcassets */,
+				8BAE06F8277CE1AA00E1EF51 /* Animations */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8B72819627766829009050D9 /* RocketLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				8B72819D27766A97009050D9 /* RocketLaunchBuilder.swift */,
+				8B72819C27766A97009050D9 /* RocketLaunchViewController.swift */,
+				8B72819927766A97009050D9 /* RocketLaunchPresenter.swift */,
+				8B7281AD277670D9009050D9 /* RocketLaunchInteractor.swift */,
+				8B72819A27766A97009050D9 /* RocketLaunchRouter.swift */,
+				8B72819B27766A97009050D9 /* RocketLaunchModels.swift */,
+			);
+			path = RocketLaunch;
+			sourceTree = "<group>";
+		};
+		8B7281972776698C009050D9 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				8B7281B82776755A009050D9 /* EventBuilder.swift */,
+				8B7281B42776755A009050D9 /* EventViewController.swift */,
+				8B7281B62776755A009050D9 /* EventPresenter.swift */,
+				8B7281B92776755A009050D9 /* EventInteractor.swift */,
+				8B7281B72776755A009050D9 /* EventRouter.swift */,
+				8B7281B52776755A009050D9 /* EventModels.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		8B7281982776699E009050D9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8B7281C4277675DB009050D9 /* SettingsBuilder.swift */,
+				8B7281C1277675DB009050D9 /* SettingsViewController.swift */,
+				8B7281C2277675DB009050D9 /* SettingsPresenter.swift */,
+				8B7281C5277675DB009050D9 /* SettingsInteractor.swift */,
+				8B7281C0277675DB009050D9 /* SettingsRouter.swift */,
+				8B7281C3277675DB009050D9 /* SettingsModels.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		8B7281A327766B13009050D9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8B7281A627766BC8009050D9 /* BaseBuilder.swift */,
+				8B7281A427766B36009050D9 /* BaseViewController.swift */,
+				8B7281A827766C41009050D9 /* BasePresenter.swift */,
+				8B7281AA27766DAC009050D9 /* BaseRouter.swift */,
+				8B7281B02776711F009050D9 /* BaseInteractor.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8B7281B227767520009050D9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8B5ECA8D277E066900BE1EA4 /* Extensions */,
+				8B7281B32776752E009050D9 /* Services */,
+				8BD9F3B42776841E001312A9 /* Constants.swift */,
+				8BD9F3C127768C4C001312A9 /* UserDefaultsManager.swift */,
+				8B1B93DC27765F7E00398B5C /* RocketLaunch.xcdatamodeld */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8B7281B32776752E009050D9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8B57FB5C27874CA600AF4A95 /* Firebase */,
+				8BD9F3B8277684E0001312A9 /* TheSpaceDevs */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8BAE06F8277CE1AA00E1EF51 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				8BAE06FE277CF3D200E1EF51 /* bw-rocket-loading.json */,
+				8BAE06FD277CF3D200E1EF51 /* rgb-rocket-loading.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		8BC3A6AA27777BF100F88D8D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8BE852C32777BD610007EA6F /* EventTableViewCell.swift */,
+				8BC3A6AB27777C1800F88D8D /* RocketLaunchTableViewCell.swift */,
+				8BBC1C6B27790447009F9DF5 /* ProviderTableViewCell.swift */,
+				8BBC1C6D27790469009F9DF5 /* MissionTableViewCell.swift */,
+				8BBC1C6F27790489009F9DF5 /* PadTableViewCell.swift */,
+				8BB6B98F278B6DB200E53EBB /* GoogleAdTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8BD9F3B8277684E0001312A9 /* TheSpaceDevs */ = {
+			isa = PBXGroup;
+			children = (
+				8BD9F3B6277684BF001312A9 /* SpaceService.swift */,
+				8BD9F3BF27768655001312A9 /* SpaceModels.swift */,
+			);
+			path = TheSpaceDevs;
+			sourceTree = "<group>";
+		};
+		8BD9F3C327769D24001312A9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8B4E28DC27776CEA00B83DB8 /* Table */,
+				8B5078E927862C3D007E6C48 /* NavigationController.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8BE852C52777D1120007EA6F /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				8BBC1C582778B97A009F9DF5 /* InformationBuilder.swift */,
+				8BBC1C572778B97A009F9DF5 /* InformationViewController.swift */,
+				8BBC1C562778B97A009F9DF5 /* InformationPresenter.swift */,
+				8BBC1C532778B97A009F9DF5 /* InformationRouter.swift */,
+				8BBC1C552778B97A009F9DF5 /* InformationModels.swift */,
+			);
+			path = Information;
+			sourceTree = "<group>";
+		};
+		9AF1493AFA7D26529061780F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2244FA85EF535306B17584EF /* Pods-RocketLaunch.debug.xcconfig */,
+				C224C68A750844BFDCC8C868 /* Pods-RocketLaunch.release.xcconfig */,
+				6E43ABE14987ADFB79A54BFF /* Pods-RocketLaunch-RocketLaunchUITests.debug.xcconfig */,
+				43B7903872D2F3E5F0E72EE2 /* Pods-RocketLaunch-RocketLaunchUITests.release.xcconfig */,
+				1EE897474FF94F3694C34447 /* Pods-RocketLaunchTests.debug.xcconfig */,
+				A8F01796D482A48FA02A532A /* Pods-RocketLaunchTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,15 +504,25 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B1B93FD27765F8000398B5C /* Build configuration list for PBXNativeTarget "RocketLaunch" */;
 			buildPhases = (
+				5B38F74F00D835C0B556C457 /* [CP] Check Pods Manifest.lock */,
 				8B1B93CC27765F7E00398B5C /* Sources */,
 				8B1B93CD27765F7E00398B5C /* Frameworks */,
 				8B1B93CE27765F7E00398B5C /* Resources */,
+				0DB5C34A982B464954089F5F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = RocketLaunch;
+			packageProductDependencies = (
+				8BD9F3BA277685E4001312A9 /* Alamofire */,
+				8BD9F3BD277685FB001312A9 /* Kingfisher */,
+				8BAE06F6277CE11C00E1EF51 /* Lottie */,
+				8B57FB5627874B9700AF4A95 /* FirebaseAnalytics */,
+				8B57FB5827874B9700AF4A95 /* FirebaseCrashlytics */,
+				8B57FB5A27874B9700AF4A95 /* FirebaseRemoteConfig */,
+			);
 			productName = RocketLaunch;
 			productReference = 8B1B93D027765F7E00398B5C /* RocketLaunch.app */;
 			productType = "com.apple.product-type.application";
@@ -154,6 +531,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B1B940027765F8000398B5C /* Build configuration list for PBXNativeTarget "RocketLaunchTests" */;
 			buildPhases = (
+				37A0624F879AE229FD2B08EF /* [CP] Check Pods Manifest.lock */,
 				8B1B93E527765F8000398B5C /* Sources */,
 				8B1B93E627765F8000398B5C /* Frameworks */,
 				8B1B93E727765F8000398B5C /* Resources */,
@@ -172,9 +550,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B1B940327765F8000398B5C /* Build configuration list for PBXNativeTarget "RocketLaunchUITests" */;
 			buildPhases = (
+				3FCA8C841F6C5C8D21AA22FB /* [CP] Check Pods Manifest.lock */,
 				8B1B93EF27765F8000398B5C /* Sources */,
 				8B1B93F027765F8000398B5C /* Frameworks */,
 				8B1B93F127765F8000398B5C /* Resources */,
+				C0F15347E321BCACB3E0FC4A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -218,6 +598,12 @@
 				Base,
 			);
 			mainGroup = 8B1B93C727765F7E00398B5C;
+			packageReferences = (
+				8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				8B57FB5527874B9700AF4A95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8B1B93D127765F7E00398B5C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,9 +620,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BAE06FF277CF3D200E1EF51 /* rgb-rocket-loading.json in Resources */,
+				8BA1050E27875A3600C30A45 /* RemoteConfigDefaults.plist in Resources */,
 				8B1B93E327765F8000398B5C /* LaunchScreen.storyboard in Resources */,
+				8BAE0700277CF3D200E1EF51 /* bw-rocket-loading.json in Resources */,
+				8B7281CD27767D72009050D9 /* Settings.bundle in Resources */,
 				8B1B93E027765F8000398B5C /* Assets.xcassets in Resources */,
-				8B1B93DB27765F7E00398B5C /* Main.storyboard in Resources */,
+				8B57FB4E27873F4600AF4A95 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,15 +646,163 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0DB5C34A982B464954089F5F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch/Pods-RocketLaunch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch/Pods-RocketLaunch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch/Pods-RocketLaunch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37A0624F879AE229FD2B08EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RocketLaunchTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FCA8C841F6C5C8D21AA22FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RocketLaunch-RocketLaunchUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B38F74F00D835C0B556C457 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RocketLaunch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0F15347E321BCACB3E0FC4A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8B1B93CC27765F7E00398B5C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BD9F3C027768655001312A9 /* SpaceModels.swift in Sources */,
+				8B72819E27766A97009050D9 /* RocketLaunchPresenter.swift in Sources */,
+				8B7281BC2776755B009050D9 /* EventPresenter.swift in Sources */,
+				8B7281A927766C41009050D9 /* BasePresenter.swift in Sources */,
+				8B7281BA2776755B009050D9 /* EventViewController.swift in Sources */,
+				8B7281BB2776755B009050D9 /* EventModels.swift in Sources */,
 				8B1B93DE27765F7E00398B5C /* RocketLaunch.xcdatamodeld in Sources */,
-				8B1B93D827765F7E00398B5C /* ViewController.swift in Sources */,
+				8BBC1C6E27790469009F9DF5 /* MissionTableViewCell.swift in Sources */,
 				8B1B93D427765F7E00398B5C /* AppDelegate.swift in Sources */,
-				8B1B93D627765F7E00398B5C /* SceneDelegate.swift in Sources */,
+				8BD9F3B52776841E001312A9 /* Constants.swift in Sources */,
+				8B5078EA27862C3D007E6C48 /* NavigationController.swift in Sources */,
+				8B217C762784D97600978CA9 /* LaunchPadLocatorModels.swift in Sources */,
+				8B7281A027766A97009050D9 /* RocketLaunchModels.swift in Sources */,
+				8B7281BF2776755B009050D9 /* EventInteractor.swift in Sources */,
+				8B217C742784D97600978CA9 /* LaunchPadLocatorPresenter.swift in Sources */,
+				8BBC1C7027790489009F9DF5 /* PadTableViewCell.swift in Sources */,
+				8B7281BD2776755B009050D9 /* EventRouter.swift in Sources */,
+				8BE852C42777BD610007EA6F /* EventTableViewCell.swift in Sources */,
+				8B7281A227766A97009050D9 /* RocketLaunchBuilder.swift in Sources */,
+				8B7281AF277670D9009050D9 /* RocketLaunchInteractor.swift in Sources */,
+				8BBC1C592778B97A009F9DF5 /* InformationRouter.swift in Sources */,
+				8BB6B990278B6DB200E53EBB /* GoogleAdTableViewCell.swift in Sources */,
+				8B7281A527766B36009050D9 /* BaseViewController.swift in Sources */,
+				8B7281AB27766DAC009050D9 /* BaseRouter.swift in Sources */,
+				8B7281A127766A97009050D9 /* RocketLaunchViewController.swift in Sources */,
+				8B57FB5E27874CC400AF4A95 /* FirebaseRCService.swift in Sources */,
+				8B217C782784D97600978CA9 /* LaunchPadLocatorBuilder.swift in Sources */,
+				8BD9F3B7277684BF001312A9 /* SpaceService.swift in Sources */,
+				8B7281C8277675DB009050D9 /* SettingsPresenter.swift in Sources */,
+				8B7281C9277675DB009050D9 /* SettingsModels.swift in Sources */,
+				8BBC1C5C2778B97A009F9DF5 /* InformationPresenter.swift in Sources */,
+				8BC3A6AC27777C1800F88D8D /* RocketLaunchTableViewCell.swift in Sources */,
+				8BBC1C5D2778B97A009F9DF5 /* InformationViewController.swift in Sources */,
+				8B217C772784D97600978CA9 /* LaunchPadLocatorViewController.swift in Sources */,
+				8B7281CB277675DB009050D9 /* SettingsInteractor.swift in Sources */,
+				8B7281C6277675DB009050D9 /* SettingsRouter.swift in Sources */,
+				8B7281C7277675DB009050D9 /* SettingsViewController.swift in Sources */,
+				8BD9F3C227768C4C001312A9 /* UserDefaultsManager.swift in Sources */,
+				8BBC1C5E2778B97A009F9DF5 /* InformationBuilder.swift in Sources */,
+				8B72819F27766A97009050D9 /* RocketLaunchRouter.swift in Sources */,
+				8BBC1C5B2778B97A009F9DF5 /* InformationModels.swift in Sources */,
+				8B4E28DF27776D1E00B83DB8 /* HeaderView.swift in Sources */,
+				8BBC1C6C27790447009F9DF5 /* ProviderTableViewCell.swift in Sources */,
+				8B7281A727766BC8009050D9 /* BaseBuilder.swift in Sources */,
+				8B7281BE2776755B009050D9 /* EventBuilder.swift in Sources */,
+				8B217C752784D97600978CA9 /* LaunchPadLocatorRouter.swift in Sources */,
+				8B5ECA8F277E06A300BE1EA4 /* UIColor+LaunchStatus.swift in Sources */,
+				8B7281CA277675DB009050D9 /* SettingsBuilder.swift in Sources */,
+				8B7281B12776711F009050D9 /* BaseInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +839,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8B1B93D927765F7E00398B5C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8B1B93DA27765F7E00398B5C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8B1B93E127765F8000398B5C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -375,6 +905,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -429,6 +960,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -438,25 +970,34 @@
 		};
 		8B1B93FE27765F8000398B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2244FA85EF535306B17584EF /* Pods-RocketLaunch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 20220112;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RocketLaunch/Info.plist;
+				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RocketLaunch;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braispcastro.rocket-launch";
+				MARKETING_VERSION = 1.0.1;
+				OTHER_LDFLAGS = (
+					"$(inherited),",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.rocketlaunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -466,25 +1007,34 @@
 		};
 		8B1B93FF27765F8000398B5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C224C68A750844BFDCC8C868 /* Pods-RocketLaunch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 20220112;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RocketLaunch/Info.plist;
+				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RocketLaunch;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braispcastro.rocket-launch";
+				MARKETING_VERSION = 1.0.1;
+				OTHER_LDFLAGS = (
+					"$(inherited),",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.rocketlaunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -494,6 +1044,7 @@
 		};
 		8B1B940127765F8000398B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EE897474FF94F3694C34447 /* Pods-RocketLaunchTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -514,6 +1065,7 @@
 		};
 		8B1B940227765F8000398B5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8F01796D482A48FA02A532A /* Pods-RocketLaunchTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -534,6 +1086,7 @@
 		};
 		8B1B940427765F8000398B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E43ABE14987ADFB79A54BFF /* Pods-RocketLaunch-RocketLaunchUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -552,6 +1105,7 @@
 		};
 		8B1B940527765F8000398B5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43B7903872D2F3E5F0E72EE2 /* Pods-RocketLaunch-RocketLaunchUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -608,6 +1162,74 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B57FB5527874B9700AF4A95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 8.9.1;
+			};
+		};
+		8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.3.0;
+			};
+		};
+		8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.5.0;
+			};
+		};
+		8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = exactVersion;
+				version = 7.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B57FB5627874B9700AF4A95 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B57FB5527874B9700AF4A95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		8B57FB5827874B9700AF4A95 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B57FB5527874B9700AF4A95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		8B57FB5A27874B9700AF4A95 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B57FB5527874B9700AF4A95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		8BAE06F6277CE11C00E1EF51 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		8BD9F3BA277685E4001312A9 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		8BD9F3BD277685FB001312A9 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8B1B93DC27765F7E00398B5C /* RocketLaunch.xcdatamodeld */ = {
