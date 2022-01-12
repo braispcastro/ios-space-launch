@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>Rocket&#x2007;Launch</string>
+	<string>Rocket Launch</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-7337873881009900~3921251952</string>
 	<key>SKAdNetworkItems</key>
