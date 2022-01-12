@@ -14,8 +14,7 @@ enum Event {
         let title: String
     }
     
-    struct EventViewModel: Equatable, EventListProtocol {
-        var isAd = false
+    struct EventViewModel: Equatable {
         let imageUrl: String?
         let name: String
         let location: String
@@ -24,13 +23,5 @@ enum Event {
         let date: String
         let rawData: Space.Event.Result
     }
-    
-    struct GoogleNativeAd: Equatable, EventListProtocol {
-        var isAd = true
-    }
 
-}
-
-protocol EventListProtocol {
-    var isAd: Bool { get set }
 }

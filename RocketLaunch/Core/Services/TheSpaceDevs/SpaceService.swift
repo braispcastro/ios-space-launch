@@ -21,7 +21,12 @@ class SpaceService {
         
         func url() -> URL? {
             
+            #if DEBUG
+            let baseUrl = Constants.kLaunchBaseUrlDev
+            #else
             let baseUrl = FirebaseRCService.shared.spaceBaseUrl!
+            #endif
+            
             let limit = FirebaseRCService.shared.spaceResultLimit!
             
             switch self {

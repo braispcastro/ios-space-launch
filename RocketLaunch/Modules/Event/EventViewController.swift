@@ -14,17 +14,19 @@ final class EventViewController: BaseViewController {
 
     var presenter: EventPresenterProtocol!
     private var viewModel: Event.ViewModel!
-    private var eventList: [EventListProtocol] = []
+    private var eventList: [Event.EventViewModel] = []
 
     // MARK: - Component Declaration
     
     private var rocketAnimationView: AnimationView!
     private var tableView: UITableView!
     private var refreshControl: UIRefreshControl!
+    private var adBannerView: GADBannerView!
 
     private enum ViewTraits {
         static let margins = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: -15)
         static let lottieMargins = UIEdgeInsets(top: 96, left: 96, bottom: -96, right: -96)
+        static let adBannerHeight = CGFloat(50)
     }
     
     public enum AccessibilityIds {
@@ -80,6 +82,17 @@ final class EventViewController: BaseViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        adBannerView = GADBannerView(adSize: GADAdSizeFullWidthPortraitWithHeight(ViewTraits.adBannerHeight))
+        adBannerView.translatesAutoresizingMaskIntoConstraints = false
+        #if DEBUG
+        adBannerView.adUnitID = Constants.kAdBannerTest
+        #else
+        adBannerView.adUnitID = FirebaseRCService.shared.googleAdBannerId!
+        #endif
+        adBannerView.rootViewController = self
+        adBannerView.delegate = self
+        view.addSubview(adBannerView)
     }
 
     override func setupConstraints() {
@@ -90,9 +103,14 @@ final class EventViewController: BaseViewController {
             rocketAnimationView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ViewTraits.lottieMargins.right),
             
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            adBannerView.heightAnchor.constraint(equalToConstant: ViewTraits.adBannerHeight),
+            adBannerView.topAnchor.constraint(equalTo: tableView.bottomAnchor),
+            adBannerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
+            adBannerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            adBannerView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
@@ -110,41 +128,17 @@ final class EventViewController: BaseViewController {
 
     // MARK: Private Methods
     
-    private func getEventCell(_ event: Event.EventViewModel) -> EventTableViewCell {
-        guard let cell: EventTableViewCell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.kReuseIdentifier) as? EventTableViewCell else {
-            fatalError("Not registered for tableView")
-        }
-        
-        cell.mainImageView.kf.setImage(with: URL(string: event.imageUrl ?? ""), placeholder: UIImage(named: "Rocket"))
-        cell.nameLabel.text = event.name
-        cell.locationLabel.text = event.location
-        cell.typeLabel.text = event.type
-        cell.descriptionLabel.text = event.description
-        cell.dateLabel.text = event.date
-        cell.isUserInteractionEnabled = false
-        
-        return cell
-    }
-    
-    private func getAdCell(_ ad: Event.GoogleNativeAd) -> GoogleAdTableViewCell {
-        guard let cell: GoogleAdTableViewCell = tableView.dequeueReusableCell(withIdentifier: GoogleAdTableViewCell.kReuseIdentifier) as? GoogleAdTableViewCell else {
-            fatalError("Not registered for tableView")
-        }
-        
-        cell.googleAdView.rootViewController = self
+    private func requestPermissionForAds() {
         if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+            ATTrackingManager.requestTrackingAuthorization() { status in
                 DispatchQueue.main.async {
-                    cell.googleAdView.load(GADRequest())
+                    self.adBannerView.load(GADRequest())
                 }
-            })
+            }
         } else {
-            cell.googleAdView.load(GADRequest())
+            self.adBannerView.load(GADRequest())
         }
-        
-        return cell
     }
-
 }
 
 // MARK: - EventsViewControllerProtocol
@@ -156,8 +150,9 @@ extension EventViewController: EventViewControllerProtocol {
         self.title = viewModel.title
     }
     
-    func showEvents(eventList: [EventListProtocol]) {
+    func showEvents(eventList: [Event.EventViewModel]) {
         self.eventList = eventList
+        requestPermissionForAds()
         rocketAnimationView.stop()
         rocketAnimationView.isHidden = true
         tableView.isHidden = false
@@ -194,18 +189,52 @@ extension EventViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = eventList[indexPath.section]
-        if let launch = item as? Event.EventViewModel {
-            return getEventCell(launch)
-        } else if let ad = item as? Event.GoogleNativeAd {
-            return getAdCell(ad)
-        } else {
-            fatalError("Only two types allowed")
+        guard let cell: EventTableViewCell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.kReuseIdentifier) as? EventTableViewCell else {
+            fatalError("Not registered for tableView")
         }
+        
+        cell.mainImageView.kf.setImage(with: URL(string: eventList[indexPath.section].imageUrl ?? ""), placeholder: UIImage(named: "Rocket"))
+        cell.nameLabel.text = eventList[indexPath.section].name
+        cell.locationLabel.text = eventList[indexPath.section].location
+        cell.typeLabel.text = eventList[indexPath.section].type
+        cell.descriptionLabel.text = eventList[indexPath.section].description
+        cell.dateLabel.text = eventList[indexPath.section].date
+        cell.isUserInteractionEnabled = false
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
     
+}
+
+// MARK: - GADBannerViewDelegate
+
+extension EventViewController: GADBannerViewDelegate {
+    
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("bannerViewDidReceiveAd")
+    }
+
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+        print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+        print("bannerViewDidRecordImpression")
+    }
+
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+        print("bannerViewWillPresentScreen")
+    }
+
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+        print("bannerViewWillDIsmissScreen")
+    }
+
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+        print("bannerViewDidDismissScreen")
+    }
 }

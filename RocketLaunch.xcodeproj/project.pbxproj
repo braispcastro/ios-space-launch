@@ -975,11 +975,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20220112;
+				CURRENT_PROJECT_VERSION = 20220113;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RocketLaunch;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rocket Launch";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -992,7 +992,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited),",
 					"-ObjC",
@@ -1012,11 +1012,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20220112;
+				CURRENT_PROJECT_VERSION = 20220113;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RocketLaunch;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rocket Launch";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1029,13 +1029,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited),",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.rocketlaunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

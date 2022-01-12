@@ -29,7 +29,7 @@ final class SettingsPresenter<T: SettingsViewControllerProtocol, U: SettingsRout
         let appVersion: String = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let aboutSection = Settings.Section(title: "About", rows: [
             Settings.Row(title: "Application", subtitle: "Rocket Launch Calendar", enabled: false),
-            Settings.Row(title: "Developer", subtitle: "Brais Castro", enabled: false),
+            //Settings.Row(title: "Developer", subtitle: "Brais Castro", enabled: false),
             Settings.Row(title: "Version", subtitle: appVersion, enabled: false)
         ])
         

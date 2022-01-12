@@ -15,17 +15,19 @@ final class RocketLaunchViewController: BaseViewController {
 
     var presenter: RocketLaunchPresenterProtocol!    
     private var viewModel: RocketLaunch.ViewModel!
-    private var launchList: [LaunchListProtocol] = []
+    private var launchList: [RocketLaunch.LaunchViewModel] = []
 
     // MARK: - Component Declaration
     
     private var rocketAnimationView: AnimationView!
     private var tableView: UITableView!
     private var refreshControl: UIRefreshControl!
+    private var adBannerView: GADBannerView!
     
     private enum ViewTraits {
         static let margins = UIEdgeInsets(top: 15, left: 15, bottom: -15, right: -15)
         static let lottieMargins = UIEdgeInsets(top: 96, left: 96, bottom: -96, right: -96)
+        static let adBannerHeight = CGFloat(50)
     }
     
     public enum AccessibilityIds {
@@ -83,6 +85,17 @@ final class RocketLaunchViewController: BaseViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        adBannerView = GADBannerView(adSize: GADAdSizeFullWidthPortraitWithHeight(ViewTraits.adBannerHeight))
+        adBannerView.translatesAutoresizingMaskIntoConstraints = false
+        #if DEBUG
+        adBannerView.adUnitID = Constants.kAdBannerTest
+        #else
+        adBannerView.adUnitID = FirebaseRCService.shared.googleAdBannerId!
+        #endif
+        adBannerView.rootViewController = self
+        adBannerView.delegate = self
+        view.addSubview(adBannerView)
     }
 
     override func setupConstraints() {
@@ -93,9 +106,14 @@ final class RocketLaunchViewController: BaseViewController {
             rocketAnimationView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ViewTraits.lottieMargins.right),
             
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            adBannerView.heightAnchor.constraint(equalToConstant: ViewTraits.adBannerHeight),
+            adBannerView.topAnchor.constraint(equalTo: tableView.bottomAnchor),
+            adBannerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
+            adBannerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            adBannerView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
@@ -113,41 +131,16 @@ final class RocketLaunchViewController: BaseViewController {
 
     // MARK: Private Methods
     
-    private func getLaunchCell(_ launch: RocketLaunch.LaunchViewModel) -> RocketLaunchTableViewCell {
-        guard let cell: RocketLaunchTableViewCell = tableView.dequeueReusableCell(withIdentifier: RocketLaunchTableViewCell.kReuseIdentifier) as? RocketLaunchTableViewCell else {
-            fatalError("Not registered for tableView")
-        }
-        
-        cell.mainImageView.kf.setImage(with: URL(string: launch.imageUrl ?? ""), placeholder: UIImage(named: "Rocket"))
-        cell.rocketLabel.text = launch.rocket
-        cell.missionLabel.text = launch.mission
-        cell.providerLabel.text = launch.provider
-        cell.padLabel.text = launch.pad
-        cell.windowStartLabel.text = launch.windowStart
-        cell.statusLabel.text = launch.status
-        cell.statusLabel.textColor = UIColor.fromLaunchStatus(launchStatus: launch.statusType)
-        cell.setupTimer(stringDate: launch.windowStart)
-        
-        return cell
-    }
-    
-    private func getAdCell(_ ad: RocketLaunch.GoogleNativeAd) -> GoogleAdTableViewCell {
-        guard let cell: GoogleAdTableViewCell = tableView.dequeueReusableCell(withIdentifier: GoogleAdTableViewCell.kReuseIdentifier) as? GoogleAdTableViewCell else {
-            fatalError("Not registered for tableView")
-        }
-        
-        cell.googleAdView.rootViewController = self
+    private func requestPermissionForAds() {
         if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+            ATTrackingManager.requestTrackingAuthorization() { status in
                 DispatchQueue.main.async {
-                    cell.googleAdView.load(GADRequest())
+                    self.adBannerView.load(GADRequest())
                 }
-            })
+            }
         } else {
-            cell.googleAdView.load(GADRequest())
+            self.adBannerView.load(GADRequest())
         }
-        
-        return cell
     }
 }
 
@@ -160,8 +153,9 @@ extension RocketLaunchViewController: RocketLaunchViewControllerProtocol {
         self.title = viewModel.title
     }
     
-    func showLaunches(launchList: [LaunchListProtocol]) {
+    func showLaunches(launchList: [RocketLaunch.LaunchViewModel]) {
         self.launchList = launchList
+        requestPermissionForAds()
         rocketAnimationView.stop()
         rocketAnimationView.isHidden = true
         tableView.isHidden = false
@@ -198,32 +192,59 @@ extension RocketLaunchViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = launchList[indexPath.section]
-        if let launch = item as? RocketLaunch.LaunchViewModel {
-            return getLaunchCell(launch)
-        } else if let ad = item as? RocketLaunch.GoogleNativeAd {
-            return getAdCell(ad)
-        } else {
-            fatalError("Only two types allowed")
+        guard let cell: RocketLaunchTableViewCell = tableView.dequeueReusableCell(withIdentifier: RocketLaunchTableViewCell.kReuseIdentifier) as? RocketLaunchTableViewCell else {
+            fatalError("Not registered for tableView")
         }
+        
+        cell.mainImageView.kf.setImage(with: URL(string: launchList[indexPath.section].imageUrl ?? ""), placeholder: UIImage(named: "Rocket"))
+        cell.rocketLabel.text = launchList[indexPath.section].rocket
+        cell.missionLabel.text = launchList[indexPath.section].mission
+        cell.providerLabel.text = launchList[indexPath.section].provider
+        cell.padLabel.text = launchList[indexPath.section].pad
+        cell.windowStartLabel.text = launchList[indexPath.section].windowStart
+        cell.statusLabel.text = launchList[indexPath.section].status
+        cell.statusLabel.textColor = UIColor.fromLaunchStatus(launchStatus: launchList[indexPath.section].statusType)
+        cell.setupTimer(stringDate: launchList[indexPath.section].windowStart)
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let item = launchList[indexPath.section]
-        if item.isAd {
-            return UITableView.automaticDimension
-        } else {
-            return 180
-        }
+        return 180
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        let item = launchList[indexPath.section]
-        if let launch = item as? RocketLaunch.LaunchViewModel {
-            presenter.launchTapped(launch: launch.rawData)
-        }
+        presenter.launchTapped(launch: launchList[indexPath.section].rawData)
     }
     
+}
+
+// MARK: - GADBannerViewDelegate
+
+extension RocketLaunchViewController: GADBannerViewDelegate {
+    
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("bannerViewDidReceiveAd")
+    }
+
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+        print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+        print("bannerViewDidRecordImpression")
+    }
+
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+        print("bannerViewWillPresentScreen")
+    }
+
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+        print("bannerViewWillDIsmissScreen")
+    }
+
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+        print("bannerViewDidDismissScreen")
+    }
 }
