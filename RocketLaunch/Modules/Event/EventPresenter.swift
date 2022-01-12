@@ -9,7 +9,7 @@ import Foundation
 
 protocol EventViewControllerProtocol: BaseViewControllerProtocol {
     func show(viewModel: Event.ViewModel)
-    func showEvents(eventList: [EventListProtocol])
+    func showEvents(eventList: [Event.EventViewModel])
 }
 
 protocol EventPresenterProtocol: BasePresenterProtocol {
@@ -48,7 +48,7 @@ extension EventPresenter: EventPresenterProtocol {
 
 extension EventPresenter: EventInteractorCallbackProtocol {
     
-    func setEventList(eventList: [EventListProtocol]) {
+    func setEventList(eventList: [Event.EventViewModel]) {
         viewController.showEvents(eventList: eventList)
     }
     

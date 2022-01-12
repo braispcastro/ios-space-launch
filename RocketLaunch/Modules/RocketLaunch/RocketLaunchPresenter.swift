@@ -10,7 +10,7 @@ import GoogleMobileAds
 
 protocol RocketLaunchViewControllerProtocol: BaseViewControllerProtocol {
     func show(viewModel: RocketLaunch.ViewModel)
-    func showLaunches(launchList: [LaunchListProtocol])
+    func showLaunches(launchList: [RocketLaunch.LaunchViewModel])
 }
 
 protocol RocketLaunchPresenterProtocol: BasePresenterProtocol {
@@ -49,7 +49,7 @@ extension RocketLaunchPresenter: RocketLaunchPresenterProtocol {
 
 extension RocketLaunchPresenter: RocketLaunchInteractorCallbackProtocol {
     
-    func setLaunchList(launchList: [LaunchListProtocol]) {
+    func setLaunchList(launchList: [RocketLaunch.LaunchViewModel]) {
         viewController.showLaunches(launchList: launchList)
     }
     
