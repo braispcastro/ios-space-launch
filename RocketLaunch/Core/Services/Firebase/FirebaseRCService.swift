@@ -19,6 +19,9 @@ final class FirebaseRCService {
     private(set) var spaceBaseUrl: String!
     private(set) var spaceResultLimit: String!
     private(set) var googleAdBannerId: String!
+    private(set) var privacyPolicyURI: String!
+    private(set) var termsOfUseURI: String!
+    private(set) var supportFormURI: String!
     
     // MARK: - Initialization
     
@@ -43,6 +46,9 @@ final class FirebaseRCService {
         self.spaceBaseUrl = self.remoteConfig.configValue(forKey: Constants.kRemoteSpaceBaseUrl).stringValue!
         self.spaceResultLimit = self.remoteConfig.configValue(forKey: Constants.kRemoteSpaceResultLimit).stringValue!
         self.googleAdBannerId = self.remoteConfig.configValue(forKey: Constants.kRemoteGoogleAdBannerId).stringValue!
+        self.privacyPolicyURI = self.remoteConfig.configValue(forKey: Constants.kRemotePrivacyPolicyURI).stringValue!
+        self.termsOfUseURI = self.remoteConfig.configValue(forKey: Constants.kRemoteTermsOfUseURI).stringValue!
+        self.supportFormURI = self.remoteConfig.configValue(forKey: Constants.kRemoteSuportFormURI).stringValue!
     }
     
     // MARK: - Public methods

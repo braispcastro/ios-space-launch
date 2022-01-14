@@ -24,6 +24,12 @@ enum Settings {
         let title: String
         let subtitle: String
         let enabled: Bool
+        let uri: String?
+        let configType: ConfigType?
+    }
+    
+    enum ConfigType {
+        case appearance
     }
 
 }

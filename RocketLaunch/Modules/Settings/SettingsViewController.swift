@@ -51,7 +51,6 @@ final class SettingsViewController: BaseViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.setContentHuggingPriority(.defaultHigh, for: .vertical)
         tableView.separatorStyle = .singleLine
-        //tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.kReuseIdentifier)
         view.addSubview(tableView)
         
         tableView.dataSource = self
@@ -131,6 +130,14 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let item = viewModel.sections[indexPath.section].rows[indexPath.row]
+        
+        if let configType = item.configType {
+            self.presenter.configurationTapped(configType: configType)
+        } else if let uri = item.uri {
+            self.presenter.navigateToURI(uri: uri)
+        }
     }
     
 }
