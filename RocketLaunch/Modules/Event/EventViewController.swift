@@ -149,6 +149,10 @@ extension EventViewController: EventViewControllerProtocol {
         tableView.reloadData()
         refreshControl?.endRefreshing()
     }
+    
+    func listUpdateRejected() {
+        refreshControl?.endRefreshing()
+    }
  
 }
 

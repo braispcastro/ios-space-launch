@@ -171,6 +171,10 @@ extension RocketLaunchViewController: RocketLaunchViewControllerProtocol {
         tableView.reloadData()
         refreshControl?.endRefreshing()
     }
+    
+    func listUpdateRejected() {
+        refreshControl?.endRefreshing()
+    }
  
 }
 

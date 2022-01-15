@@ -22,6 +22,7 @@ final class FirebaseRCService {
     private(set) var privacyPolicyURI: String!
     private(set) var termsOfUseURI: String!
     private(set) var supportFormURI: String!
+    private(set) var spaceSyncDelay: Double!
     
     // MARK: - Initialization
     
@@ -49,6 +50,7 @@ final class FirebaseRCService {
         self.privacyPolicyURI = self.remoteConfig.configValue(forKey: Constants.kRemotePrivacyPolicyURI).stringValue!
         self.termsOfUseURI = self.remoteConfig.configValue(forKey: Constants.kRemoteTermsOfUseURI).stringValue!
         self.supportFormURI = self.remoteConfig.configValue(forKey: Constants.kRemoteSuportFormURI).stringValue!
+        self.spaceSyncDelay = Double(self.remoteConfig.configValue(forKey: Constants.kRemoteSpaceSyncDelay).stringValue!)!
     }
     
     // MARK: - Public methods
