@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         initializeLibraries()
+        configureVisualStyle()
         
         return true
     }
@@ -41,6 +42,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         bottomNavigator.setViewControllers([rocketLaunch, events, settings], animated: true)
         
         return bottomNavigator
+    }
+    
+    private func configureVisualStyle() {
+        guard let interfaceStyle = UserDefaultsManager.string(key: .interfaceStyle) else {
+            UserDefaultsManager.set(key: .interfaceStyle, value: "Default")
+            return
+        }
+        
+        switch interfaceStyle {
+        case "Light":
+            window?.overrideUserInterfaceStyle = .light
+            break
+        case "Dark":
+            window?.overrideUserInterfaceStyle = .dark
+            break
+        default:
+            window?.overrideUserInterfaceStyle = .unspecified
+            break
+        }
     }
     
     private func initializeLibraries() {

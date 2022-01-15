@@ -90,7 +90,7 @@ extension SettingsPresenter: SettingsPresenterProtocol {
     func configurationTapped(configType: Settings.ConfigType) {
         switch configType {
         case .appearance:
-            print("Appearance")
+            self.router.showSettingsDialog(title: "Appearance", configType: configType)
             break
         }
     }

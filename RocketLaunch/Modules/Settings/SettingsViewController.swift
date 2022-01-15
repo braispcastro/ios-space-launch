@@ -49,7 +49,6 @@ final class SettingsViewController: BaseViewController {
     override func setupComponents() {
         tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.setContentHuggingPriority(.defaultHigh, for: .vertical)
         tableView.separatorStyle = .singleLine
         view.addSubview(tableView)
         

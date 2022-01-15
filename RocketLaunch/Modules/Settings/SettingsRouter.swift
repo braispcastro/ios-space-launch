@@ -9,9 +9,14 @@
 import Foundation
 
 protocol SettingsRouterProtocol: BaseRouterProtocol {
-
+    func showSettingsDialog(title: String, configType: Settings.ConfigType)
 }
 
 class SettingsRouter: BaseRouter, SettingsRouterProtocol {
 
+    func showSettingsDialog(title: String, configType: Settings.ConfigType) {
+        let vc = SettingsDialogBuilder.build(title: title, configType: configType)
+        viewController.present(vc, animated: true)
+    }
+    
 }
