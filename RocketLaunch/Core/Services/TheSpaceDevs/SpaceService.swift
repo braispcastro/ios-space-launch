@@ -49,8 +49,8 @@ class SpaceService {
             
         AF.request(url).responseDecodable(of: Space.Launch.self) { response in
             if let current = response.value {
-                    success(current)
-                    return
+                success(current)
+                return
             }
             
             failure(response.error)
@@ -67,8 +67,8 @@ class SpaceService {
             
         AF.request(url).responseDecodable(of: Space.Event.self) { response in
             if let current = response.value {
-                    success(current)
-                    return
+                success(current)
+                return
             }
             
             failure(response.error)

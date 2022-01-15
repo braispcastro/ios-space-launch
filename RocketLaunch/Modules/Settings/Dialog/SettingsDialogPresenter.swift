@@ -31,11 +31,6 @@ final class SettingsDialogPresenter<T: SettingsDialogViewControllerProtocol, U: 
     private func buildDialogForAppearance() -> SettingsDialog.ViewModel {
         let interfaceStyle = UserDefaultsManager.string(key: .interfaceStyle)
         
-        let defaultStyle = SettingsDialog.Row(title: "Default", selected: interfaceStyle == "Default") {
-            UserDefaultsManager.set(key: .interfaceStyle, value: "Default")
-            self.viewController.changeInterfaceStyle(style: .unspecified)
-            self.prepareView()
-        }
         let lightStyle = SettingsDialog.Row(title: "Light", selected: interfaceStyle == "Light") {
             UserDefaultsManager.set(key: .interfaceStyle, value: "Light")
             self.viewController.changeInterfaceStyle(style: .light)
@@ -46,10 +41,15 @@ final class SettingsDialogPresenter<T: SettingsDialogViewControllerProtocol, U: 
             self.viewController.changeInterfaceStyle(style: .dark)
             self.prepareView()
         }
+        let defaultStyle = SettingsDialog.Row(title: "Default", selected: interfaceStyle == "Default") {
+            UserDefaultsManager.set(key: .interfaceStyle, value: "Default")
+            self.viewController.changeInterfaceStyle(style: .unspecified)
+            self.prepareView()
+        }
         
         return SettingsDialog.ViewModel(title: title,
                                         settingsType: configType,
-                                        rows: [defaultStyle, lightStyle, darkStyle])
+                                        rows: [lightStyle, darkStyle, defaultStyle])
     }
     
 }
