@@ -16,15 +16,19 @@ final class SettingsDialogViewController: BaseViewController {
     
     private var titleLabel: UILabel!
     private var tableView: UITableView!
+    private var dismissButton: UIButton!
 
     private enum ViewTraits {
-        static let margins = UIEdgeInsets(top: 30, left: 15, bottom: -15, right: -15)
+        static let margins = UIEdgeInsets(top: 30, left: 15, bottom: -30, right: -15)
+        static let buttonMargins = UIEdgeInsets(top: 30, left: 60, bottom: -30, right: -60)
+        static let buttonHeight = CGFloat(50)
     }
     
     public enum AccessibilityIds {
         static let view: String = "settings-dialog-view"
         static let titleLabel: String = "settings-dialog-title-label"
         static let tableView: String = "settings-dialog-table-view"
+        static let dismissButton: String = "settings-dialog-dismiss-button"
     }
 
     // MARK: - ViewLife Cycle
@@ -49,6 +53,14 @@ final class SettingsDialogViewController: BaseViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        dismissButton = UIButton()
+        dismissButton.translatesAutoresizingMaskIntoConstraints = false
+        dismissButton.backgroundColor = UIColor.init(named: "AccentColor")
+        dismissButton.titleLabel?.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
+        dismissButton.setTitle("OK", for: .normal)
+        dismissButton.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
+        view.addSubview(dismissButton)
     }
 
     override func setupConstraints() {
@@ -58,18 +70,30 @@ final class SettingsDialogViewController: BaseViewController {
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ViewTraits.margins.right),
             
             tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: ViewTraits.margins.top),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            dismissButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: ViewTraits.buttonMargins.top),
+            dismissButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: ViewTraits.buttonMargins.bottom),
+            dismissButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ViewTraits.buttonMargins.left),
+            dismissButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ViewTraits.buttonMargins.right),
+            
+            dismissButton.heightAnchor.constraint(equalToConstant: ViewTraits.buttonHeight)
         ])
     }
     
     override func setupAccessibilityIdentifiers() {
         view.accessibilityIdentifier = AccessibilityIds.view
+        titleLabel.accessibilityIdentifier = AccessibilityIds.titleLabel
         tableView.accessibilityIdentifier = AccessibilityIds.tableView
+        dismissButton.accessibilityIdentifier = AccessibilityIds.dismissButton
     }
 
     // MARK: - Actions
+    
+    @objc private func dismissButtonTapped() {
+        self.dismiss(animated: true)
+    }
 
     // MARK: Private Methods
 
