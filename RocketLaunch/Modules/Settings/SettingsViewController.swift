@@ -31,6 +31,7 @@ final class SettingsViewController: BaseViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.title = "Settings"
         self.tabBarItem.image = UIImage(systemName: "ellipsis")
+        self.tabBarItem.selectedImage = UIImage(systemName: "ellipsis")
     }
     
     required init?(coder: NSCoder) {

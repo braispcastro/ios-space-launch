@@ -41,6 +41,7 @@ final class EventViewController: BaseViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.title = "Events"
         self.tabBarItem.image = UIImage(systemName: "calendar")
+        self.tabBarItem.selectedImage = UIImage(systemName: "calendar")
     }
     
     required init?(coder: NSCoder) {

@@ -42,6 +42,7 @@ final class RocketLaunchViewController: BaseViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.title = "Launches"
         self.tabBarItem.image = UIImage(systemName: "paperplane")
+        self.tabBarItem.selectedImage = UIImage(systemName: "paperplane.fill")
     }
     
     required init?(coder: NSCoder) {
