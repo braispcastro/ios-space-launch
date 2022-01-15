@@ -28,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        FirebaseRCService.shared.fetch(completion: { })
+        FirebaseRCService.shared.fetch() {
+            // Do nothing...
+        }
     }
     
     // MARK: - Private Methods
@@ -67,9 +69,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Firebase
         FirebaseApp.configure()
-        
-        // Google ADs
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
     }
 
     // MARK: - Core Data stack

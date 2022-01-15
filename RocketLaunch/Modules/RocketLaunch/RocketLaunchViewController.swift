@@ -53,9 +53,7 @@ final class RocketLaunchViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.prepareView()
-        FirebaseRCService.shared.fetch() {
-            self.presenter.getLaunchesToShow()
-        }
+        configureApp()
     }
 
     // MARK: - Setup
@@ -88,11 +86,6 @@ final class RocketLaunchViewController: BaseViewController {
         
         adBannerView = GADBannerView(adSize: GADAdSizeFullWidthPortraitWithHeight(ViewTraits.adBannerHeight))
         adBannerView.translatesAutoresizingMaskIntoConstraints = false
-        #if DEBUG
-        adBannerView.adUnitID = Constants.kAdBannerTest
-        #else
-        adBannerView.adUnitID = FirebaseRCService.shared.googleAdBannerId!
-        #endif
         adBannerView.rootViewController = self
         adBannerView.delegate = self
         view.addSubview(adBannerView)
@@ -131,15 +124,32 @@ final class RocketLaunchViewController: BaseViewController {
 
     // MARK: Private Methods
     
-    private func requestPermissionForAds() {
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization() { status in
-                DispatchQueue.main.async {
-                    self.adBannerView.load(GADRequest())
+    private func configureApp() {
+        self.tabBarController?.tabBar.isUserInteractionEnabled = false
+        // Firebase configuration
+        FirebaseRCService.shared.fetch() {
+            // Tracking request
+            self.requestPermissionForAds() {
+                // Ads initialization
+                GADMobileAds.sharedInstance().start() { _ in
+                    if let adUnitId = FirebaseRCService.shared.googleAdBannerId {
+                        self.adBannerView.adUnitID = adUnitId
+                        self.adBannerView.load(GADRequest())
+                    }
+                    self.presenter.getLaunchesToShow()
+                    self.tabBarController?.tabBar.isUserInteractionEnabled = true
                 }
             }
+        }
+    }
+    
+    private func requestPermissionForAds(completionHandler: @escaping () -> Void) {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization() { status in
+                completionHandler()
+            }
         } else {
-            self.adBannerView.load(GADRequest())
+            completionHandler()
         }
     }
 }
@@ -155,7 +165,6 @@ extension RocketLaunchViewController: RocketLaunchViewControllerProtocol {
     
     func showLaunches(launchList: [RocketLaunch.LaunchViewModel]) {
         self.launchList = launchList
-        requestPermissionForAds()
         rocketAnimationView.stop()
         rocketAnimationView.isHidden = true
         tableView.isHidden = false
