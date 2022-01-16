@@ -11,12 +11,20 @@ class ProviderTableViewCell: UITableViewCell {
 
     static let kReuseIdentifier: String = "provider-table-view-cell"
     
+    var infoUrl: String?
+    var wikiUrl: String?
+    
     // MARK: - Component Declaration
     
     internal var vStackView: UIStackView!
     internal var logoImageView: UIImageView!
     internal var titleLabel: UILabel!
     internal var descriptionLabel: UILabel!
+    internal var hStackView: UIStackView!
+    internal var infoView: UIView!
+    internal var infoButton: UIButton!
+    internal var wikiView: UIView!
+    internal var wikiButton: UIButton!
     
     private enum ViewTraits {
         static let margins = UIEdgeInsets(top: 12, left: 12, bottom: -12, right: -12)
@@ -29,6 +37,11 @@ class ProviderTableViewCell: UITableViewCell {
         static let logoImageView: String = "logo-image-view"
         static let titleLabel: String = "title-label"
         static let descriptionLabel: String = "description-label"
+        static let hStackView: String = "horizontal-stack-view"
+        static let infoView: String = "info-view"
+        static let infoButton: String = "info-button"
+        static let wikiView: String = "wiki-view"
+        static let wikiButton: String = "wiki-button"
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -59,7 +72,7 @@ class ProviderTableViewCell: UITableViewCell {
         vStackView = UIStackView()
         vStackView.translatesAutoresizingMaskIntoConstraints = false
         vStackView.axis = .vertical
-        self.addSubview(vStackView)
+        contentView.addSubview(vStackView)
         
         logoImageView = UIImageView()
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -81,19 +94,65 @@ class ProviderTableViewCell: UITableViewCell {
         descriptionLabel.textAlignment = .justified
         descriptionLabel.numberOfLines = 0
         vStackView.addArrangedSubview(descriptionLabel)
+        
+        hStackView = UIStackView()
+        hStackView.translatesAutoresizingMaskIntoConstraints = false
+        hStackView.axis = .horizontal
+        hStackView.distribution = .fillEqually
+        hStackView.contentMode = .center
+        hStackView.spacing = 30
+        vStackView.addArrangedSubview(hStackView)
+        
+        infoView = UIView()
+        infoView.translatesAutoresizingMaskIntoConstraints = false
+        hStackView.addArrangedSubview(infoView)
+        
+        infoButton = UIButton()
+        infoButton.translatesAutoresizingMaskIntoConstraints = false
+        infoButton.contentVerticalAlignment = .fill
+        infoButton.contentHorizontalAlignment = .fill
+        infoButton.setImage(UIImage.init(systemName: "info.circle"), for: .normal)
+        infoButton.contentMode = .scaleAspectFill
+        infoButton.tintColor = UIColor.init(named: "AccentColor")
+        infoView.addSubview(infoButton)
+        
+        wikiView = UIView()
+        wikiView.translatesAutoresizingMaskIntoConstraints = false
+        hStackView.addArrangedSubview(wikiView)
+        
+        wikiButton = UIButton()
+        wikiButton.translatesAutoresizingMaskIntoConstraints = false
+        wikiButton.contentVerticalAlignment = .fill
+        wikiButton.contentHorizontalAlignment = .fill
+        wikiButton.setImage(UIImage.init(systemName: "w.circle"), for: .normal)
+        wikiButton.contentMode = .scaleAspectFill
+        wikiButton.tintColor = UIColor.init(named: "AccentColor")
+        wikiView.addSubview(wikiButton)
     }
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            vStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: ViewTraits.margins.top),
-            vStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: ViewTraits.margins.bottom),
-            vStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: ViewTraits.margins.left),
-            vStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: ViewTraits.margins.right),
+            vStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: ViewTraits.margins.top),
+            vStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: ViewTraits.margins.bottom),
+            vStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ViewTraits.margins.left),
+            vStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: ViewTraits.margins.right),
             
             logoImageView.heightAnchor.constraint(equalToConstant: 120),
             
             logoImageView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: ViewTraits.margins.bottom),
-            titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: ViewTraits.labelMargins.bottom)
+            titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: ViewTraits.labelMargins.bottom),
+            descriptionLabel.bottomAnchor.constraint(equalTo: hStackView.topAnchor, constant: ViewTraits.margins.bottom),
+            
+            hStackView.heightAnchor.constraint(equalToConstant: 50),
+            
+            infoButton.centerXAnchor.constraint(equalTo: infoView.centerXAnchor),
+            infoButton.centerYAnchor.constraint(equalTo: infoView.centerYAnchor),
+            infoButton.heightAnchor.constraint(equalTo: infoView.heightAnchor),
+            infoButton.heightAnchor.constraint(equalTo: infoButton.widthAnchor),
+            wikiButton.centerXAnchor.constraint(equalTo: wikiView.centerXAnchor),
+            wikiButton.centerYAnchor.constraint(equalTo: wikiView.centerYAnchor),
+            wikiButton.heightAnchor.constraint(equalTo: wikiView.heightAnchor),
+            wikiButton.heightAnchor.constraint(equalTo: wikiButton.widthAnchor)
         ])
     }
     
@@ -103,6 +162,9 @@ class ProviderTableViewCell: UITableViewCell {
         logoImageView.accessibilityIdentifier = AccessibilityIds.logoImageView
         titleLabel.accessibilityIdentifier = AccessibilityIds.titleLabel
         descriptionLabel.accessibilityIdentifier = AccessibilityIds.descriptionLabel
+        hStackView.accessibilityIdentifier = AccessibilityIds.hStackView
+        infoButton.accessibilityIdentifier = AccessibilityIds.infoButton
+        wikiButton.accessibilityIdentifier = AccessibilityIds.wikiButton
     }
 
 }

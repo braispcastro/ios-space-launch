@@ -75,7 +75,16 @@ final class InformationViewController: BaseViewController {
     }
 
     // MARK: - Actions
-
+    
+    @objc private func goToURL(sender: UIButton) {
+        if sender.accessibilityIdentifier == "info-button", let infoUri = viewModel.provider!.infoUrl, let infoUrl = URL(string: infoUri) {
+            UIApplication.shared.open(infoUrl)
+        }
+        if sender.accessibilityIdentifier == "wiki-button", let wikiUri = viewModel.provider!.wikiUrl, let wikiUrl = URL(string: wikiUri) {
+            UIApplication.shared.open(wikiUrl)
+        }
+    }
+    
     // MARK: Private Methods
 
 }
@@ -119,9 +128,10 @@ extension InformationViewController: InformationViewControllerProtocol {
             cell.logoImageView.isHidden = true
         }
         
-        //cell.titleLabel.text = viewModel.provider!.name
+        cell.selectionStyle = .none
         cell.descriptionLabel.text = viewModel.provider!.description
-        cell.isUserInteractionEnabled = false
+        cell.infoButton.addTarget(self, action: #selector(goToURL(sender:)), for: .touchUpInside)
+        cell.wikiButton.addTarget(self, action: #selector(goToURL(sender:)), for: .touchUpInside)
         
         return cell
     }
