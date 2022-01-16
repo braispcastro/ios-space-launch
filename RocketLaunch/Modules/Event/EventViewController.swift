@@ -41,6 +41,7 @@ final class EventViewController: BaseViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.title = "Events"
         self.tabBarItem.image = UIImage(systemName: "calendar")
+        self.tabBarItem.selectedImage = UIImage(systemName: "calendar")
     }
     
     required init?(coder: NSCoder) {
@@ -53,6 +54,7 @@ final class EventViewController: BaseViewController {
         super.viewDidLoad()
         presenter.prepareView()
         presenter.getEventsToShow()
+        self.requestAds()
     }
 
     // MARK: - Setup
@@ -85,11 +87,6 @@ final class EventViewController: BaseViewController {
         
         adBannerView = GADBannerView(adSize: GADAdSizeFullWidthPortraitWithHeight(ViewTraits.adBannerHeight))
         adBannerView.translatesAutoresizingMaskIntoConstraints = false
-        #if DEBUG
-        adBannerView.adUnitID = Constants.kAdBannerTest
-        #else
-        adBannerView.adUnitID = FirebaseRCService.shared.googleAdBannerId!
-        #endif
         adBannerView.rootViewController = self
         adBannerView.delegate = self
         view.addSubview(adBannerView)
@@ -128,14 +125,9 @@ final class EventViewController: BaseViewController {
 
     // MARK: Private Methods
     
-    private func requestPermissionForAds() {
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization() { status in
-                DispatchQueue.main.async {
-                    self.adBannerView.load(GADRequest())
-                }
-            }
-        } else {
+    private func requestAds() {
+        if let adUnitId = FirebaseRCService.shared.googleAdBannerId {
+            self.adBannerView.adUnitID = adUnitId
             self.adBannerView.load(GADRequest())
         }
     }
@@ -152,11 +144,14 @@ extension EventViewController: EventViewControllerProtocol {
     
     func showEvents(eventList: [Event.EventViewModel]) {
         self.eventList = eventList
-        requestPermissionForAds()
         rocketAnimationView.stop()
         rocketAnimationView.isHidden = true
         tableView.isHidden = false
         tableView.reloadData()
+        refreshControl?.endRefreshing()
+    }
+    
+    func listUpdateRejected() {
         refreshControl?.endRefreshing()
     }
  

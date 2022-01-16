@@ -8,7 +8,7 @@
 import Foundation
 
 enum UserDefaultsKey: String {
-    case lastSyncDate
+    case interfaceStyle
 }
 
 final class UserDefaultsManager {

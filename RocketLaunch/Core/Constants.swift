@@ -26,6 +26,10 @@ struct Constants {
     static let kRemoteSpaceBaseUrl = "SpaceBaseUrl"
     static let kRemoteSpaceResultLimit = "SpaceResultLimit"
     static let kRemoteGoogleAdBannerId = "GoogleAdBannerId"
+    static let kRemotePrivacyPolicyURI = "PrivacyPolicyURI"
+    static let kRemoteTermsOfUseURI = "TermsOfUseURI"
+    static let kRemoteSuportFormURI = "SupportFormURI"
+    static let kRemoteSpaceSyncDelay = "SpaceSyncDelay"
     
     // AdMob
     static let kAdBannerTest = "ca-app-pub-3940256099942544/2934735716"

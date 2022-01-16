@@ -22,12 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         initializeLibraries()
+        configureVisualStyle()
         
         return true
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        FirebaseRCService.shared.fetch(completion: { })
+        FirebaseRCService.shared.fetch() {
+            // Do nothing...
+        }
     }
     
     // MARK: - Private Methods
@@ -43,13 +46,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return bottomNavigator
     }
     
+    private func configureVisualStyle() {
+        guard let interfaceStyle = UserDefaultsManager.string(key: .interfaceStyle) else {
+            UserDefaultsManager.set(key: .interfaceStyle, value: "Default")
+            return
+        }
+        
+        switch interfaceStyle {
+        case "Light":
+            window?.overrideUserInterfaceStyle = .light
+            break
+        case "Dark":
+            window?.overrideUserInterfaceStyle = .dark
+            break
+        default:
+            window?.overrideUserInterfaceStyle = .unspecified
+            break
+        }
+    }
+    
     private func initializeLibraries() {
         
         // Firebase
         FirebaseApp.configure()
-        
-        // Google ADs
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
     }
 
     // MARK: - Core Data stack

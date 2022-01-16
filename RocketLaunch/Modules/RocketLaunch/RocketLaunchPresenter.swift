@@ -11,6 +11,7 @@ import GoogleMobileAds
 protocol RocketLaunchViewControllerProtocol: BaseViewControllerProtocol {
     func show(viewModel: RocketLaunch.ViewModel)
     func showLaunches(launchList: [RocketLaunch.LaunchViewModel])
+    func listUpdateRejected()
 }
 
 protocol RocketLaunchPresenterProtocol: BasePresenterProtocol {
@@ -21,6 +22,7 @@ protocol RocketLaunchPresenterProtocol: BasePresenterProtocol {
 
 final class RocketLaunchPresenter<T: RocketLaunchViewControllerProtocol, U: RocketLaunchRouterProtocol>: BasePresenter<T, U> {
     
+    var lastLaunchesSync: Date?
     let interactor: RocketLaunchInteractorProtocol
     
     init(viewController: T, router: U, interactor: RocketLaunchInteractorProtocol) {
@@ -38,7 +40,17 @@ extension RocketLaunchPresenter: RocketLaunchPresenterProtocol {
     }
     
     func getLaunchesToShow() {
-        interactor.getLaunchList()
+        guard let lastLaunchesSync = self.lastLaunchesSync else {
+            interactor.getLaunchList()
+            return
+        }
+        
+        let interval = Date().timeIntervalSinceReferenceDate - lastLaunchesSync.timeIntervalSinceReferenceDate
+        if interval > FirebaseRCService.shared.spaceSyncDelay {
+            interactor.getLaunchList()
+        } else {
+            viewController.listUpdateRejected()
+        }
     }
     
     func launchTapped(launch: Space.Launch.Result) {
@@ -50,6 +62,9 @@ extension RocketLaunchPresenter: RocketLaunchPresenterProtocol {
 extension RocketLaunchPresenter: RocketLaunchInteractorCallbackProtocol {
     
     func setLaunchList(launchList: [RocketLaunch.LaunchViewModel]) {
+        if launchList.count > 0 {
+            self.lastLaunchesSync = Date()
+        }
         viewController.showLaunches(launchList: launchList)
     }
     

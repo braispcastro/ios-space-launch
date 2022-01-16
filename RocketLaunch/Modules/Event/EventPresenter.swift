@@ -10,6 +10,7 @@ import Foundation
 protocol EventViewControllerProtocol: BaseViewControllerProtocol {
     func show(viewModel: Event.ViewModel)
     func showEvents(eventList: [Event.EventViewModel])
+    func listUpdateRejected()
 }
 
 protocol EventPresenterProtocol: BasePresenterProtocol {
@@ -20,6 +21,7 @@ protocol EventPresenterProtocol: BasePresenterProtocol {
 
 final class EventPresenter<T: EventViewControllerProtocol, U: EventRouterProtocol>: BasePresenter<T, U> {
     
+    var lastEventsSync: Date?
     let interactor: EventInteractorProtocol
     
     init(viewController: T, router: U, interactor: EventInteractorProtocol) {
@@ -37,7 +39,17 @@ extension EventPresenter: EventPresenterProtocol {
     }
     
     func getEventsToShow() {
-        interactor.getEventList()
+        guard let lastEventsSync = self.lastEventsSync else {
+            interactor.getEventList()
+            return
+        }
+        
+        let interval = Date().timeIntervalSinceReferenceDate - lastEventsSync.timeIntervalSinceReferenceDate
+        if interval > FirebaseRCService.shared.spaceSyncDelay {
+            interactor.getEventList()
+        } else {
+            viewController.listUpdateRejected()
+        }
     }
     
     func eventTapped(event: Space.Event.Result) {
@@ -49,6 +61,9 @@ extension EventPresenter: EventPresenterProtocol {
 extension EventPresenter: EventInteractorCallbackProtocol {
     
     func setEventList(eventList: [Event.EventViewModel]) {
+        if eventList.count > 0 {
+            self.lastEventsSync = Date()
+        }
         viewController.showEvents(eventList: eventList)
     }
     
