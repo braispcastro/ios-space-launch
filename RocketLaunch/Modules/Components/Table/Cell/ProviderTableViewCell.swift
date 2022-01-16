@@ -113,7 +113,7 @@ class ProviderTableViewCell: UITableViewCell {
         infoButton.contentHorizontalAlignment = .fill
         infoButton.setImage(UIImage.init(systemName: "info.circle"), for: .normal)
         infoButton.contentMode = .scaleAspectFill
-        infoButton.tintColor = UIColor.init(named: "TextColor")
+        infoButton.tintColor = UIColor.init(named: "AccentColor")
         infoView.addSubview(infoButton)
         
         wikiView = UIView()
@@ -126,7 +126,7 @@ class ProviderTableViewCell: UITableViewCell {
         wikiButton.contentHorizontalAlignment = .fill
         wikiButton.setImage(UIImage.init(systemName: "w.circle"), for: .normal)
         wikiButton.contentMode = .scaleAspectFill
-        wikiButton.tintColor = UIColor.init(named: "TextColor")
+        wikiButton.tintColor = UIColor.init(named: "AccentColor")
         wikiView.addSubview(wikiButton)
     }
 
