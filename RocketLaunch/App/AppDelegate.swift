@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 import Firebase
+import FirebaseMessaging
 import GoogleMobileAds
 
 @main
@@ -22,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         initializeLibraries()
+        initializePushNotifications(application)
         configureVisualStyle()
         
         return true
@@ -66,9 +68,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func initializeLibraries() {
-        
         // Firebase
         FirebaseApp.configure()
+    }
+    
+    private func initializePushNotifications(_ application: UIApplication) {
+        UNUserNotificationCenter.current().delegate = self
+        
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, _ in
+            
+        }
+        application.registerForRemoteNotifications()
     }
 
     // MARK: - Core Data stack
@@ -118,3 +129,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+// MARK: - UNUserNotificationCenterDelegate
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+}
+
+// MARK: - MessagingDelegate
+extension AppDelegate: MessagingDelegate {
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        
+    }
+    
+}
