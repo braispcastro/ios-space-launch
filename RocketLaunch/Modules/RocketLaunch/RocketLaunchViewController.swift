@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import AppTrackingTransparency
+import FirebaseMessaging
+import GoogleMobileAds
 import Kingfisher
 import Lottie
-import GoogleMobileAds
-import AppTrackingTransparency
 
 final class RocketLaunchViewController: BaseViewController {
 
@@ -138,6 +139,7 @@ final class RocketLaunchViewController: BaseViewController {
                         self.adBannerView.load(GADRequest())
                     }
                     self.presenter.getLaunchesToShow()
+                    self.requestPushNotificationsPermission()
                     self.tabBarController?.tabBar.isUserInteractionEnabled = true
                 }
             }
@@ -151,6 +153,26 @@ final class RocketLaunchViewController: BaseViewController {
             }
         } else {
             completionHandler()
+        }
+    }
+    
+    private func requestPushNotificationsPermission() {
+    let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { granted, error in
+            guard granted else { return }
+            UNUserNotificationCenter.current().getNotificationSettings { settings in
+                guard settings.authorizationStatus == .authorized else { return }
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                    #if DEBUG
+                    Messaging.messaging().unsubscribe(fromTopic: "production")
+                    Messaging.messaging().subscribe(toTopic: "development")
+                    #else
+                    Messaging.messaging().unsubscribe(fromTopic: "development")
+                    Messaging.messaging().subscribe(toTopic: "production")
+                    #endif
+                }
+            }
         }
     }
 }

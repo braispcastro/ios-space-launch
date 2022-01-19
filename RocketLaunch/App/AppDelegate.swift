@@ -22,8 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = setupTabBarController()
         self.window?.makeKeyAndVisible()
         
-        initializeLibraries()
-        initializePushNotifications(application)
+        application.registerForRemoteNotifications()
+        
+        configureLibraries()
         configureVisualStyle()
         
         return true
@@ -67,19 +68,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    private func initializeLibraries() {
+    private func configureLibraries() {
         // Firebase
         FirebaseApp.configure()
-    }
-    
-    private func initializePushNotifications(_ application: UIApplication) {
-        UNUserNotificationCenter.current().delegate = self
         
-        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, _ in
-            
-        }
-        application.registerForRemoteNotifications()
+        // Push notifications
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
     }
 
     // MARK: - Core Data stack
@@ -132,13 +127,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // MARK: - UNUserNotificationCenterDelegate
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+        let token = tokenParts.joined()
+        print("Token: \(token)")
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register: \(error)")
+    }
+    
 }
 
 // MARK: - MessagingDelegate
 extension AppDelegate: MessagingDelegate {
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        
+        if let fcmToken = fcmToken {
+            print("FCMToken: \(fcmToken)")
+        }
     }
     
 }

@@ -1009,7 +1009,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RocketLaunch/SupportingFiles/RocketLaunch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20220116;
+				CURRENT_PROJECT_VERSION = 20220120;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
@@ -1026,11 +1026,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
-				OTHER_LDFLAGS = (
-					"$(inherited),",
-					"-ObjC",
-				);
+				MARKETING_VERSION = 1.4.0;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.rocketlaunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1047,7 +1044,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RocketLaunch/SupportingFiles/RocketLaunch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20220116;
+				CURRENT_PROJECT_VERSION = 20220120;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
@@ -1064,11 +1061,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
-				OTHER_LDFLAGS = (
-					"$(inherited),",
-					"-ObjC",
-				);
+				MARKETING_VERSION = 1.4.0;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.rocketlaunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
