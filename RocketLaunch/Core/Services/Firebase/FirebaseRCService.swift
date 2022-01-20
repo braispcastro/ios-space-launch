@@ -46,7 +46,11 @@ final class FirebaseRCService {
     private func setupValues() {
         self.spaceBaseUrl = self.remoteConfig.configValue(forKey: Constants.kRemoteSpaceBaseUrl).stringValue!
         self.spaceResultLimit = self.remoteConfig.configValue(forKey: Constants.kRemoteSpaceResultLimit).stringValue!
+        #if DEBUG
+        self.googleAdBannerId = Constants.kAdBannerTest
+        #else
         self.googleAdBannerId = self.remoteConfig.configValue(forKey: Constants.kRemoteGoogleAdBannerId).stringValue!
+        #endif
         self.privacyPolicyURI = self.remoteConfig.configValue(forKey: Constants.kRemotePrivacyPolicyURI).stringValue!
         self.termsOfUseURI = self.remoteConfig.configValue(forKey: Constants.kRemoteTermsOfUseURI).stringValue!
         self.supportFormURI = self.remoteConfig.configValue(forKey: Constants.kRemoteSuportFormURI).stringValue!

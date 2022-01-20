@@ -57,6 +57,7 @@
 		8B79599227930FCE00A55E13 /* SettingsDialogModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B79598D27930FCE00A55E13 /* SettingsDialogModels.swift */; };
 		8B79599327930FCE00A55E13 /* SettingsDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B79598E27930FCE00A55E13 /* SettingsDialogViewController.swift */; };
 		8B79599427930FCE00A55E13 /* SettingsDialogBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B79598F27930FCE00A55E13 /* SettingsDialogBuilder.swift */; };
+		8B8DAAC327975F8C00233A7A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8B8DAAC227975F8C00233A7A /* FirebaseMessaging */; };
 		8BA1050E27875A3600C30A45 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BA1050D27875A3600C30A45 /* RemoteConfigDefaults.plist */; };
 		8BAE06F7277CE11C00E1EF51 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8BAE06F6277CE11C00E1EF51 /* Lottie */; };
 		8BAE06FF277CF3D200E1EF51 /* rgb-rocket-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE06FD277CF3D200E1EF51 /* rgb-rocket-loading.json */; };
@@ -116,11 +117,13 @@
 		8B1B93F327765F8000398B5C /* RocketLaunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketLaunchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1B93F727765F8000398B5C /* RocketLaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchUITests.swift; sourceTree = "<group>"; };
 		8B1B93F927765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8B1F50C12799DD76008BEA78 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
 		8B217C6F2784D97600978CA9 /* LaunchPadLocatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorPresenter.swift; sourceTree = "<group>"; };
 		8B217C702784D97600978CA9 /* LaunchPadLocatorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorRouter.swift; sourceTree = "<group>"; };
 		8B217C712784D97600978CA9 /* LaunchPadLocatorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorModels.swift; sourceTree = "<group>"; };
 		8B217C722784D97600978CA9 /* LaunchPadLocatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorViewController.swift; sourceTree = "<group>"; };
 		8B217C732784D97600978CA9 /* LaunchPadLocatorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorBuilder.swift; sourceTree = "<group>"; };
+		8B292AA9279765760005C640 /* RocketLaunch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RocketLaunch.entitlements; sourceTree = "<group>"; };
 		8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		8B5078E927862C3D007E6C48 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		8B57FB4D27873F4600AF4A95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -184,6 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B8DAAC327975F8C00233A7A /* FirebaseMessaging in Frameworks */,
 				8BD9F3BE277685FB001312A9 /* Kingfisher in Frameworks */,
 				8BD9F3BB277685E4001312A9 /* Alamofire in Frameworks */,
 				8B57FB5927874B9700AF4A95 /* FirebaseCrashlytics in Frameworks */,
@@ -216,6 +220,7 @@
 		44A6AE5911992E7D9CF5A0A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8B1F50C12799DD76008BEA78 /* GoogleMobileAds.xcframework */,
 				B59C4C152F12A3094D36DCF4 /* Pods_RocketLaunch.framework */,
 				2FD74AC0DDFFA491A9404327 /* Pods_RocketLaunch_RocketLaunchUITests.framework */,
 				BC16D69A4CFD30D6F6A40A29 /* Pods_RocketLaunchTests.framework */,
@@ -348,6 +353,7 @@
 				8B1B93E427765F8000398B5C /* Info.plist */,
 				8B57FB4D27873F4600AF4A95 /* GoogleService-Info.plist */,
 				8BA1050D27875A3600C30A45 /* RemoteConfigDefaults.plist */,
+				8B292AA9279765760005C640 /* RocketLaunch.entitlements */,
 				8B7281CC27767D72009050D9 /* Settings.bundle */,
 			);
 			path = SupportingFiles;
@@ -545,6 +551,7 @@
 				8B57FB5627874B9700AF4A95 /* FirebaseAnalytics */,
 				8B57FB5827874B9700AF4A95 /* FirebaseCrashlytics */,
 				8B57FB5A27874B9700AF4A95 /* FirebaseRemoteConfig */,
+				8B8DAAC227975F8C00233A7A /* FirebaseMessaging */,
 			);
 			productName = RocketLaunch;
 			productReference = 8B1B93D027765F7E00398B5C /* RocketLaunch.app */;
@@ -1002,8 +1009,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RocketLaunch/SupportingFiles/RocketLaunch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20220116;
+				CURRENT_PROJECT_VERSION = 20220120;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
@@ -1020,11 +1028,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
-				OTHER_LDFLAGS = (
-					"$(inherited),",
-					"-ObjC",
-				);
+				MARKETING_VERSION = 1.4.0;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.rocketlaunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1039,8 +1044,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RocketLaunch/SupportingFiles/RocketLaunch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20220116;
+				CURRENT_PROJECT_VERSION = 20220120;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
@@ -1057,11 +1063,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
-				OTHER_LDFLAGS = (
-					"$(inherited),",
-					"-ObjC",
-				);
+				MARKETING_VERSION = 1.4.0;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.rocketlaunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
@@ -1242,6 +1245,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8B57FB5527874B9700AF4A95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
+		};
+		8B8DAAC227975F8C00233A7A /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B57FB5527874B9700AF4A95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 		8BAE06F6277CE11C00E1EF51 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
