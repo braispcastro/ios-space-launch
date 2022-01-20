@@ -123,6 +123,16 @@ final class RocketLaunchViewController: BaseViewController {
     @objc func refresh(_ sender: AnyObject) {
         presenter.getLaunchesToShow()
     }
+    
+    // MARK: - Public Methods
+    
+    func requestAds() {
+        guard self.adBannerView != nil else { return }
+        if let adUnitId = FirebaseRCService.shared.googleAdBannerId {
+            self.adBannerView.adUnitID = adUnitId
+            self.adBannerView.load(GADRequest())
+        }
+    }
 
     // MARK: Private Methods
     
@@ -134,10 +144,7 @@ final class RocketLaunchViewController: BaseViewController {
             self.requestPermissionForAds() {
                 // Ads initialization
                 GADMobileAds.sharedInstance().start() { _ in
-                    if let adUnitId = FirebaseRCService.shared.googleAdBannerId {
-                        self.adBannerView.adUnitID = adUnitId
-                        self.adBannerView.load(GADRequest())
-                    }
+                    self.requestAds()
                     self.presenter.getLaunchesToShow()
                     self.requestPushNotificationsPermission()
                     self.tabBarController?.tabBar.isUserInteractionEnabled = true

@@ -15,6 +15,8 @@ import GoogleMobileAds
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var appComesFromBackground = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -34,6 +36,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseRCService.shared.fetch() {
             // Do nothing...
         }
+        
+        if appComesFromBackground {
+            if let rocketLaunchVC = self.window?.rootViewController?.children[0].children[0] as? RocketLaunchViewController {
+                rocketLaunchVC.requestAds()
+            }
+            if let eventVC = self.window?.rootViewController?.children[1].children[0] as? EventViewController {
+                eventVC.requestAds()
+            }
+        }
+        
+        appComesFromBackground = false
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        appComesFromBackground = true
     }
     
     // MARK: - Private Methods
@@ -131,6 +148,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
         let token = tokenParts.joined()
         print("Token: \(token)")
+        Messaging.messaging().apnsToken = deviceToken
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
