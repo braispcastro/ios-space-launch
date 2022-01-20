@@ -117,6 +117,7 @@
 		8B1B93F327765F8000398B5C /* RocketLaunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketLaunchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1B93F727765F8000398B5C /* RocketLaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchUITests.swift; sourceTree = "<group>"; };
 		8B1B93F927765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8B1F50C12799DD76008BEA78 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
 		8B217C6F2784D97600978CA9 /* LaunchPadLocatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorPresenter.swift; sourceTree = "<group>"; };
 		8B217C702784D97600978CA9 /* LaunchPadLocatorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorRouter.swift; sourceTree = "<group>"; };
 		8B217C712784D97600978CA9 /* LaunchPadLocatorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorModels.swift; sourceTree = "<group>"; };
@@ -219,6 +220,7 @@
 		44A6AE5911992E7D9CF5A0A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8B1F50C12799DD76008BEA78 /* GoogleMobileAds.xcframework */,
 				B59C4C152F12A3094D36DCF4 /* Pods_RocketLaunch.framework */,
 				2FD74AC0DDFFA491A9404327 /* Pods_RocketLaunch_RocketLaunchUITests.framework */,
 				BC16D69A4CFD30D6F6A40A29 /* Pods_RocketLaunchTests.framework */,
