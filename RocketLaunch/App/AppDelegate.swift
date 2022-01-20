@@ -8,12 +8,15 @@
 import UIKit
 import CoreData
 import Firebase
+import FirebaseMessaging
 import GoogleMobileAds
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var appComesFromBackground = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -21,7 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = setupTabBarController()
         self.window?.makeKeyAndVisible()
         
-        initializeLibraries()
+        application.registerForRemoteNotifications()
+        
+        configureLibraries()
         configureVisualStyle()
         
         return true
@@ -31,6 +36,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseRCService.shared.fetch() {
             // Do nothing...
         }
+        
+        if appComesFromBackground {
+            if let rocketLaunchVC = self.window?.rootViewController?.children[0].children[0] as? RocketLaunchViewController {
+                rocketLaunchVC.requestAds()
+            }
+            if let eventVC = self.window?.rootViewController?.children[1].children[0] as? EventViewController {
+                eventVC.requestAds()
+            }
+        }
+        
+        appComesFromBackground = false
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        appComesFromBackground = true
     }
     
     // MARK: - Private Methods
@@ -65,10 +85,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    private func initializeLibraries() {
-        
+    private func configureLibraries() {
         // Firebase
         FirebaseApp.configure()
+        
+        // Push notifications
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
     }
 
     // MARK: - Core Data stack
@@ -118,3 +141,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+// MARK: - UNUserNotificationCenterDelegate
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+        let token = tokenParts.joined()
+        print("Token: \(token)")
+        Messaging.messaging().apnsToken = deviceToken
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register: \(error)")
+    }
+    
+}
+
+// MARK: - MessagingDelegate
+extension AppDelegate: MessagingDelegate {
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        if let fcmToken = fcmToken {
+            print("FCMToken: \(fcmToken)")
+        }
+    }
+    
+}

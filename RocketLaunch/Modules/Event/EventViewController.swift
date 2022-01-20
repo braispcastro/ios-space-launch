@@ -122,15 +122,19 @@ final class EventViewController: BaseViewController {
     @objc func refresh(_ sender: AnyObject) {
         presenter.getEventsToShow()
     }
-
-    // MARK: Private Methods
     
-    private func requestAds() {
+    // MARK: - Public Methods
+    
+    func requestAds() {
+        guard self.adBannerView != nil else { return }
         if let adUnitId = FirebaseRCService.shared.googleAdBannerId {
             self.adBannerView.adUnitID = adUnitId
             self.adBannerView.load(GADRequest())
         }
     }
+
+    // MARK: Private Methods
+    
 }
 
 // MARK: - EventsViewControllerProtocol
