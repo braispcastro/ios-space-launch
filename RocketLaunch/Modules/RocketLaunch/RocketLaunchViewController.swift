@@ -127,10 +127,12 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
         // Firebase configuration
         FirebaseRCService.shared.fetch() {
             super.requestPermissionForAds {
-                AdBannerManager.shared.rootViewController = self
-                self.presenter.getLaunchesToShow()
-                self.requestPushNotificationsPermission()
-                self.tabBarController?.tabBar.isUserInteractionEnabled = true
+                DispatchQueue.main.async {
+                    AdBannerManager.shared.rootViewController = self
+                    self.presenter.getLaunchesToShow()
+                    self.requestPushNotificationsPermission()
+                    self.tabBarController?.tabBar.isUserInteractionEnabled = true
+                }
             }
         }
     }
