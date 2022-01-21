@@ -45,12 +45,15 @@ final class SettingsPresenter<T: SettingsViewControllerProtocol, U: SettingsRout
         
         configRows.append(Settings.Row(title: "Appearance", subtitle: "Light, Dark, Default", enabled: true, uri: nil, configType: .appearance))
         
+        let pushNotificationsSubtitle = "Tap to enable in device settings"
+        configRows.append(Settings.Row(title: "Enable notifications", subtitle: pushNotificationsSubtitle, enabled: true, uri: UIApplication.openSettingsURLString, configType: nil))
+        
         var allowTrackingEnabled = false
         var allowTrackingSubtitle = "Tracking is allowed"
         if #available(iOS 14, *) {
             if ATTrackingManager.trackingAuthorizationStatus != .authorized {
                 allowTrackingEnabled = true
-                allowTrackingSubtitle = "Tap to change in device settings"
+                allowTrackingSubtitle = "Tap to allow in device settings"
             }
         }
         configRows.append(Settings.Row(title: "Allow tracking", subtitle: allowTrackingSubtitle, enabled: allowTrackingEnabled, uri: UIApplication.openSettingsURLString, configType: nil))
