@@ -7,10 +7,9 @@
 
 import UIKit
 import Lottie
-import GoogleMobileAds
 import AppTrackingTransparency
 
-final class EventViewController: BaseViewController {
+final class EventViewController: BaseViewController, AdBannerViewController {
 
     var presenter: EventPresenterProtocol!
     private var viewModel: Event.ViewModel!
@@ -18,15 +17,15 @@ final class EventViewController: BaseViewController {
 
     // MARK: - Component Declaration
     
+    internal var adBannerPlaceholder: UIView?
+    
     private var rocketAnimationView: AnimationView!
     private var tableView: UITableView!
     private var refreshControl: UIRefreshControl!
-    private var adBannerView: GADBannerView!
 
     private enum ViewTraits {
         static let margins = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: -15)
         static let lottieMargins = UIEdgeInsets(top: 96, left: 96, bottom: -96, right: -96)
-        static let adBannerHeight = CGFloat(50)
     }
     
     public enum AccessibilityIds {
@@ -54,7 +53,6 @@ final class EventViewController: BaseViewController {
         super.viewDidLoad()
         presenter.prepareView()
         presenter.getEventsToShow()
-        self.requestAds()
     }
 
     // MARK: - Setup
@@ -85,11 +83,9 @@ final class EventViewController: BaseViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        adBannerView = GADBannerView(adSize: GADAdSizeFullWidthPortraitWithHeight(ViewTraits.adBannerHeight))
-        adBannerView.translatesAutoresizingMaskIntoConstraints = false
-        adBannerView.rootViewController = self
-        adBannerView.delegate = self
-        view.addSubview(adBannerView)
+        adBannerPlaceholder = UIView()
+        adBannerPlaceholder!.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(adBannerPlaceholder!)
     }
 
     override func setupConstraints() {
@@ -103,11 +99,11 @@ final class EventViewController: BaseViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            adBannerView.heightAnchor.constraint(equalToConstant: ViewTraits.adBannerHeight),
-            adBannerView.topAnchor.constraint(equalTo: tableView.bottomAnchor),
-            adBannerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
-            adBannerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            adBannerView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            adBannerPlaceholder!.heightAnchor.constraint(equalToConstant: AdBannerManager.ViewTraits.adBannerHeight),
+            adBannerPlaceholder!.topAnchor.constraint(equalTo: tableView.bottomAnchor),
+            adBannerPlaceholder!.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
+            adBannerPlaceholder!.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            adBannerPlaceholder!.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
@@ -121,16 +117,6 @@ final class EventViewController: BaseViewController {
     
     @objc func refresh(_ sender: AnyObject) {
         presenter.getEventsToShow()
-    }
-    
-    // MARK: - Public Methods
-    
-    func requestAds() {
-        guard self.adBannerView != nil else { return }
-        if let adUnitId = FirebaseRCService.shared.googleAdBannerId {
-            self.adBannerView.adUnitID = adUnitId
-            self.adBannerView.load(GADRequest())
-        }
     }
 
     // MARK: Private Methods
@@ -207,33 +193,4 @@ extension EventViewController: UITableViewDataSource, UITableViewDelegate {
         return UITableView.automaticDimension
     }
     
-}
-
-// MARK: - GADBannerViewDelegate
-
-extension EventViewController: GADBannerViewDelegate {
-    
-    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-        print("bannerViewDidReceiveAd")
-    }
-
-    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
-        print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
-    }
-
-    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
-        print("bannerViewDidRecordImpression")
-    }
-
-    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
-        print("bannerViewWillPresentScreen")
-    }
-
-    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
-        print("bannerViewWillDIsmissScreen")
-    }
-
-    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
-        print("bannerViewDidDismissScreen")
-    }
 }
