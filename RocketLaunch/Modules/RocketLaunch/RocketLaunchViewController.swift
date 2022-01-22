@@ -6,13 +6,11 @@
 //
 
 import UIKit
-import AppTrackingTransparency
 import FirebaseMessaging
-import GoogleMobileAds
 import Kingfisher
 import Lottie
 
-final class RocketLaunchViewController: BaseViewController {
+final class RocketLaunchViewController: BaseViewController, AdBannerViewController {
 
     var presenter: RocketLaunchPresenterProtocol!    
     private var viewModel: RocketLaunch.ViewModel!
@@ -20,15 +18,15 @@ final class RocketLaunchViewController: BaseViewController {
 
     // MARK: - Component Declaration
     
+    internal var adBannerPlaceholder: UIView?
+    
     private var rocketAnimationView: AnimationView!
     private var tableView: UITableView!
     private var refreshControl: UIRefreshControl!
-    private var adBannerView: GADBannerView!
     
     private enum ViewTraits {
         static let margins = UIEdgeInsets(top: 15, left: 15, bottom: -15, right: -15)
         static let lottieMargins = UIEdgeInsets(top: 96, left: 96, bottom: -96, right: -96)
-        static let adBannerHeight = CGFloat(50)
     }
     
     public enum AccessibilityIds {
@@ -86,11 +84,9 @@ final class RocketLaunchViewController: BaseViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        adBannerView = GADBannerView(adSize: GADAdSizeFullWidthPortraitWithHeight(ViewTraits.adBannerHeight))
-        adBannerView.translatesAutoresizingMaskIntoConstraints = false
-        adBannerView.rootViewController = self
-        adBannerView.delegate = self
-        view.addSubview(adBannerView)
+        adBannerPlaceholder = UIView()
+        adBannerPlaceholder!.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(adBannerPlaceholder!)
     }
 
     override func setupConstraints() {
@@ -104,11 +100,11 @@ final class RocketLaunchViewController: BaseViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            adBannerView.heightAnchor.constraint(equalToConstant: ViewTraits.adBannerHeight),
-            adBannerView.topAnchor.constraint(equalTo: tableView.bottomAnchor),
-            adBannerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
-            adBannerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            adBannerView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            adBannerPlaceholder!.heightAnchor.constraint(equalToConstant: AdBannerManager.ViewTraits.adBannerHeight),
+            adBannerPlaceholder!.topAnchor.constraint(equalTo: tableView.bottomAnchor),
+            adBannerPlaceholder!.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
+            adBannerPlaceholder!.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            adBannerPlaceholder!.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
@@ -123,16 +119,6 @@ final class RocketLaunchViewController: BaseViewController {
     @objc func refresh(_ sender: AnyObject) {
         presenter.getLaunchesToShow()
     }
-    
-    // MARK: - Public Methods
-    
-    func requestAds() {
-        guard self.adBannerView != nil else { return }
-        if let adUnitId = FirebaseRCService.shared.googleAdBannerId {
-            self.adBannerView.adUnitID = adUnitId
-            self.adBannerView.load(GADRequest())
-        }
-    }
 
     // MARK: Private Methods
     
@@ -140,11 +126,9 @@ final class RocketLaunchViewController: BaseViewController {
         self.tabBarController?.tabBar.isUserInteractionEnabled = false
         // Firebase configuration
         FirebaseRCService.shared.fetch() {
-            // Tracking request
-            self.requestPermissionForAds() {
-                // Ads initialization
-                GADMobileAds.sharedInstance().start() { _ in
-                    self.requestAds()
+            super.requestPermissionForAds {
+                DispatchQueue.main.async {
+                    AdBannerManager.shared.rootViewController = self
                     self.presenter.getLaunchesToShow()
                     self.requestPushNotificationsPermission()
                     self.tabBarController?.tabBar.isUserInteractionEnabled = true
@@ -153,18 +137,8 @@ final class RocketLaunchViewController: BaseViewController {
         }
     }
     
-    private func requestPermissionForAds(completionHandler: @escaping () -> Void) {
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization() { status in
-                completionHandler()
-            }
-        } else {
-            completionHandler()
-        }
-    }
-    
     private func requestPushNotificationsPermission() {
-    let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { granted, error in
             guard granted else { return }
             UNUserNotificationCenter.current().getNotificationSettings { settings in
@@ -261,33 +235,4 @@ extension RocketLaunchViewController: UITableViewDataSource, UITableViewDelegate
         presenter.launchTapped(launch: launchList[indexPath.section].rawData)
     }
     
-}
-
-// MARK: - GADBannerViewDelegate
-
-extension RocketLaunchViewController: GADBannerViewDelegate {
-    
-    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-        print("bannerViewDidReceiveAd")
-    }
-
-    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
-        print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
-    }
-
-    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
-        print("bannerViewDidRecordImpression")
-    }
-
-    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
-        print("bannerViewWillPresentScreen")
-    }
-
-    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
-        print("bannerViewWillDIsmissScreen")
-    }
-
-    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
-        print("bannerViewDidDismissScreen")
-    }
 }

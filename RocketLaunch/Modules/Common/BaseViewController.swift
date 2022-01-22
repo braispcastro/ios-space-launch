@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import AppTrackingTransparency
 
 class BaseViewController: UIViewController {
+    
+    static var firstTimeLaunched = true
 
     // MARK: - ViewLife Cycle
     /*
@@ -32,6 +35,14 @@ class BaseViewController: UIViewController {
         setupView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !BaseViewController.firstTimeLaunched {
+            AdBannerManager.shared.rootViewController = self
+        }
+        BaseViewController.firstTimeLaunched = false
+    }
+    
     // MARK: - Setup
     
     func setupComponents() {
@@ -44,6 +55,18 @@ class BaseViewController: UIViewController {
     
     func setupAccessibilityIdentifiers() {
         fatalError("Missing implementation of \"setupAccessibilityIdentifiers\"")
+    }
+    
+    // MARK: - Public Methods
+    
+    func requestPermissionForAds(completionHandler: @escaping () -> Void) {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization() { status in
+                completionHandler()
+            }
+        } else {
+            completionHandler()
+        }
     }
     
     // MARK: - Private Methods

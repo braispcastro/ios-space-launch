@@ -2,7 +2,7 @@
 //  GoogleAdTableViewCell.swift
 //  RocketLaunch
 //
-//  Created by Castro, Brais on 9/1/22.
+//  Created by Brais Castro on 9/1/22.
 //
 
 import UIKit

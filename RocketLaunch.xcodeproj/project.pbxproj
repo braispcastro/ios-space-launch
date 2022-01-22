@@ -20,6 +20,7 @@
 		8B217C762784D97600978CA9 /* LaunchPadLocatorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C712784D97600978CA9 /* LaunchPadLocatorModels.swift */; };
 		8B217C772784D97600978CA9 /* LaunchPadLocatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C722784D97600978CA9 /* LaunchPadLocatorViewController.swift */; };
 		8B217C782784D97600978CA9 /* LaunchPadLocatorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C732784D97600978CA9 /* LaunchPadLocatorBuilder.swift */; };
+		8B2A6387279AEAF200614CC6 /* AdBannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A6386279AEAF200614CC6 /* AdBannerManager.swift */; };
 		8B4E28DF27776D1E00B83DB8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */; };
 		8B5078EA27862C3D007E6C48 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5078E927862C3D007E6C48 /* NavigationController.swift */; };
 		8B57FB4E27873F4600AF4A95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B57FB4D27873F4600AF4A95 /* GoogleService-Info.plist */; };
@@ -124,6 +125,7 @@
 		8B217C722784D97600978CA9 /* LaunchPadLocatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorViewController.swift; sourceTree = "<group>"; };
 		8B217C732784D97600978CA9 /* LaunchPadLocatorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorBuilder.swift; sourceTree = "<group>"; };
 		8B292AA9279765760005C640 /* RocketLaunch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RocketLaunch.entitlements; sourceTree = "<group>"; };
+		8B2A6386279AEAF200614CC6 /* AdBannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerManager.swift; sourceTree = "<group>"; };
 		8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		8B5078E927862C3D007E6C48 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		8B57FB4D27873F4600AF4A95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 			children = (
 				8B4E28DC27776CEA00B83DB8 /* Table */,
 				8B5078E927862C3D007E6C48 /* NavigationController.swift */,
+				8B2A6386279AEAF200614CC6 /* AdBannerManager.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 				8B7281A927766C41009050D9 /* BasePresenter.swift in Sources */,
 				8B7281BA2776755B009050D9 /* EventViewController.swift in Sources */,
 				8B7281BB2776755B009050D9 /* EventModels.swift in Sources */,
+				8B2A6387279AEAF200614CC6 /* AdBannerManager.swift in Sources */,
 				8B1B93DE27765F7E00398B5C /* RocketLaunch.xcdatamodeld in Sources */,
 				8BBC1C6E27790469009F9DF5 /* MissionTableViewCell.swift in Sources */,
 				8B1B93D427765F7E00398B5C /* AppDelegate.swift in Sources */,
@@ -1011,7 +1015,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RocketLaunch/SupportingFiles/RocketLaunch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20220120;
+				CURRENT_PROJECT_VERSION = 20220123;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
@@ -1028,7 +1032,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.4.1;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.rocketlaunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1046,7 +1050,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RocketLaunch/SupportingFiles/RocketLaunch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20220120;
+				CURRENT_PROJECT_VERSION = 20220123;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
@@ -1063,7 +1067,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.4.1;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.rocketlaunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
