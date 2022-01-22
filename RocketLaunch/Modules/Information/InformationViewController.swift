@@ -8,12 +8,14 @@
 import UIKit
 import MapKit
 
-final class InformationViewController: BaseViewController {
+final class InformationViewController: BaseViewController, AdBannerViewController {
 
     var presenter: InformationPresenterProtocol!
     private var viewModel: Information.ViewModel!
 
     // MARK: - Component Declaration
+    
+    internal var adBannerPlaceholder: AdPlaceholderView?
     
     private var tableView: UITableView!
 
@@ -57,14 +59,23 @@ final class InformationViewController: BaseViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        adBannerPlaceholder = AdPlaceholderView()
+        adBannerPlaceholder!.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(adBannerPlaceholder!)
     }
 
     override func setupConstraints() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            adBannerPlaceholder!.heightAnchor.constraint(equalToConstant: AdBannerManager.ViewTraits.adBannerHeight),
+            adBannerPlaceholder!.topAnchor.constraint(equalTo: tableView.bottomAnchor),
+            adBannerPlaceholder!.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
+            adBannerPlaceholder!.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            adBannerPlaceholder!.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
