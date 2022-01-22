@@ -17,7 +17,7 @@ final class EventViewController: BaseViewController, AdBannerViewController {
 
     // MARK: - Component Declaration
     
-    internal var adBannerPlaceholder: UIView?
+    internal var adBannerPlaceholder: AdPlaceholderView?
     
     private var rocketAnimationView: AnimationView!
     private var tableView: UITableView!
@@ -83,7 +83,7 @@ final class EventViewController: BaseViewController, AdBannerViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        adBannerPlaceholder = UIView()
+        adBannerPlaceholder = AdPlaceholderView()
         adBannerPlaceholder!.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(adBannerPlaceholder!)
     }

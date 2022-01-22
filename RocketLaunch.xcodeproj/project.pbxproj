@@ -58,6 +58,7 @@
 		8B79599227930FCE00A55E13 /* SettingsDialogModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B79598D27930FCE00A55E13 /* SettingsDialogModels.swift */; };
 		8B79599327930FCE00A55E13 /* SettingsDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B79598E27930FCE00A55E13 /* SettingsDialogViewController.swift */; };
 		8B79599427930FCE00A55E13 /* SettingsDialogBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B79598F27930FCE00A55E13 /* SettingsDialogBuilder.swift */; };
+		8B7E7CD4279C6A94002D21AF /* AdPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7E7CD3279C6A94002D21AF /* AdPlaceholderView.swift */; };
 		8B8DAAC327975F8C00233A7A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8B8DAAC227975F8C00233A7A /* FirebaseMessaging */; };
 		8BA1050E27875A3600C30A45 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BA1050D27875A3600C30A45 /* RemoteConfigDefaults.plist */; };
 		8BAE06F7277CE11C00E1EF51 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8BAE06F6277CE11C00E1EF51 /* Lottie */; };
@@ -160,6 +161,7 @@
 		8B79598D27930FCE00A55E13 /* SettingsDialogModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDialogModels.swift; sourceTree = "<group>"; };
 		8B79598E27930FCE00A55E13 /* SettingsDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDialogViewController.swift; sourceTree = "<group>"; };
 		8B79598F27930FCE00A55E13 /* SettingsDialogBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDialogBuilder.swift; sourceTree = "<group>"; };
+		8B7E7CD3279C6A94002D21AF /* AdPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPlaceholderView.swift; sourceTree = "<group>"; };
 		8BA1050D27875A3600C30A45 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		8BAE06FD277CF3D200E1EF51 /* rgb-rocket-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "rgb-rocket-loading.json"; sourceTree = "<group>"; };
 		8BAE06FE277CF3D200E1EF51 /* bw-rocket-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "bw-rocket-loading.json"; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 				8B4E28DC27776CEA00B83DB8 /* Table */,
 				8B5078E927862C3D007E6C48 /* NavigationController.swift */,
 				8B2A6386279AEAF200614CC6 /* AdBannerManager.swift */,
+				8B7E7CD3279C6A94002D21AF /* AdPlaceholderView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -634,9 +637,9 @@
 			);
 			mainGroup = 8B1B93C727765F7E00398B5C;
 			packageReferences = (
-				8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
-				8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher.git" */,
-				8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios.git" */,
+				8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				8B57FB5527874B9700AF4A95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 8B1B93D127765F7E00398B5C /* Products */;
@@ -876,6 +879,7 @@
 				8B7281BE2776755B009050D9 /* EventBuilder.swift in Sources */,
 				8B217C752784D97600978CA9 /* LaunchPadLocatorRouter.swift in Sources */,
 				8B5ECA8F277E06A300BE1EA4 /* UIColor+LaunchStatus.swift in Sources */,
+				8B7E7CD4279C6A94002D21AF /* AdPlaceholderView.swift in Sources */,
 				8B7281CA277675DB009050D9 /* SettingsBuilder.swift in Sources */,
 				8B7281B12776711F009050D9 /* BaseInteractor.swift in Sources */,
 			);
@@ -1072,6 +1076,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.rocketlaunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1244,7 +1249,7 @@
 				version = 8.9.1;
 			};
 		};
-		8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios.git" */ = {
+		8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
 			requirement = {
@@ -1252,7 +1257,7 @@
 				version = 3.3.0;
 			};
 		};
-		8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
+		8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -1260,7 +1265,7 @@
 				version = 5.5.0;
 			};
 		};
-		8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher.git" */ = {
+		8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
@@ -1293,17 +1298,17 @@
 		};
 		8BAE06F6277CE11C00E1EF51 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios.git" */;
+			package = 8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
 		};
 		8BD9F3BA277685E4001312A9 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
+			package = 8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 		8BD9F3BD277685FB001312A9 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher.git" */;
+			package = 8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -9,7 +9,7 @@ import UIKit
 import GoogleMobileAds
 
 protocol AdBannerViewController: UIViewController {
-    var adBannerPlaceholder: UIView? { get }
+    var adBannerPlaceholder: AdPlaceholderView? { get }
     func addBannerToAdsPlaceholder(_ banner: UIView)
 }
 
@@ -57,11 +57,8 @@ final class AdBannerManager: NSObject {
             if let banner = self.bannerView {
                 banner.rootViewController = root
                 if !loadedSimpleBannerAd {
-                    // Ads initialization
-                    GADMobileAds.sharedInstance().start() { _ in
-                        banner.adUnitID = adUnitId
-                        banner.load(GADRequest())
-                    }
+                    banner.adUnitID = adUnitId
+                    banner.load(GADRequest())
                 } else {
                     root.addBannerToAdsPlaceholder(banner)
                 }

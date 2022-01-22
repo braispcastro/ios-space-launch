@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import GoogleMobileAds
 import FirebaseMessaging
 import Kingfisher
 import Lottie
+
+#if MEDIATION
+import GoogleMobileAdsMediationTestSuite
+#endif
 
 final class RocketLaunchViewController: BaseViewController, AdBannerViewController {
 
@@ -18,7 +23,7 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
 
     // MARK: - Component Declaration
     
-    internal var adBannerPlaceholder: UIView?
+    internal var adBannerPlaceholder: AdPlaceholderView?
     
     private var rocketAnimationView: AnimationView!
     private var tableView: UITableView!
@@ -84,7 +89,7 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
         tableView.dataSource = self
         tableView.delegate = self
         
-        adBannerPlaceholder = UIView()
+        adBannerPlaceholder = AdPlaceholderView()
         adBannerPlaceholder!.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(adBannerPlaceholder!)
     }
@@ -128,10 +133,16 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
         FirebaseRCService.shared.fetch() {
             super.requestPermissionForAds {
                 DispatchQueue.main.async {
-                    AdBannerManager.shared.rootViewController = self
-                    self.presenter.getLaunchesToShow()
-                    self.requestPushNotificationsPermission()
-                    self.tabBarController?.tabBar.isUserInteractionEnabled = true
+                    GADMobileAds.sharedInstance().start() { _ in
+                        #if MEDIATION
+                        GoogleMobileAdsMediationTestSuite.present(on: self, delegate: self)
+                        #else
+                        AdBannerManager.shared.rootViewController = self
+                        self.presenter.getLaunchesToShow()
+                        self.requestPushNotificationsPermission()
+                        self.tabBarController?.tabBar.isUserInteractionEnabled = true
+                        #endif
+                    }
                 }
             }
         }
@@ -236,3 +247,16 @@ extension RocketLaunchViewController: UITableViewDataSource, UITableViewDelegate
     }
     
 }
+
+#if MEDIATION
+extension RocketLaunchViewController: GMTSMediationTestSuiteDelegate {
+    
+    func mediationTestSuiteWasDismissed() {
+        AdBannerManager.shared.rootViewController = self
+        self.presenter.getLaunchesToShow()
+        self.requestPushNotificationsPermission()
+        self.tabBarController?.tabBar.isUserInteractionEnabled = true
+    }
+    
+}
+#endif
