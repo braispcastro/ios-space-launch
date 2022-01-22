@@ -39,8 +39,6 @@ final class AdBannerManager: NSObject {
     public override init() {
         super.init()
         
-        GADMobileAds.sharedInstance().start()
-        
         configureSimpleBanner()
     }
     

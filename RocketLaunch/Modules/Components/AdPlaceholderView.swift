@@ -2,7 +2,7 @@
 //  AdPlaceholderView.swift
 //  RocketLaunch
 //
-//  Created by Castro, Brais on 22/1/22.
+//  Created by Brais Castro on 22/1/22.
 //
 
 import UIKit
