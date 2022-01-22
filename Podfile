@@ -7,6 +7,8 @@ target 'RocketLaunch' do
 
   # Pods for RocketLaunch
   pod 'Google-Mobile-Ads-SDK'
+  pod 'GoogleMobileAdsMediationFacebook'
+  pod 'GoogleMobileAdsMediationTestSuite'
 
   target 'RocketLaunchTests' do
     inherit! :search_paths

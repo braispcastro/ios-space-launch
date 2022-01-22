@@ -541,6 +541,7 @@
 				8B1B93CD27765F7E00398B5C /* Frameworks */,
 				8B1B93CE27765F7E00398B5C /* Resources */,
 				0DB5C34A982B464954089F5F /* [CP] Embed Pods Frameworks */,
+				F90801554A3BF95282487191 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -588,6 +589,7 @@
 				8B1B93F027765F8000398B5C /* Frameworks */,
 				8B1B93F127765F8000398B5C /* Resources */,
 				C0F15347E321BCACB3E0FC4A /* [CP] Embed Pods Frameworks */,
+				5D42E509A4F782F02DB6BC60 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -632,9 +634,9 @@
 			);
 			mainGroup = 8B1B93C727765F7E00398B5C;
 			packageReferences = (
-				8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
+				8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher.git" */,
+				8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios.git" */,
 				8B57FB5527874B9700AF4A95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 8B1B93D127765F7E00398B5C /* Products */;
@@ -763,6 +765,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5D42E509A4F782F02DB6BC60 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C0F15347E321BCACB3E0FC4A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -778,6 +797,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F90801554A3BF95282487191 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch/Pods-RocketLaunch-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch/Pods-RocketLaunch-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch/Pods-RocketLaunch-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1015,7 +1051,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RocketLaunch/SupportingFiles/RocketLaunch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20220123;
+				CURRENT_PROJECT_VERSION = 20220124;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
@@ -1032,7 +1068,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.1;
+				MARKETING_VERSION = 1.4.2;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.rocketlaunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1050,7 +1086,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RocketLaunch/SupportingFiles/RocketLaunch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20220123;
+				CURRENT_PROJECT_VERSION = 20220124;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
@@ -1067,7 +1103,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.1;
+				MARKETING_VERSION = 1.4.2;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.rocketlaunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1208,7 +1244,7 @@
 				version = 8.9.1;
 			};
 		};
-		8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+		8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
 			requirement = {
@@ -1216,7 +1252,7 @@
 				version = 3.3.0;
 			};
 		};
-		8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -1224,7 +1260,7 @@
 				version = 5.5.0;
 			};
 		};
-		8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
@@ -1257,17 +1293,17 @@
 		};
 		8BAE06F6277CE11C00E1EF51 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			package = 8BAE06F5277CE11C00E1EF51 /* XCRemoteSwiftPackageReference "lottie-ios.git" */;
 			productName = Lottie;
 		};
 		8BD9F3BA277685E4001312A9 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 8BD9F3B9277685E4001312A9 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
 			productName = Alamofire;
 		};
 		8BD9F3BD277685FB001312A9 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 8BD9F3BC277685FB001312A9 /* XCRemoteSwiftPackageReference "Kingfisher.git" */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */

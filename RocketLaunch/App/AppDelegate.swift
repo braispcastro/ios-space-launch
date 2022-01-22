@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import FBAudienceNetwork
 import Firebase
 import FirebaseMessaging
 import GoogleMobileAds
@@ -71,6 +72,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func configureLibraries() {
         // Firebase
         FirebaseApp.configure()
+        
+        // Facebook ads settings
+        FBAdSettings.setAdvertiserTrackingEnabled(true)
         
         // Push notifications
         Messaging.messaging().delegate = self
