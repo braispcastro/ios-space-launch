@@ -6,7 +6,7 @@ target 'RocketLaunch' do
   use_frameworks!
 
   # Pods for RocketLaunch
-  pod 'Google-Mobile-Ads-SDK'
+  # pod 'Google-Mobile-Ads-SDK'
   pod 'GoogleMobileAdsMediationFacebook'
   pod 'GoogleMobileAdsMediationTestSuite'
 

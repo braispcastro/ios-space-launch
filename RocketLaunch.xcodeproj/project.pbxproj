@@ -179,6 +179,8 @@
 		8BD9F3B6277684BF001312A9 /* SpaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceService.swift; sourceTree = "<group>"; };
 		8BD9F3BF27768655001312A9 /* SpaceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceModels.swift; sourceTree = "<group>"; };
 		8BD9F3C127768C4C001312A9 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		8BDBB3FD279F22CC00BF0C8A /* FacebookAdapter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FacebookAdapter.xcframework; path = "Pods/GoogleMobileAdsMediationFacebook/FacebookAdapter-6.9.0.0/FacebookAdapter.xcframework"; sourceTree = "<group>"; };
+		8BDBB3FE279F22CC00BF0C8A /* FBAudienceNetwork.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FBAudienceNetwork.xcframework; path = Pods/FBAudienceNetwork/Static/FBAudienceNetwork.xcframework; sourceTree = "<group>"; };
 		8BE852C32777BD610007EA6F /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		A8F01796D482A48FA02A532A /* Pods-RocketLaunchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketLaunchTests.release.xcconfig"; path = "Target Support Files/Pods-RocketLaunchTests/Pods-RocketLaunchTests.release.xcconfig"; sourceTree = "<group>"; };
 		B59C4C152F12A3094D36DCF4 /* Pods_RocketLaunch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RocketLaunch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +226,8 @@
 		44A6AE5911992E7D9CF5A0A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BDBB3FD279F22CC00BF0C8A /* FacebookAdapter.xcframework */,
+				8BDBB3FE279F22CC00BF0C8A /* FBAudienceNetwork.xcframework */,
 				8B1F50C12799DD76008BEA78 /* GoogleMobileAds.xcframework */,
 				B59C4C152F12A3094D36DCF4 /* Pods_RocketLaunch.framework */,
 				2FD74AC0DDFFA491A9404327 /* Pods_RocketLaunch_RocketLaunchUITests.framework */,

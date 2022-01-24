@@ -7,6 +7,7 @@
 
 import UIKit
 import AppTrackingTransparency
+import FBAudienceNetwork
 
 class BaseViewController: UIViewController {
     
@@ -62,6 +63,8 @@ class BaseViewController: UIViewController {
     func requestPermissionForAds(completionHandler: @escaping () -> Void) {
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization() { status in
+                // Facebook ads settings
+                FBAdSettings.setAdvertiserTrackingEnabled(status == .authorized)
                 completionHandler()
             }
         } else {
