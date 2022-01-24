@@ -133,6 +133,7 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
         FirebaseRCService.shared.fetch() {
             super.requestPermissionForAds {
                 DispatchQueue.main.async {
+                    //GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["a7bfe2a540fd67b0a8bdd91be6afc8ba"]
                     GADMobileAds.sharedInstance().start() { _ in
                         #if MEDIATION
                         GoogleMobileAdsMediationTestSuite.present(on: self, delegate: self)
