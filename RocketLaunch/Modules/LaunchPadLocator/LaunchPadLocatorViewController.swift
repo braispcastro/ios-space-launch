@@ -51,6 +51,8 @@ final class LaunchPadLocatorViewController: BaseViewController {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.mapType = .hybridFlyover
         view.addSubview(mapView)
+        
+        adBannerPlaceholder.removeFromSuperview()
     }
 
     override func setupConstraints() {

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import GoogleMobileAds
 
 protocol RocketLaunchViewControllerProtocol: BaseViewControllerProtocol {
     func show(viewModel: RocketLaunch.ViewModel)

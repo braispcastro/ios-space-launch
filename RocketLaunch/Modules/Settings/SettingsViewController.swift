@@ -7,14 +7,12 @@
 
 import UIKit
 
-final class SettingsViewController: BaseViewController, AdBannerViewController {
+final class SettingsViewController: BaseViewController {
 
     var presenter: SettingsPresenterProtocol!
     private var viewModel: Settings.ViewModel!
 
     // MARK: - Component Declaration
-    
-    internal var adBannerPlaceholder: AdPlaceholderView?
     
     private var tableView: UITableView!
 
@@ -57,10 +55,6 @@ final class SettingsViewController: BaseViewController, AdBannerViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-        adBannerPlaceholder = AdPlaceholderView()
-        adBannerPlaceholder!.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(adBannerPlaceholder!)
     }
 
     override func setupConstraints() {
@@ -69,11 +63,11 @@ final class SettingsViewController: BaseViewController, AdBannerViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            adBannerPlaceholder!.heightAnchor.constraint(equalToConstant: AdBannerManager.ViewTraits.adBannerHeight),
-            adBannerPlaceholder!.topAnchor.constraint(equalTo: tableView.bottomAnchor),
-            adBannerPlaceholder!.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
-            adBannerPlaceholder!.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            adBannerPlaceholder!.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            adBannerPlaceholder.heightAnchor.constraint(equalToConstant: AdPlaceholderView.ViewTraits.adBannerHeight),
+            adBannerPlaceholder.topAnchor.constraint(equalTo: tableView.bottomAnchor),
+            adBannerPlaceholder.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
+            adBannerPlaceholder.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            adBannerPlaceholder.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     

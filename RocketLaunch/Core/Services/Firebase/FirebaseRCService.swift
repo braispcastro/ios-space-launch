@@ -18,11 +18,11 @@ final class FirebaseRCService {
     
     private(set) var spaceBaseUrl: String!
     private(set) var spaceResultLimit: String!
-    private(set) var googleAdBannerId: String!
     private(set) var privacyPolicyURI: String!
     private(set) var termsOfUseURI: String!
     private(set) var supportFormURI: String!
     private(set) var spaceSyncDelay: Double!
+    private(set) var appLovinAdBannerUnitId: String!
     
     // MARK: - Initialization
     
@@ -46,15 +46,11 @@ final class FirebaseRCService {
     private func setupValues() {
         self.spaceBaseUrl = self.remoteConfig.configValue(forKey: Constants.kRemoteSpaceBaseUrl).stringValue!
         self.spaceResultLimit = self.remoteConfig.configValue(forKey: Constants.kRemoteSpaceResultLimit).stringValue!
-        #if DEBUG
-        self.googleAdBannerId = Constants.kAdBannerTest
-        #else
-        self.googleAdBannerId = self.remoteConfig.configValue(forKey: Constants.kRemoteGoogleAdBannerId).stringValue!
-        #endif
         self.privacyPolicyURI = self.remoteConfig.configValue(forKey: Constants.kRemotePrivacyPolicyURI).stringValue!
         self.termsOfUseURI = self.remoteConfig.configValue(forKey: Constants.kRemoteTermsOfUseURI).stringValue!
         self.supportFormURI = self.remoteConfig.configValue(forKey: Constants.kRemoteSuportFormURI).stringValue!
         self.spaceSyncDelay = Double(self.remoteConfig.configValue(forKey: Constants.kRemoteSpaceSyncDelay).stringValue!)!
+        self.appLovinAdBannerUnitId = self.remoteConfig.configValue(forKey: Constants.kRemoteAppLovinBannerUnitId).stringValue!
     }
     
     // MARK: - Public methods

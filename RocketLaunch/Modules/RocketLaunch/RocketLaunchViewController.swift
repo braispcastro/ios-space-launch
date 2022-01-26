@@ -6,16 +6,13 @@
 //
 
 import UIKit
-import GoogleMobileAds
+import AdSupport
+import AppLovinSDK
 import FirebaseMessaging
 import Kingfisher
 import Lottie
 
-#if MEDIATION
-import GoogleMobileAdsMediationTestSuite
-#endif
-
-final class RocketLaunchViewController: BaseViewController, AdBannerViewController {
+final class RocketLaunchViewController: BaseViewController {
 
     var presenter: RocketLaunchPresenterProtocol!    
     private var viewModel: RocketLaunch.ViewModel!
@@ -23,7 +20,7 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
 
     // MARK: - Component Declaration
     
-    internal var adBannerPlaceholder: AdPlaceholderView?
+    //internal var adBannerPlaceholder: AdPlaceholderView!
     
     private var rocketAnimationView: AnimationView!
     private var tableView: UITableView!
@@ -69,7 +66,6 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
         tableView.isHidden = true
         tableView.separatorStyle = .none
         tableView.register(RocketLaunchTableViewCell.self, forCellReuseIdentifier: RocketLaunchTableViewCell.kReuseIdentifier)
-        tableView.register(GoogleAdTableViewCell.self, forCellReuseIdentifier: GoogleAdTableViewCell.kReuseIdentifier)
         view.addSubview(tableView)
         
         refreshControl = UIRefreshControl()
@@ -88,10 +84,6 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-        adBannerPlaceholder = AdPlaceholderView()
-        adBannerPlaceholder!.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(adBannerPlaceholder!)
     }
 
     override func setupConstraints() {
@@ -105,11 +97,11 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            adBannerPlaceholder!.heightAnchor.constraint(equalToConstant: AdBannerManager.ViewTraits.adBannerHeight),
-            adBannerPlaceholder!.topAnchor.constraint(equalTo: tableView.bottomAnchor),
-            adBannerPlaceholder!.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
-            adBannerPlaceholder!.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            adBannerPlaceholder!.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            adBannerPlaceholder.heightAnchor.constraint(equalToConstant: AdPlaceholderView.ViewTraits.adBannerHeight),
+            adBannerPlaceholder.topAnchor.constraint(equalTo: tableView.bottomAnchor),
+            adBannerPlaceholder.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
+            adBannerPlaceholder.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            adBannerPlaceholder.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
@@ -118,7 +110,7 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
         rocketAnimationView.accessibilityIdentifier = AccessibilityIds.rocketAnimationView
         tableView.accessibilityIdentifier = AccessibilityIds.tableView
     }
-
+    
     // MARK: - Actions
     
     @objc func refresh(_ sender: AnyObject) {
@@ -133,16 +125,11 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
         FirebaseRCService.shared.fetch() {
             super.requestPermissionForAds {
                 DispatchQueue.main.async {
-                    //GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["a7bfe2a540fd67b0a8bdd91be6afc8ba"]
-                    GADMobileAds.sharedInstance().start() { _ in
-                        #if MEDIATION
-                        GoogleMobileAdsMediationTestSuite.present(on: self, delegate: self)
-                        #else
-                        AdBannerManager.shared.rootViewController = self
+                    // Init AppLovin SDK
+                    ALSdk.shared()!.initializeSdk { (configuration: ALSdkConfiguration) in
                         self.presenter.getLaunchesToShow()
                         self.requestPushNotificationsPermission()
                         self.tabBarController?.tabBar.isUserInteractionEnabled = true
-                        #endif
                     }
                 }
             }
@@ -248,16 +235,3 @@ extension RocketLaunchViewController: UITableViewDataSource, UITableViewDelegate
     }
     
 }
-
-#if MEDIATION
-extension RocketLaunchViewController: GMTSMediationTestSuiteDelegate {
-    
-    func mediationTestSuiteWasDismissed() {
-        AdBannerManager.shared.rootViewController = self
-        self.presenter.getLaunchesToShow()
-        self.requestPushNotificationsPermission()
-        self.tabBarController?.tabBar.isUserInteractionEnabled = true
-    }
-    
-}
-#endif

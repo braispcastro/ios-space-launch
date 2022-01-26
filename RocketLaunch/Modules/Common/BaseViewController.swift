@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import AdSupport
 import AppTrackingTransparency
-import FBAudienceNetwork
+import AppLovinSDK
 
 class BaseViewController: UIViewController {
     
-    static var firstTimeLaunched = true
-
+    internal var adBannerPlaceholder: AdPlaceholderView!
+    
     // MARK: - ViewLife Cycle
     /*
      Order:
@@ -29,7 +30,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         setupComponents()
-        setupConstraints()
+        //setupConstraints()
         setupAccessibilityIdentifiers()
         
         setupNavigationItem()
@@ -38,10 +39,9 @@ class BaseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if !BaseViewController.firstTimeLaunched {
-            AdBannerManager.shared.rootViewController = self
-        }
-        BaseViewController.firstTimeLaunched = false
+        
+        setupAdBanner()
+        setupConstraints()
     }
     
     // MARK: - Setup
@@ -58,13 +58,21 @@ class BaseViewController: UIViewController {
         fatalError("Missing implementation of \"setupAccessibilityIdentifiers\"")
     }
     
+    func setupAdBanner() {
+        adBannerPlaceholder = AdPlaceholderView.shared
+        adBannerPlaceholder.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(adBannerPlaceholder)
+    }
+    
     // MARK: - Public Methods
     
     func requestPermissionForAds(completionHandler: @escaping () -> Void) {
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization() { status in
-                // Facebook ads settings
-                FBAdSettings.setAdvertiserTrackingEnabled(status == .authorized)
+                ALSdk.shared()!.mediationProvider = "max"
+                if ASIdentifierManager.shared().isAdvertisingTrackingEnabled {
+                    ALSdk.shared()!.userIdentifier = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+                }
                 completionHandler()
             }
         } else {

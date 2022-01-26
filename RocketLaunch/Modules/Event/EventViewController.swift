@@ -9,15 +9,13 @@ import UIKit
 import Lottie
 import AppTrackingTransparency
 
-final class EventViewController: BaseViewController, AdBannerViewController {
+final class EventViewController: BaseViewController {
 
     var presenter: EventPresenterProtocol!
     private var viewModel: Event.ViewModel!
     private var eventList: [Event.EventViewModel] = []
 
     // MARK: - Component Declaration
-    
-    internal var adBannerPlaceholder: AdPlaceholderView?
     
     private var rocketAnimationView: AnimationView!
     private var tableView: UITableView!
@@ -63,7 +61,6 @@ final class EventViewController: BaseViewController, AdBannerViewController {
         tableView.isHidden = true
         tableView.separatorStyle = .none
         tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.kReuseIdentifier)
-        tableView.register(GoogleAdTableViewCell.self, forCellReuseIdentifier: GoogleAdTableViewCell.kReuseIdentifier)
         view.addSubview(tableView)
         
         refreshControl = UIRefreshControl()
@@ -82,10 +79,6 @@ final class EventViewController: BaseViewController, AdBannerViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-        adBannerPlaceholder = AdPlaceholderView()
-        adBannerPlaceholder!.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(adBannerPlaceholder!)
     }
 
     override func setupConstraints() {
@@ -99,11 +92,11 @@ final class EventViewController: BaseViewController, AdBannerViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            adBannerPlaceholder!.heightAnchor.constraint(equalToConstant: AdBannerManager.ViewTraits.adBannerHeight),
-            adBannerPlaceholder!.topAnchor.constraint(equalTo: tableView.bottomAnchor),
-            adBannerPlaceholder!.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
-            adBannerPlaceholder!.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            adBannerPlaceholder!.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            adBannerPlaceholder.heightAnchor.constraint(equalToConstant: AdPlaceholderView.ViewTraits.adBannerHeight),
+            adBannerPlaceholder.topAnchor.constraint(equalTo: tableView.bottomAnchor),
+            adBannerPlaceholder.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
+            adBannerPlaceholder.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            adBannerPlaceholder.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
