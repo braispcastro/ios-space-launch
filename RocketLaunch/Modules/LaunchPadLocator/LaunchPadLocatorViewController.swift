@@ -82,7 +82,7 @@ extension LaunchPadLocatorViewController: LaunchPadLocatorViewControllerProtocol
                                             longitude: CLLocationDegrees(Double(viewModel.longitude)!))
         
         let region = MKCoordinateRegion(center: center,
-                                        span: MKCoordinateSpan(latitudeDelta: 0.6, longitudeDelta: 0.6))
+                                        span: MKCoordinateSpan(latitudeDelta: 0.4, longitudeDelta: 0.4))
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = center

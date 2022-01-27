@@ -6,7 +6,7 @@
 	<string>CbH3CaUdffGuNcQUSB81HCOcZrzKO7I1AyQu7v-7qnCV2uyD4vhqKNehpEvJ3EZkWsbVHHMigf9wRk5S_2fQUz</string>
 	<key>NSAdvertisingAttributionReportEndpoint</key>
 	<string>https://postbacks-app.com</string>
-	<key>SKAdNetworkIdentifier</key>
+	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
 			<key>SKAdNetworkIdentifier</key>

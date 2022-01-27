@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import AdSupport
-import AppTrackingTransparency
 import AppLovinSDK
 
 class BaseViewController: UIViewController {
@@ -55,22 +53,6 @@ class BaseViewController: UIViewController {
         adBannerPlaceholder = AdPlaceholderView.shared
         adBannerPlaceholder.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(adBannerPlaceholder)
-    }
-    
-    // MARK: - Public Methods
-    
-    func requestPermissionForAds(completionHandler: @escaping () -> Void) {
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization() { status in
-                ALSdk.shared()!.mediationProvider = "max"
-                if ASIdentifierManager.shared().isAdvertisingTrackingEnabled {
-                    ALSdk.shared()!.userIdentifier = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-                }
-                completionHandler()
-            }
-        } else {
-            completionHandler()
-        }
     }
     
     // MARK: - Private Methods

@@ -8,7 +8,6 @@
 import UIKit
 import AdSupport
 import AppLovinSDK
-import FirebaseMessaging
 import Kingfisher
 import Lottie
 
@@ -55,7 +54,7 @@ final class RocketLaunchViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.prepareView()
-        configureApp()
+        presenter.getLaunchesToShow()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,45 +123,6 @@ final class RocketLaunchViewController: BaseViewController {
     
     @objc func refresh(_ sender: AnyObject) {
         presenter.getLaunchesToShow()
-    }
-
-    // MARK: Private Methods
-    
-    private func configureApp() {
-        self.tabBarController?.tabBar.isUserInteractionEnabled = false
-        // Firebase configuration
-        FirebaseRCService.shared.fetch() {
-            super.requestPermissionForAds {
-                DispatchQueue.main.async {
-                    // Init AppLovin SDK
-                    ALSdk.shared()!.initializeSdk { (configuration: ALSdkConfiguration) in
-                        self.presenter.getLaunchesToShow()
-                        self.requestPushNotificationsPermission()
-                        self.tabBarController?.tabBar.isUserInteractionEnabled = true
-                    }
-                }
-            }
-        }
-    }
-    
-    private func requestPushNotificationsPermission() {
-        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { granted, error in
-            guard granted else { return }
-            UNUserNotificationCenter.current().getNotificationSettings { settings in
-                guard settings.authorizationStatus == .authorized else { return }
-                DispatchQueue.main.async {
-                    UIApplication.shared.registerForRemoteNotifications()
-                    #if DEBUG
-                    Messaging.messaging().unsubscribe(fromTopic: "production")
-                    Messaging.messaging().subscribe(toTopic: "development")
-                    #else
-                    Messaging.messaging().unsubscribe(fromTopic: "development")
-                    Messaging.messaging().subscribe(toTopic: "production")
-                    #endif
-                }
-            }
-        }
     }
 }
 
