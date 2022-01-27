@@ -7,9 +7,9 @@
 
 import UIKit
 import CoreData
+import AppLovinSDK
 import Firebase
 import FirebaseMessaging
-import GoogleMobileAds
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,13 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        configureLibraries()
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = setupTabBarController()
+        self.window?.rootViewController = SplashViewController()
         self.window?.makeKeyAndVisible()
         
         application.registerForRemoteNotifications()
-        
-        configureLibraries()
         configureVisualStyle()
         
         return true
@@ -37,17 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: - Private Methods
-    
-    private func setupTabBarController() -> UITabBarController {
-        let rocketLaunch = RocketLaunchBuilder.build()
-        let events = EventBuilder.build()
-        let settings = SettingsBuilder.build()
-        
-        let bottomNavigator = UITabBarController()
-        bottomNavigator.setViewControllers([rocketLaunch, events, settings], animated: true)
-        
-        return bottomNavigator
-    }
     
     private func configureVisualStyle() {
         guard let interfaceStyle = UserDefaultsManager.string(key: .interfaceStyle) else {

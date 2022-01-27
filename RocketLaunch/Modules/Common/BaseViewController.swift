@@ -6,12 +6,12 @@
 //
 
 import UIKit
-import AppTrackingTransparency
+import AppLovinSDK
 
 class BaseViewController: UIViewController {
     
-    static var firstTimeLaunched = true
-
+    internal var adBannerPlaceholder: AdPlaceholderView!
+    
     // MARK: - ViewLife Cycle
     /*
      Order:
@@ -35,14 +35,6 @@ class BaseViewController: UIViewController {
         setupView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if !BaseViewController.firstTimeLaunched {
-            AdBannerManager.shared.rootViewController = self
-        }
-        BaseViewController.firstTimeLaunched = false
-    }
-    
     // MARK: - Setup
     
     func setupComponents() {
@@ -57,16 +49,10 @@ class BaseViewController: UIViewController {
         fatalError("Missing implementation of \"setupAccessibilityIdentifiers\"")
     }
     
-    // MARK: - Public Methods
-    
-    func requestPermissionForAds(completionHandler: @escaping () -> Void) {
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization() { status in
-                completionHandler()
-            }
-        } else {
-            completionHandler()
-        }
+    func setupAdBanner() {
+        adBannerPlaceholder = AdPlaceholderView.shared
+        adBannerPlaceholder.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(adBannerPlaceholder)
     }
     
     // MARK: - Private Methods

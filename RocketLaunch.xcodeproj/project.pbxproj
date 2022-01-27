@@ -20,7 +20,6 @@
 		8B217C762784D97600978CA9 /* LaunchPadLocatorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C712784D97600978CA9 /* LaunchPadLocatorModels.swift */; };
 		8B217C772784D97600978CA9 /* LaunchPadLocatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C722784D97600978CA9 /* LaunchPadLocatorViewController.swift */; };
 		8B217C782784D97600978CA9 /* LaunchPadLocatorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217C732784D97600978CA9 /* LaunchPadLocatorBuilder.swift */; };
-		8B2A6387279AEAF200614CC6 /* AdBannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A6386279AEAF200614CC6 /* AdBannerManager.swift */; };
 		8B4E28DF27776D1E00B83DB8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */; };
 		8B5078EA27862C3D007E6C48 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5078E927862C3D007E6C48 /* NavigationController.swift */; };
 		8B57FB4E27873F4600AF4A95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B57FB4D27873F4600AF4A95 /* GoogleService-Info.plist */; };
@@ -58,12 +57,12 @@
 		8B79599227930FCE00A55E13 /* SettingsDialogModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B79598D27930FCE00A55E13 /* SettingsDialogModels.swift */; };
 		8B79599327930FCE00A55E13 /* SettingsDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B79598E27930FCE00A55E13 /* SettingsDialogViewController.swift */; };
 		8B79599427930FCE00A55E13 /* SettingsDialogBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B79598F27930FCE00A55E13 /* SettingsDialogBuilder.swift */; };
+		8B7E7CD4279C6A94002D21AF /* AdPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7E7CD3279C6A94002D21AF /* AdPlaceholderView.swift */; };
 		8B8DAAC327975F8C00233A7A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8B8DAAC227975F8C00233A7A /* FirebaseMessaging */; };
 		8BA1050E27875A3600C30A45 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BA1050D27875A3600C30A45 /* RemoteConfigDefaults.plist */; };
 		8BAE06F7277CE11C00E1EF51 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8BAE06F6277CE11C00E1EF51 /* Lottie */; };
 		8BAE06FF277CF3D200E1EF51 /* rgb-rocket-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE06FD277CF3D200E1EF51 /* rgb-rocket-loading.json */; };
 		8BAE0700277CF3D200E1EF51 /* bw-rocket-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE06FE277CF3D200E1EF51 /* bw-rocket-loading.json */; };
-		8BB6B990278B6DB200E53EBB /* GoogleAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B98F278B6DB200E53EBB /* GoogleAdTableViewCell.swift */; };
 		8BBC1C592778B97A009F9DF5 /* InformationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C532778B97A009F9DF5 /* InformationRouter.swift */; };
 		8BBC1C5B2778B97A009F9DF5 /* InformationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C552778B97A009F9DF5 /* InformationModels.swift */; };
 		8BBC1C5C2778B97A009F9DF5 /* InformationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C562778B97A009F9DF5 /* InformationPresenter.swift */; };
@@ -80,8 +79,11 @@
 		8BD9F3C027768655001312A9 /* SpaceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3BF27768655001312A9 /* SpaceModels.swift */; };
 		8BD9F3C227768C4C001312A9 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9F3C127768C4C001312A9 /* UserDefaultsManager.swift */; };
 		8BE852C42777BD610007EA6F /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE852C32777BD610007EA6F /* EventTableViewCell.swift */; };
+		8BF95F1F27A2E90300049900 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF95F1E27A2E90300049900 /* SplashViewController.swift */; };
+		BEE98785BB26ED74382629AD /* AppLovinQualityService.xcframework in AppLovinQualityService Embed Framework */ = {isa = PBXBuildFile; fileRef = 84D946A3BC8A5DEFCF39FCB5 /* AppLovinQualityService.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD684E8F1E45B95121CC1813 /* Pods_RocketLaunchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC16D69A4CFD30D6F6A40A29 /* Pods_RocketLaunchTests.framework */; };
 		D136DC4DD2C1CBCE1F045525 /* Pods_RocketLaunch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59C4C152F12A3094D36DCF4 /* Pods_RocketLaunch.framework */; };
+		E2CC06FF135969E53981E8F7 /* AppLovinQualityService.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D946A3BC8A5DEFCF39FCB5 /* AppLovinQualityService.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,12 +103,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5791E51E601E137F77001B36 /* AppLovinQualityService Embed Framework */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BEE98785BB26ED74382629AD /* AppLovinQualityService.xcframework in AppLovinQualityService Embed Framework */,
+			);
+			name = "AppLovinQualityService Embed Framework";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1EE897474FF94F3694C34447 /* Pods-RocketLaunchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketLaunchTests.debug.xcconfig"; path = "Target Support Files/Pods-RocketLaunchTests/Pods-RocketLaunchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2244FA85EF535306B17584EF /* Pods-RocketLaunch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketLaunch.debug.xcconfig"; path = "Target Support Files/Pods-RocketLaunch/Pods-RocketLaunch.debug.xcconfig"; sourceTree = "<group>"; };
 		2FD74AC0DDFFA491A9404327 /* Pods_RocketLaunch_RocketLaunchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RocketLaunch_RocketLaunchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43B7903872D2F3E5F0E72EE2 /* Pods-RocketLaunch-RocketLaunchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketLaunch-RocketLaunchUITests.release.xcconfig"; path = "Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6E43ABE14987ADFB79A54BFF /* Pods-RocketLaunch-RocketLaunchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketLaunch-RocketLaunchUITests.debug.xcconfig"; path = "Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		84D946A3BC8A5DEFCF39FCB5 /* AppLovinQualityService.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = AppLovinQualityService.xcframework; path = AppLovinQualityService/AppLovinQualityService.xcframework; sourceTree = "<group>"; };
 		8B1B93D027765F7E00398B5C /* RocketLaunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketLaunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1B93D327765F7E00398B5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B1B93DD27765F7E00398B5C /* RocketLaunch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RocketLaunch.xcdatamodel; sourceTree = "<group>"; };
@@ -118,14 +135,12 @@
 		8B1B93F327765F8000398B5C /* RocketLaunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketLaunchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1B93F727765F8000398B5C /* RocketLaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchUITests.swift; sourceTree = "<group>"; };
 		8B1B93F927765F8000398B5C /* RocketLaunchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8B1F50C12799DD76008BEA78 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
 		8B217C6F2784D97600978CA9 /* LaunchPadLocatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorPresenter.swift; sourceTree = "<group>"; };
 		8B217C702784D97600978CA9 /* LaunchPadLocatorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorRouter.swift; sourceTree = "<group>"; };
 		8B217C712784D97600978CA9 /* LaunchPadLocatorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorModels.swift; sourceTree = "<group>"; };
 		8B217C722784D97600978CA9 /* LaunchPadLocatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorViewController.swift; sourceTree = "<group>"; };
 		8B217C732784D97600978CA9 /* LaunchPadLocatorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadLocatorBuilder.swift; sourceTree = "<group>"; };
 		8B292AA9279765760005C640 /* RocketLaunch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RocketLaunch.entitlements; sourceTree = "<group>"; };
-		8B2A6386279AEAF200614CC6 /* AdBannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerManager.swift; sourceTree = "<group>"; };
 		8B4E28DE27776D1E00B83DB8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		8B5078E927862C3D007E6C48 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		8B57FB4D27873F4600AF4A95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -160,10 +175,10 @@
 		8B79598D27930FCE00A55E13 /* SettingsDialogModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDialogModels.swift; sourceTree = "<group>"; };
 		8B79598E27930FCE00A55E13 /* SettingsDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDialogViewController.swift; sourceTree = "<group>"; };
 		8B79598F27930FCE00A55E13 /* SettingsDialogBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDialogBuilder.swift; sourceTree = "<group>"; };
+		8B7E7CD3279C6A94002D21AF /* AdPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPlaceholderView.swift; sourceTree = "<group>"; };
 		8BA1050D27875A3600C30A45 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		8BAE06FD277CF3D200E1EF51 /* rgb-rocket-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "rgb-rocket-loading.json"; sourceTree = "<group>"; };
 		8BAE06FE277CF3D200E1EF51 /* bw-rocket-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "bw-rocket-loading.json"; sourceTree = "<group>"; };
-		8BB6B98F278B6DB200E53EBB /* GoogleAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdTableViewCell.swift; sourceTree = "<group>"; };
 		8BBC1C532778B97A009F9DF5 /* InformationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationRouter.swift; sourceTree = "<group>"; };
 		8BBC1C552778B97A009F9DF5 /* InformationModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationModels.swift; sourceTree = "<group>"; };
 		8BBC1C562778B97A009F9DF5 /* InformationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPresenter.swift; sourceTree = "<group>"; };
@@ -178,6 +193,7 @@
 		8BD9F3BF27768655001312A9 /* SpaceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceModels.swift; sourceTree = "<group>"; };
 		8BD9F3C127768C4C001312A9 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		8BE852C32777BD610007EA6F /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		8BF95F1E27A2E90300049900 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		A8F01796D482A48FA02A532A /* Pods-RocketLaunchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketLaunchTests.release.xcconfig"; path = "Target Support Files/Pods-RocketLaunchTests/Pods-RocketLaunchTests.release.xcconfig"; sourceTree = "<group>"; };
 		B59C4C152F12A3094D36DCF4 /* Pods_RocketLaunch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RocketLaunch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC16D69A4CFD30D6F6A40A29 /* Pods_RocketLaunchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RocketLaunchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +205,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2CC06FF135969E53981E8F7 /* AppLovinQualityService.xcframework in Frameworks */,
 				8B8DAAC327975F8C00233A7A /* FirebaseMessaging in Frameworks */,
 				8BD9F3BE277685FB001312A9 /* Kingfisher in Frameworks */,
 				8BD9F3BB277685E4001312A9 /* Alamofire in Frameworks */,
@@ -222,7 +239,6 @@
 		44A6AE5911992E7D9CF5A0A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8B1F50C12799DD76008BEA78 /* GoogleMobileAds.xcframework */,
 				B59C4C152F12A3094D36DCF4 /* Pods_RocketLaunch.framework */,
 				2FD74AC0DDFFA491A9404327 /* Pods_RocketLaunch_RocketLaunchUITests.framework */,
 				BC16D69A4CFD30D6F6A40A29 /* Pods_RocketLaunchTests.framework */,
@@ -239,6 +255,7 @@
 				8B1B93D127765F7E00398B5C /* Products */,
 				9AF1493AFA7D26529061780F /* Pods */,
 				44A6AE5911992E7D9CF5A0A0 /* Frameworks */,
+				C18FFE7030D3809AD0231FF6 /* AppLovinQualityService */,
 			);
 			sourceTree = "<group>";
 		};
@@ -365,6 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				8B1B93E127765F8000398B5C /* LaunchScreen.storyboard */,
+				8BF95F1E27A2E90300049900 /* SplashViewController.swift */,
 			);
 			path = LaunchScreen;
 			sourceTree = "<group>";
@@ -480,7 +498,6 @@
 				8BBC1C6B27790447009F9DF5 /* ProviderTableViewCell.swift */,
 				8BBC1C6D27790469009F9DF5 /* MissionTableViewCell.swift */,
 				8BBC1C6F27790489009F9DF5 /* PadTableViewCell.swift */,
-				8BB6B98F278B6DB200E53EBB /* GoogleAdTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -499,7 +516,7 @@
 			children = (
 				8B4E28DC27776CEA00B83DB8 /* Table */,
 				8B5078E927862C3D007E6C48 /* NavigationController.swift */,
-				8B2A6386279AEAF200614CC6 /* AdBannerManager.swift */,
+				8B7E7CD3279C6A94002D21AF /* AdPlaceholderView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -529,6 +546,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C18FFE7030D3809AD0231FF6 /* AppLovinQualityService */ = {
+			isa = PBXGroup;
+			children = (
+				84D946A3BC8A5DEFCF39FCB5 /* AppLovinQualityService.xcframework */,
+			);
+			name = AppLovinQualityService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -536,11 +561,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B1B93FD27765F8000398B5C /* Build configuration list for PBXNativeTarget "RocketLaunch" */;
 			buildPhases = (
+				E34C4A8DBC0D772E25082E79 /* AppLovinQualityService Updater */,
 				5B38F74F00D835C0B556C457 /* [CP] Check Pods Manifest.lock */,
 				8B1B93CC27765F7E00398B5C /* Sources */,
 				8B1B93CD27765F7E00398B5C /* Frameworks */,
 				8B1B93CE27765F7E00398B5C /* Resources */,
-				0DB5C34A982B464954089F5F /* [CP] Embed Pods Frameworks */,
+				01AB882E850A80F2E5CEB559 /* [CP] Copy Pods Resources */,
+				5791E51E601E137F77001B36 /* AppLovinQualityService Embed Framework */,
+				83EFDE49D2CE2B523D365642 /* AppLovinQualityService */,
 			);
 			buildRules = (
 			);
@@ -587,7 +615,7 @@
 				8B1B93EF27765F8000398B5C /* Sources */,
 				8B1B93F027765F8000398B5C /* Frameworks */,
 				8B1B93F127765F8000398B5C /* Resources */,
-				C0F15347E321BCACB3E0FC4A /* [CP] Embed Pods Frameworks */,
+				562880A43B9DE7832B229332 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -680,21 +708,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0DB5C34A982B464954089F5F /* [CP] Embed Pods Frameworks */ = {
+		01AB882E850A80F2E5CEB559 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch/Pods-RocketLaunch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch/Pods-RocketLaunch-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch/Pods-RocketLaunch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch/Pods-RocketLaunch-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch/Pods-RocketLaunch-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch/Pods-RocketLaunch-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		37A0624F879AE229FD2B08EF /* [CP] Check Pods Manifest.lock */ = {
@@ -741,6 +769,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		562880A43B9DE7832B229332 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5B38F74F00D835C0B556C457 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -763,22 +808,39 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C0F15347E321BCACB3E0FC4A /* [CP] Embed Pods Frameworks */ = {
+		83EFDE49D2CE2B523D365642 /* AppLovinQualityService */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			inputPaths = (
+				AppLovinQualityService/AppLovinQualityServicePlugin.app,
+				"$(TARGET_BUILD_DIR)/$(INFOPLIST_PATH)",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
 			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			name = AppLovinQualityService;
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_FOLDER_PATH)/.AppLovinQualityService/AppLovinQualityService.json",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RocketLaunch-RocketLaunchUITests/Pods-RocketLaunch-RocketLaunchUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "AppLovinQualityService/AppLovinQualityServicePlugin.app/Contents/MacOS/AppLovinQualityServicePlugin \"AppLovinQualityServiceSetup-ios.rb\"";
+		};
+		E34C4A8DBC0D772E25082E79 /* AppLovinQualityService Updater */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "AppLovinQualityService Updater";
+			outputPaths = (
+				AppLovinQualityService/AppLovinQualityServicePlugin.app,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ruby \"AppLovinQualityServiceSetup-ios.rb\" update";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -794,7 +856,6 @@
 				8B7281A927766C41009050D9 /* BasePresenter.swift in Sources */,
 				8B7281BA2776755B009050D9 /* EventViewController.swift in Sources */,
 				8B7281BB2776755B009050D9 /* EventModels.swift in Sources */,
-				8B2A6387279AEAF200614CC6 /* AdBannerManager.swift in Sources */,
 				8B1B93DE27765F7E00398B5C /* RocketLaunch.xcdatamodeld in Sources */,
 				8BBC1C6E27790469009F9DF5 /* MissionTableViewCell.swift in Sources */,
 				8B1B93D427765F7E00398B5C /* AppDelegate.swift in Sources */,
@@ -812,7 +873,6 @@
 				8B7281A227766A97009050D9 /* RocketLaunchBuilder.swift in Sources */,
 				8B7281AF277670D9009050D9 /* RocketLaunchInteractor.swift in Sources */,
 				8BBC1C592778B97A009F9DF5 /* InformationRouter.swift in Sources */,
-				8BB6B990278B6DB200E53EBB /* GoogleAdTableViewCell.swift in Sources */,
 				8B7281A527766B36009050D9 /* BaseViewController.swift in Sources */,
 				8B7281AB27766DAC009050D9 /* BaseRouter.swift in Sources */,
 				8B7281A127766A97009050D9 /* RocketLaunchViewController.swift in Sources */,
@@ -840,8 +900,10 @@
 				8B7281BE2776755B009050D9 /* EventBuilder.swift in Sources */,
 				8B217C752784D97600978CA9 /* LaunchPadLocatorRouter.swift in Sources */,
 				8B5ECA8F277E06A300BE1EA4 /* UIColor+LaunchStatus.swift in Sources */,
+				8B7E7CD4279C6A94002D21AF /* AdPlaceholderView.swift in Sources */,
 				8B7281CA277675DB009050D9 /* SettingsBuilder.swift in Sources */,
 				8B7281B12776711F009050D9 /* BaseInteractor.swift in Sources */,
+				8BF95F1F27A2E90300049900 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -926,6 +988,10 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AppLovinQualityService",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -988,6 +1054,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AppLovinQualityService",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1011,12 +1081,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2244FA85EF535306B17584EF /* Pods-RocketLaunch.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RocketLaunch/SupportingFiles/RocketLaunch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20220123;
+				CURRENT_PROJECT_VERSION = 20220128;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(inherited)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Rocket Launch";
@@ -1032,10 +1107,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.1;
-				OTHER_LDFLAGS = "$(inherited)";
+				MARKETING_VERSION = 1.4.2;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.rocketlaunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1046,12 +1125,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C224C68A750844BFDCC8C868 /* Pods-RocketLaunch.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RocketLaunch/SupportingFiles/RocketLaunch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20220123;
+				CURRENT_PROJECT_VERSION = 20220128;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(inherited)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RocketLaunch/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Rocket Launch";
@@ -1067,8 +1151,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.1;
-				OTHER_LDFLAGS = "$(inherited)";
+				MARKETING_VERSION = 1.4.2;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.rocketlaunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";

@@ -6,11 +6,12 @@
 //
 
 import UIKit
-import FirebaseMessaging
+import AdSupport
+import AppLovinSDK
 import Kingfisher
 import Lottie
 
-final class RocketLaunchViewController: BaseViewController, AdBannerViewController {
+final class RocketLaunchViewController: BaseViewController {
 
     var presenter: RocketLaunchPresenterProtocol!    
     private var viewModel: RocketLaunch.ViewModel!
@@ -18,7 +19,7 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
 
     // MARK: - Component Declaration
     
-    internal var adBannerPlaceholder: UIView?
+    //internal var adBannerPlaceholder: AdPlaceholderView!
     
     private var rocketAnimationView: AnimationView!
     private var tableView: UITableView!
@@ -53,7 +54,14 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.prepareView()
-        configureApp()
+        presenter.getLaunchesToShow()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupAdBanner()
+        setupConstraints()
     }
 
     // MARK: - Setup
@@ -64,7 +72,6 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
         tableView.isHidden = true
         tableView.separatorStyle = .none
         tableView.register(RocketLaunchTableViewCell.self, forCellReuseIdentifier: RocketLaunchTableViewCell.kReuseIdentifier)
-        tableView.register(GoogleAdTableViewCell.self, forCellReuseIdentifier: GoogleAdTableViewCell.kReuseIdentifier)
         view.addSubview(tableView)
         
         refreshControl = UIRefreshControl()
@@ -84,9 +91,7 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
         tableView.dataSource = self
         tableView.delegate = self
         
-        adBannerPlaceholder = UIView()
-        adBannerPlaceholder!.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(adBannerPlaceholder!)
+        setupAdBanner()
     }
 
     override func setupConstraints() {
@@ -100,11 +105,11 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            adBannerPlaceholder!.heightAnchor.constraint(equalToConstant: AdBannerManager.ViewTraits.adBannerHeight),
-            adBannerPlaceholder!.topAnchor.constraint(equalTo: tableView.bottomAnchor),
-            adBannerPlaceholder!.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
-            adBannerPlaceholder!.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            adBannerPlaceholder!.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            adBannerPlaceholder.heightAnchor.constraint(equalToConstant: AdPlaceholderView.ViewTraits.adBannerHeight),
+            adBannerPlaceholder.topAnchor.constraint(equalTo: tableView.bottomAnchor),
+            adBannerPlaceholder.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
+            adBannerPlaceholder.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            adBannerPlaceholder.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
@@ -113,48 +118,11 @@ final class RocketLaunchViewController: BaseViewController, AdBannerViewControll
         rocketAnimationView.accessibilityIdentifier = AccessibilityIds.rocketAnimationView
         tableView.accessibilityIdentifier = AccessibilityIds.tableView
     }
-
+    
     // MARK: - Actions
     
     @objc func refresh(_ sender: AnyObject) {
         presenter.getLaunchesToShow()
-    }
-
-    // MARK: Private Methods
-    
-    private func configureApp() {
-        self.tabBarController?.tabBar.isUserInteractionEnabled = false
-        // Firebase configuration
-        FirebaseRCService.shared.fetch() {
-            super.requestPermissionForAds {
-                DispatchQueue.main.async {
-                    AdBannerManager.shared.rootViewController = self
-                    self.presenter.getLaunchesToShow()
-                    self.requestPushNotificationsPermission()
-                    self.tabBarController?.tabBar.isUserInteractionEnabled = true
-                }
-            }
-        }
-    }
-    
-    private func requestPushNotificationsPermission() {
-        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { granted, error in
-            guard granted else { return }
-            UNUserNotificationCenter.current().getNotificationSettings { settings in
-                guard settings.authorizationStatus == .authorized else { return }
-                DispatchQueue.main.async {
-                    UIApplication.shared.registerForRemoteNotifications()
-                    #if DEBUG
-                    Messaging.messaging().unsubscribe(fromTopic: "production")
-                    Messaging.messaging().subscribe(toTopic: "development")
-                    #else
-                    Messaging.messaging().unsubscribe(fromTopic: "development")
-                    Messaging.messaging().subscribe(toTopic: "production")
-                    #endif
-                }
-            }
-        }
     }
 }
 

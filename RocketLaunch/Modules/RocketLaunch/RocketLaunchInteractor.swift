@@ -7,7 +7,6 @@
 
 import UIKit
 import CoreData
-import GoogleMobileAds
 
 protocol RocketLaunchInteractorProtocol: BaseInteractorProtocol {
     func getLaunchList()
