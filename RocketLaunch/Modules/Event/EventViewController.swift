@@ -52,6 +52,13 @@ final class EventViewController: BaseViewController {
         presenter.prepareView()
         presenter.getEventsToShow()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupAdBanner()
+        setupConstraints()
+    }
 
     // MARK: - Setup
 
@@ -79,6 +86,8 @@ final class EventViewController: BaseViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        setupAdBanner()
     }
 
     override func setupConstraints() {

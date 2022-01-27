@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AppLovinSdkKey</key>
+	<string>CbH3CaUdffGuNcQUSB81HCOcZrzKO7I1AyQu7v-7qnCV2uyD4vhqKNehpEvJ3EZkWsbVHHMigf9wRk5S_2fQUz</string>
 	<key>NSAdvertisingAttributionReportEndpoint</key>
 	<string>https://postbacks-app.com</string>
 	<key>SKAdNetworkIdentifier</key>
@@ -323,8 +325,6 @@
 			<string>v9wttpbfk9.skadnetwork</string>
 		</dict>
 	</array>
-	<key>AppLovinSdkKey</key>
-	<string>CbH3CaUdffGuNcQUSB81HCOcZrzKO7I1AyQu7v-7qnCV2uyD4vhqKNehpEvJ3EZkWsbVHHMigf9wRk5S_2fQUz</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

@@ -57,6 +57,13 @@ final class RocketLaunchViewController: BaseViewController {
         presenter.prepareView()
         configureApp()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupAdBanner()
+        setupConstraints()
+    }
 
     // MARK: - Setup
 
@@ -84,6 +91,8 @@ final class RocketLaunchViewController: BaseViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        setupAdBanner()
     }
 
     override func setupConstraints() {

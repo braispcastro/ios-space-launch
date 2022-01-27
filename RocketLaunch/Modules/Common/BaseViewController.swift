@@ -30,18 +30,11 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         setupComponents()
-        //setupConstraints()
+        setupConstraints()
         setupAccessibilityIdentifiers()
         
         setupNavigationItem()
         setupView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        setupAdBanner()
-        setupConstraints()
     }
     
     // MARK: - Setup

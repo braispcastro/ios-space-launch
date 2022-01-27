@@ -44,6 +44,13 @@ final class SettingsViewController: BaseViewController {
         super.viewDidLoad()
         presenter.prepareView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupAdBanner()
+        setupConstraints()
+    }
 
     // MARK: - Setup
 
@@ -55,6 +62,8 @@ final class SettingsViewController: BaseViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        setupAdBanner()
     }
 
     override func setupConstraints() {

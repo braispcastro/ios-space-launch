@@ -51,8 +51,6 @@ final class SettingsDialogViewController: BaseViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-        adBannerPlaceholder.removeFromSuperview()
     }
 
     override func setupConstraints() {
