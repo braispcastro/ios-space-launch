@@ -22,7 +22,7 @@ final class FirebaseRCService {
     private(set) var termsOfUseURI: String!
     private(set) var supportFormURI: String!
     private(set) var spaceSyncDelay: Double!
-    private(set) var appLovinAdBannerUnitId: String!
+    private(set) var googleAdBannerUnitId: String!
     
     // MARK: - Initialization
     
@@ -50,7 +50,13 @@ final class FirebaseRCService {
         self.termsOfUseURI = self.remoteConfig.configValue(forKey: Constants.kRemoteTermsOfUseURI).stringValue!
         self.supportFormURI = self.remoteConfig.configValue(forKey: Constants.kRemoteSuportFormURI).stringValue!
         self.spaceSyncDelay = Double(self.remoteConfig.configValue(forKey: Constants.kRemoteSpaceSyncDelay).stringValue!)!
-        self.appLovinAdBannerUnitId = self.remoteConfig.configValue(forKey: Constants.kRemoteAppLovinBannerUnitId).stringValue!
+        
+        
+        #if DEBUG
+        self.googleAdBannerUnitId = Constants.kTestingGoogleAdBannerId
+        #else
+        self.googleAdBannerUnitId = self.remoteConfig.configValue(forKey: Constants.kRemoteGoogleAdBannerUnitId).stringValue!
+        #endif
     }
     
     // MARK: - Public methods

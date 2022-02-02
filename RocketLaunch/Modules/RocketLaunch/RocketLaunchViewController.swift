@@ -7,11 +7,11 @@
 
 import UIKit
 import AdSupport
-import AppLovinSDK
+import GoogleMobileAds
 import Kingfisher
 import Lottie
 
-final class RocketLaunchViewController: BaseViewController {
+final class RocketLaunchViewController: BaseViewController, AdBannerViewController {
 
     var presenter: RocketLaunchPresenterProtocol!    
     private var viewModel: RocketLaunch.ViewModel!
@@ -19,7 +19,7 @@ final class RocketLaunchViewController: BaseViewController {
 
     // MARK: - Component Declaration
     
-    //internal var adBannerPlaceholder: AdPlaceholderView!
+    internal var adBannerPlaceholder: AdPlaceholderView?
     
     private var rocketAnimationView: AnimationView!
     private var tableView: UITableView!
@@ -56,13 +56,6 @@ final class RocketLaunchViewController: BaseViewController {
         presenter.prepareView()
         presenter.getLaunchesToShow()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        setupAdBanner()
-        setupConstraints()
-    }
 
     // MARK: - Setup
 
@@ -91,7 +84,9 @@ final class RocketLaunchViewController: BaseViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        setupAdBanner()
+        adBannerPlaceholder = AdPlaceholderView()
+        adBannerPlaceholder!.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(adBannerPlaceholder!)
     }
 
     override func setupConstraints() {
@@ -105,11 +100,11 @@ final class RocketLaunchViewController: BaseViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            adBannerPlaceholder.heightAnchor.constraint(equalToConstant: AdPlaceholderView.ViewTraits.adBannerHeight),
-            adBannerPlaceholder.topAnchor.constraint(equalTo: tableView.bottomAnchor),
-            adBannerPlaceholder.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
-            adBannerPlaceholder.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            adBannerPlaceholder.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            adBannerPlaceholder!.heightAnchor.constraint(equalToConstant: AdBannerManager.ViewTraits.adBannerHeight),
+            adBannerPlaceholder!.topAnchor.constraint(equalTo: tableView.bottomAnchor),
+            adBannerPlaceholder!.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -self.tabBarController!.tabBar.frame.height),
+            adBannerPlaceholder!.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            adBannerPlaceholder!.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     

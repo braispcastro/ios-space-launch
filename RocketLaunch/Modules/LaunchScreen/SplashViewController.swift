@@ -7,9 +7,9 @@
 
 import UIKit
 import AdSupport
-import AppLovinSDK
 import AppTrackingTransparency
 import FirebaseMessaging
+import GoogleMobileAds
 
 class SplashViewController: UIViewController {
     
@@ -58,7 +58,7 @@ class SplashViewController: UIViewController {
             self.requestPermissionForAds {
                 DispatchQueue.main.async {
                     // Init AppLovin SDK
-                    ALSdk.shared()!.initializeSdk { (configuration: ALSdkConfiguration) in
+                    GADMobileAds.sharedInstance().start { _ in
                         self.requestPushNotificationsPermission {
                             DispatchQueue.main.async {
                                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -75,11 +75,6 @@ class SplashViewController: UIViewController {
     private func requestPermissionForAds(completionHandler: @escaping () -> Void) {
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization() { status in
-                ALSdk.shared()!.mediationProvider = "max"
-                ALSdk.shared()!.settings.testDeviceAdvertisingIdentifiers = ["8d4e9a48-0faa-4aa4-90bf-afa2611cd8bb"]
-                if ASIdentifierManager.shared().isAdvertisingTrackingEnabled {
-                    ALSdk.shared()!.userIdentifier = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-                }
                 completionHandler()
             }
         } else {
