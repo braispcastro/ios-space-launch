@@ -7,9 +7,9 @@
 
 import UIKit
 import CoreData
-import AppLovinSDK
 import Firebase
 import FirebaseMessaging
+import GoogleMobileAds
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

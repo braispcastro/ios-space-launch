@@ -6,11 +6,9 @@
 //
 
 import UIKit
-import AppLovinSDK
+import GoogleMobileAds
 
 class BaseViewController: UIViewController {
-    
-    internal var adBannerPlaceholder: AdPlaceholderView!
     
     // MARK: - ViewLife Cycle
     /*
@@ -35,6 +33,12 @@ class BaseViewController: UIViewController {
         setupView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        AdBannerManager.shared.rootViewController = self
+    }
+    
     // MARK: - Setup
     
     func setupComponents() {
@@ -47,12 +51,6 @@ class BaseViewController: UIViewController {
     
     func setupAccessibilityIdentifiers() {
         fatalError("Missing implementation of \"setupAccessibilityIdentifiers\"")
-    }
-    
-    func setupAdBanner() {
-        adBannerPlaceholder = AdPlaceholderView.shared
-        adBannerPlaceholder.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(adBannerPlaceholder)
     }
     
     // MARK: - Private Methods

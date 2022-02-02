@@ -29,5 +29,8 @@ struct Constants {
     static let kRemoteTermsOfUseURI = "TermsOfUseURI"
     static let kRemoteSuportFormURI = "SupportFormURI"
     static let kRemoteSpaceSyncDelay = "SpaceSyncDelay"
-    static let kRemoteAppLovinBannerUnitId = "AppLovinBannerUnitAd"
+    static let kRemoteGoogleAdBannerUnitId = "GoogleAdBannerId"
+    
+    // Ad Banner
+    static let kTestingGoogleAdBannerId = "ca-app-pub-3940256099942544/2934735716"
 }

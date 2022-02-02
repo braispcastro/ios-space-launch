@@ -6,7 +6,7 @@ target 'RocketLaunch' do
   use_frameworks!
 
   # Pods for RocketLaunch
-  pod 'AppLovinSDK'
+  pod 'Google-Mobile-Ads-SDK'
 
   target 'RocketLaunchTests' do
     inherit! :search_paths

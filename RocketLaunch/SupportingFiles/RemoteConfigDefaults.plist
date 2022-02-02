@@ -8,7 +8,7 @@
 	<string>20</string>
 	<key>SpaceBaseUrl</key>
 	<string>https://lldev.thespacedevs.com/2.2.0</string>
-	<key>AppLovinBannerUnitAd</key>
-	<string>06a2952fcbab9771</string>
+	<key>GoogleAdBannerId</key>
+	<string>ca-app-pub-7337873881009900/5207247612</string>
 </dict>
 </plist>
